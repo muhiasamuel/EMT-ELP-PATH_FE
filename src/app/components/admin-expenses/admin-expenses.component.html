@@ -1,0 +1,74 @@
+<div class="expenses-contaner">
+  <!-- row 1-->
+  <div class="expense-container">
+    <!-- expense header -->
+    <div class="expenses-header">
+      <div class="school-name">
+        <p>School Name :</p>
+        <span></span>
+        <div class="select_school" [formGroup]="selectSchool">
+          <mat-select
+            formControlName="id"
+            name="id"
+            [placeholder]="schoolPlaceholderValue"
+          >
+            <mat-option
+              *ngFor="let school of schoolOptions"
+              [value]="school.id"
+            >
+              {{ school.schoolName }}
+            </mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div
+        class="add-expense"
+        (click)="expenseformDialog()"
+        *ngIf="selectSchool.valid"
+      >
+        <mat-icon>add_circle_outline</mat-icon>Add Expense
+      </div>
+    </div>
+    <!-- expense card -->
+    <div class="expense-card" *ngFor="let data of expensedata">
+      <!-- expense card column-1 -->
+      <div class="card-item">
+        <!-- column 1 -->
+        <div class="expense-card-item">
+          <p>{{ data.start_date }}</p>
+          <p>Term{{ data.term }}</p>
+          <p>Form{{ data.form }}</p>
+        </div>
+        <!-- column 2 -->
+        <div class="expense-card-item">
+          <p>School Fees</p>
+          <p>{{ data.schoolFees }}</p>
+        </div>
+
+        <!-- column 3 -->
+        <div class="expense-card-item">
+          <p>Shopping</p>
+          <p>{{ data.shopping }}</p>
+        </div>
+        <!-- column 4 -->
+        <div class="expense-card-item">
+          <p>Upkeep</p>
+          <p>{{ data.upkeep }}</p>
+        </div>
+        <!-- column 5 -->
+        <div class="expense-card-item">
+          <p>Transport</p>
+          <p>{{ data.transport }}</p>
+        </div>
+        <!-- column 6 -->
+        <div class="expense-card-item">
+          <p>Total</p>
+          <p>{{ data.total }}</p>
+        </div>
+      </div>
+      <!--  expense card column-2-->
+      <div class="card-item-button"><mat-icon>edit</mat-icon></div>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------ -->
+  </div>
+</div>

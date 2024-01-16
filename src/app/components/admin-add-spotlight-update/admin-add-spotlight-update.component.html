@@ -1,0 +1,38 @@
+<!-- admin-news-udate-putform.component.html -->
+
+<div class="main-container">
+    <div class="container">
+      <div class="form-container">
+        <form #uploadForm="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+          <!-- Title and Content fields -->
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" [(ngModel)]="newsForm.value.title"  required placeholder="Title">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" [(ngModel)]="newsForm.value.content"  required placeholder="content"></textarea>
+          </div>
+  
+          <!-- File input for the image -->
+          <br>
+          <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" (change)="onFileChange($event)" required>
+          </div>
+          <div class="image-preview">
+            <img *ngIf="previewImage" [src]="previewImage" alt="Image Preview" style="max-width: 100%; max-height: 200px;">
+          </div>
+          <div class="submit-cancel">
+          <button type="submit" [disabled]="newsForm.invalid">{{ data?.id ? 'Update' : 'Add' }}</button>
+          
+            <button  (click)="onCancel()">Cancel</button>
+          
+        </div>
+        </form>
+      </div>
+   
+    </div>
+  </div>
+  

@@ -1,0 +1,89 @@
+<div class="main-container">
+    <div class="container">
+        <div class="form-container">
+            <h4>Scholar Form</h4>
+            <form [formGroup]="addScholarForm" class="scholar-form" (ngSubmit)="submit()">
+                <div class="form-field">
+                    <label class="form-label">First Name</label>
+                    <input 
+                    type="text"
+                    name="scholarFirstName"
+                    placeholder="eg. Denis"
+                    formControlName="firstName">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Last Name</label>
+                    <input
+                    type="text"
+                    name="scholarLastName"
+                    placeholder="eg. Mutua"
+                    formControlName="lastName">
+                </div>
+                <div class="form-field">
+                    <!-- label -->
+                    <label class="form-label">Gender</label>
+                    <mat-select formControlName="gender" name="id">
+                      <mat-option *ngFor="let gender of genderOptions" [value]="gender">
+                        {{ gender }}
+                      </mat-option>
+                    </mat-select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label">Scholar Code</label>
+                    <input
+                    type="text"
+                    name="scholarCode"
+                    placeholder="eg. 347645J"
+                    formControlName="scholarCode">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Instituition</label>
+                    <input
+                    type="text"
+                    name="instituition"
+                    placeholder="eg. University of Nairobi"
+                    formControlName="instituition">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Cluster</label>
+                    <input
+                    type="text"
+                    name="cluster"
+                    placeholder="eg. Education"
+                    formControlName="cluster">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Course</label>
+                    <input
+                    type="text"
+                    placeholder="eg. English Literature"
+                    name="course"
+
+                    formControlName="course">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Branch</label>
+                    <input
+                    type="text"
+                    name="branch"
+                    placeholder="eg. Kangema"
+                    formControlName="branch">
+                </div>
+                <div class="button-container">
+                    <button
+                        (keydown.enter)="cancel"
+                        type="cancel"
+                        class="button-cancel"
+                        (click)="cancel()">Cancel</button>
+                    
+                    <button
+                        (keydown.enter)="submit"
+                        type="submit"
+                        class="button-submit"
+                        [disabled]="!addScholarForm.valid"
+                        (click)="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

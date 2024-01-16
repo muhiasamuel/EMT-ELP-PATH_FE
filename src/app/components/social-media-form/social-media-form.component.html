@@ -1,0 +1,98 @@
+<div class="main-container">
+  <div class="exit-post">
+    <div class="button">
+      <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+        <img src="assets/images/x.svg" height="20" />
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="socialForm" class="social-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field"><span>Social Media links</span>
+          <!-- label -->
+          <label class="form-label">Facebook</label>
+          <!-- input -->
+          <input
+            type="text"
+            placeholder="eg. www.profile.com"
+            formControlName="facebook"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">LinkedIn </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="linkedIn"
+            placeholder="eg. www.profile.com"
+            formControlName="linkedIn"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Twitter </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="twitter"
+            placeholder="eg. www.profile.com"
+            required
+            formControlName="twitter"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Github</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="github"
+            placeholder="eg. www.profile.com"
+            required
+            formControlName="github"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Instagram </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="instagram"
+            placeholder="eg. www.profile.com"
+            required
+            formControlName="instagram"
+          />
+        </div>
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Baobab Platform </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="baobab"
+            placeholder="eg. www.profile.com"
+            required
+            formControlName="baobab"
+          />
+        </div>
+
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" type="submit" class="button">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

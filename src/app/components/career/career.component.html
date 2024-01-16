@@ -1,0 +1,49 @@
+<div class="main-container">
+  <div
+    class="add"
+    matTooltip="Add Career"
+    matTooltipPosition="left"
+    matTooltipClass="tooltip"
+    (click)="cformDialog('add')"
+    *ngIf="!viewer"
+  >
+    <mat-icon>add_circle_outline</mat-icon>Add
+  </div>
+  <div class="row" *ngFor="let row of rowData">
+    <div class="container">
+      <div class="edit">
+        <div
+          class="edit"
+          matTooltip="Edit Career"
+          matTooltipPosition="left"
+          matTooltipClass="tooltip"
+          *ngIf="!viewer"
+          (click)="cformDialog('edit')"
+        >
+          <mat-icon>edit</mat-icon>Edit
+        </div>
+      </div>
+      <div class="content">
+        <p class="title">Position: {{ row.title | titlecase }}</p>
+
+        <p class="company-name">
+          Company Name: {{ row.companyName | titlecase }}
+        </p>
+
+        <i class="description">Description: {{ row.description }}</i>
+
+        <div class="date">
+          <div class="start_date">
+            <label>Start Date: </label>
+            <p>{{ row.start_date | date }}</p>
+          </div>
+          <div class="end_date">
+            <label>End Date: </label>
+            <p>{{ row.end_date | date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>

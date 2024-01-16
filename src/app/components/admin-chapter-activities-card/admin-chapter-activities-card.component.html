@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="content-container">
+    <!-- column 1 -->
+    <div class="details">
+      <!-- title -->
+      <div class="title">
+        <p>Activities</p>
+      </div>
+      <!-- description -->
+      <div class="description">
+        <p>Total Numbers of Activities</p>
+      </div>
+      <!-- total number -->
+      <div class="numbers">
+        <p>{{ activityCount }} Activities</p>
+      </div>
+
+      <!-- date -->
+      <div class="date">
+        <p>{{ currentDate | date : "fullDate" }}</p>
+      </div>
+    </div>
+
+    <!-- column 2 -->
+    <div class="icon-image">
+      <mat-icon>precision_manufacturing</mat-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+@import '~font-awesome/css/font-awesome.css';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.header {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 10px 0;
+  margin-left: 2.5%;
+  border-radius: 11px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  h3{
+    color:#333;
+  }
+  
+  .header-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 10px;
+    color: #2e2e31;
+  }
+}
+
+.feedback-container {
+  font-family: 'Arial', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  width: 95%;
+  margin-left: 2.5%;
+  box-sizing: border-box; // Ensure padding and border don't affect the width
+}
+
+.mat-accordion {
+  margin-bottom: 5px;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  margin-left: 10px;
+  font-size: 1.1em;
+  color: #817d7d;
+}
+
+.image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.quote-icon {
+  opacity: 0.4; 
+  color: #837777; 
+}
+
+.par{
+  color: #837777;  
+  width: 70%;
+}
+

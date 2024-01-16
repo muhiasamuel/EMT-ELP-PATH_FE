@@ -1,0 +1,81 @@
+<div class="application-info-contaner">
+  <!-- row 1-->
+  <div class="applicant-container">
+    <!-- application card -->
+    <div class="details-card">
+      <!-- application card column-1 -->
+      <div class="card-item">
+        <!-- column 1 -->
+        <div class="details-card-item">
+          <p>Name</p>
+          <p class="applicant-text" *ngIf="application_data">
+            {{ application_data.applicantFirstName | titlecase }}
+            {{ application_data.applicantLastName | titlecase }}
+          </p>
+        </div>
+        <!-- column 2 -->
+        <div class="details-card-item">
+          <p>Award status</p>
+          <p class="applicant-text" *ngIf="application_data">
+            {{ application_data.applicationStatus | titlecase }}
+          </p>
+        </div>
+
+        <!-- column 3 -->
+        <div class="details-card-item">
+          <p>Date Of Application</p>
+          <p class="applicant-text" *ngIf="application_data">
+            {{ application_data.dateOfApplication }}
+          </p>
+        </div>
+        <!-- column 4 -->
+        <div class="details-card-item">
+          <p>Branch</p>
+          <p class="applicant-text" *ngIf="application_data">
+            {{ application_data.branch.branchName | titlecase }}
+          </p>
+        </div>
+
+        <!-- column 5 -->
+        <div class="details-card-item">
+          <p>Awarded Date</p>
+          <p class="applicant-text" *ngIf="application_data">
+            {{ application_data.dateOfAwarding }}
+          </p>
+        </div>
+      </div>
+      <!--  application card column-2-->
+      <div class="card-item-button"><mat-icon>edit</mat-icon></div>
+    </div>
+
+    <!-- ------------------------------------------------------------------------------------------ -->
+
+    <!-- interview details -->
+    <div class="details-card" id="interview-card">
+      <!-- application card column-1 -->
+      <div class="card-item">
+        <!-- column 1 -->
+        <div class="details-card-item">
+          <p>Interview Date</p>
+          <p class="applicant-text">
+            {{ application_data?.dateOfInterview }}
+          </p>
+        </div>
+        <!-- column 2 -->
+        <div class="details-card-item">
+          <p>Uploads</p>
+          <p class="applicant-upload">Info.pdf</p>
+        </div>
+
+        <!-- column 3 -->
+        <div class="details-card-item" id="upload-button">
+          <button mat-raised-button color="primary" class="upload-button">
+            Upload
+          </button>
+        </div>
+      </div>
+      <!--  application card column-2-->
+      <div class="card-item-button"><mat-icon>edit</mat-icon></div>
+    </div>
+  </div>
+</div>

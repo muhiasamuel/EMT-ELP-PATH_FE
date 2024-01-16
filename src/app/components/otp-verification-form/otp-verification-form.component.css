@@ -1,0 +1,31 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 1rem;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0;
+  font-weight: 300;
+}/*# sourceMappingURL=otp-verification-form.component.css.map */

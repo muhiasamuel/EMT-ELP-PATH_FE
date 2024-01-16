@@ -1,0 +1,22 @@
+<div class="container">
+  <!-- column1 -->
+
+  <div class="column1-container">
+    <!-- Events -->
+    <div class="events-container">
+      <div class="header">
+        <span>Events</span>
+        <button (click)="addEventDialog()">Add Event</button>
+      </div>
+
+      <app-admin-chapter-events></app-admin-chapter-events>
+    </div>
+  </div>
+
+  <!--column2-->
+
+  <div class="column2-container">
+    <!-- chapter total events  -->
+    <app-admin-chapter-events-card></app-admin-chapter-events-card>
+  </div>
+</div>

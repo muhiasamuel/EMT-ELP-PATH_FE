@@ -1,0 +1,44 @@
+.all-content {
+  padding: 0.5rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.graphs-container {
+  height: 30vh;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 30vh;
+}
+.content-container .search-filter {
+  border-radius: 6px;
+  height: 5vh;
+  background-color: white;
+}
+.content-container .search-filter:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.content-container .table-container {
+  background-color: white;
+  height: 100%;
+  border-radius: 6px;
+}
+.content-container .table-container table {
+  width: 100%;
+}
+.content-container .table-container table th {
+  color: #A32A29;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}/*# sourceMappingURL=admin-awarded.component.css.map */

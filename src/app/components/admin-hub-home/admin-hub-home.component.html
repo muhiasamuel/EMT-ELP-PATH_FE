@@ -1,0 +1,38 @@
+<div class="container">
+  <!-- column1 -->
+
+  <div class="column1-container">
+    <!-- activity -->
+    <div class="activity-container">
+      <div class="header">
+        <span>Activities</span>
+        <button (click)="addActivityDialog()">Add Activity</button>
+      </div>
+      <app-admin-hub-activities [hubid]="hubId"></app-admin-hub-activities>
+    </div>
+
+    <!-- Events -->
+    <div class="events-container">
+      <div class="header">
+        <span>Events</span>
+        <button (click)="addEventDialog()">Add Event</button>
+      </div>
+
+      <app-admin-hub-events [hubid]="hubId"></app-admin-hub-events>
+    </div>
+  </div>
+
+  <!--column2-->
+
+  <div class="column2-container">
+    <!-- hubs profile -->
+    <app-admin-hub-profile [hubid]="hubId"></app-admin-hub-profile>
+    <!-- hub total Activities  -->
+    <app-admin-hub-activities-card
+      [hubid]="hubId"
+    ></app-admin-hub-activities-card>
+
+    <!-- hub total events  -->
+    <app-admin-hub-events-card [hubid]="hubId"></app-admin-hub-events-card>
+  </div>
+</div>

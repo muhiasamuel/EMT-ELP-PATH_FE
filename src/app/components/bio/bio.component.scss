@@ -1,0 +1,62 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+}
+.buttons {
+  margin-top: 1%;
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+
+  .edit {
+    background-color: #eaedf7;
+    color: #6259ca;
+    border: 0;
+    border-radius: 12px;
+    padding: 5px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    .mat-icon {
+      display: flex;
+      font-size: 18px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .view {
+    background-color: #eaedf7;
+    color: #6259ca;
+    border: 0;
+    border-radius: 12px;
+    padding: 5px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mat-icon {
+      display: flex;
+      font-size: 18px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+::ng-deep .tooltip {
+  font-size: 13px;
+}
+.bio-info {
+  font-size: 14px;
+  color: #3c4858;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 24px;
+  margin-top: 10px;
+}
+.container {
+  display: flex;
+  width: 80%;
+}

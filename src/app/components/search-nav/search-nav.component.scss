@@ -1,0 +1,38 @@
+img {
+  height: 40px;
+  cursor: pointer;
+}
+
+.searchMain {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+
+.imageSearch {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  padding-left: 5%;
+  align-items: center;
+}
+.searchSvg {
+  width: 20px;
+  height: 20px;
+  color: brown;
+}
+input {
+  width: 90%;
+  height: 2rem;
+  border-radius: 23px;
+  border-color: #a32a29;
+  padding-left: 2rem;
+}
+input::placeholder {
+  display: none;
+  font-weight: bold;
+  color: #a32a29;
+  font-size: 14px;
+  padding-left: 10px;
+}

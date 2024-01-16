@@ -1,0 +1,76 @@
+<div class="main-container">
+  <div class="exit-post">
+    <div class="button">
+      <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+        <img src="assets/images/x.svg" height="20" />
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form #careerform="ngForm" class="education-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field"><span>Add Career</span>
+          <!-- label -->
+          <label class="form-label">Company Name .</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="companyName"
+            placeholder="eg. EM Technologies LTD"
+            required
+            [(ngModel)]="companyName"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Position </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="title"
+            placeholder="eg. Business Consultant"
+            required
+            [(ngModel)]="title"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Description </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="description"
+            required
+            [(ngModel)]="description"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label">Start date</label>
+              <input type="date" name="start_date" [(ngModel)]="start_date" />
+            </div>
+            <!-- end date -->
+            <div class="date-end">
+              <label class="form-label">Complete date</label>
+              <input type="date" name="end_date" [(ngModel)]="end_date" />
+            </div>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" type="submit" class="button">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

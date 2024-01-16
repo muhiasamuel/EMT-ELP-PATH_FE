@@ -1,0 +1,44 @@
+<div class="container">
+  <!-- column1 -->
+
+  <div class="column1-container">
+    <!-- activity -->
+    <div class="activity-container">
+      <div class="header">
+        <span>Chapters</span>
+      </div>
+      <app-admin-chapter-activities
+        [chapterid]="chapterId"
+      ></app-admin-chapter-activities>
+    </div>
+
+    <!-- Events -->
+    <div class="events-container">
+      <div class="header">
+        <span>Events</span>
+      </div>
+
+      <app-admin-chapter-events
+        [chapterid]="chapterId"
+      ></app-admin-chapter-events>
+    </div>
+  </div>
+
+  <!--column2-->
+
+  <div class="column2-container">
+    <!-- chapters profile -->
+    <app-admin-chapter-profile
+      [chapterid]="chapterId"
+    ></app-admin-chapter-profile>
+    <!-- chapter total Activities  -->
+    <app-admin-chapter-activities-card
+      [chapterid]="chapterId"
+    ></app-admin-chapter-activities-card>
+
+    <!-- chapter total events  -->
+    <app-admin-chapter-events-card
+      [chapterid]="chapterId"
+    ></app-admin-chapter-events-card>
+  </div>
+</div>

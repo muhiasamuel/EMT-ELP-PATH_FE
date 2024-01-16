@@ -1,0 +1,40 @@
+<div class="container-spot">
+  <button class="btn1" (click)="prevPage()">
+    <fa-icon [icon]="faAnglesLeft"></fa-icon>
+  </button>
+
+  <ul class="spot-card" [@cardAnimation]="animateCards">
+    <li
+      class="spotItem"
+      *ngFor="let list of spotlight.slice(startIndex, endIndex)"
+    >
+      <div class="spot-img"><img [src]="list.image" alt="" /></div>
+      <div class="date-spot">
+        
+        <div class="item-highlight">Spotlight</div>
+        <div class="spot-date">
+          <fa-icon [icon]="faClock"></fa-icon>
+          <span>{{ list.date }}</span>
+        </div>
+      </div>
+      <div class="item-details">
+        <h4>{{ list.title }}</h4>
+        <div
+          class="btn-par"
+          [ngStyle]="!toggle ? { overflow: 'hidden' } : { overflow: 'auto' }"
+        >
+          <p>{{ toggle ? list.content : processContent(list.content)[0] }}</p>
+          <button
+            *ngIf="processContent(list.content)[1]"
+            (click)="handleMoreButtonClick()"
+          >
+            {{ !toggle ? "more..." : "less" }}
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <button class="btn2" (click)="nextPage()">
+    <fa-icon [icon]="faAnglesRight"></fa-icon>
+  </button>
+</div>

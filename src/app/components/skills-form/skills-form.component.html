@@ -1,0 +1,47 @@
+<div class="main-container">
+  <div class="exit-post">
+    <div class="button">
+      <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+        <img src="assets/images/x.svg" height="20" />
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form class="skill-form" (ngSubmit)="submit()" [formGroup]="skillsForm">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Skill Name</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="skillName"
+            placeholder="eg. Public Speaking"
+            required
+            formControlName="skillName"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Level</label>
+          <mat-slider
+            class="example-margin"
+            [(ngModel)]="value"
+            (change)="onSliderChange($event)"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <input type="range" matSliderThumb formControlName="level" />
+          </mat-slider>
+        </div>
+
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" type="submit" class="button">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

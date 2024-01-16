@@ -1,0 +1,128 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="expenseform"
+        class="education-form"
+        (ngSubmit)="submit()"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Form </label>
+
+          <!-- select -->
+          <mat-select formControlName="form" name="form">
+            <mat-option *ngFor="let form of formsOptions" [value]="form.value">
+              {{ form.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Term </label>
+
+          <!-- select -->
+          <mat-select formControlName="term" name="term">
+            <mat-option *ngFor="let term of termsOptions" [value]="term.value">
+              {{ term.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">School Fees </label>
+          <!-- input -->
+          <input
+            type="number"
+            name="schoolFees"
+            placeholder="eg. 20,000"
+            formControlName="schoolFees"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Shopping </label>
+          <!-- input -->
+          <input
+            type="number"
+            name="shopping"
+            placeholder="eg. 1,000"
+            formControlName="shopping"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Transport </label>
+          <!-- input -->
+          <input
+            type="number"
+            name="transport"
+            placeholder="eg. 1,000"
+            formControlName="transport"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Upkeep </label>
+          <!-- input -->
+          <input
+            type="number"
+            name="upkeep"
+            placeholder="eg. 1,000"
+            formControlName="upkeep"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date">
+              <label class="form-label">Date Of Disbursement</label>
+              <input
+                type="date"
+                name="start_date"
+                formControlName="start_date"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- form field -->
+        <!-- <mat-form-field appearance="outline">
+          <input
+            matInput
+            formControlName="releasedAt"
+            [matDatepicker]="releasedAtPicker"
+            (click)="releasedAtPicker.open()"
+            [disabled]="true"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="releasedAtPicker"
+            [disabled]="false"
+          >
+          </mat-datepicker-toggle>
+          <mat-datepicker
+            #releasedAtPicker
+            [disabled]="false"
+            startView="multi-year"
+          >
+          </mat-datepicker>
+        </mat-form-field> -->
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" class="button">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

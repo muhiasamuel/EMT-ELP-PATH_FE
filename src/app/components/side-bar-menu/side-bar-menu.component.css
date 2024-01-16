@@ -1,0 +1,97 @@
+.leftcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: white;
+}
+
+.side-buttons-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  width: 100vw;
+  overflow: scroll;
+  gap: 1rem;
+}
+
+.btn_list {
+  display: flex;
+}
+
+.side-buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #3c4858;
+  background: #fff;
+  border: none;
+  gap: 0;
+  justify-content: flex-start;
+  padding: 0.6em 0;
+}
+.side-buttons .mat-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #eaedf7;
+  border-radius: 0.7em;
+  color: #6259ca;
+}
+.side-buttons p {
+  font-size: 13px;
+  font-weight: 600;
+  transition: margin-left 0.45s ease;
+  transition-duration: 0.45s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  text-align: center;
+  transition-property: margin-left;
+}
+
+.side-buttons:hover {
+  color: #a32a29;
+}
+.side-buttons:hover span {
+  margin-left: 10px;
+}
+.side-buttons:hover .mat-icon {
+  background-color: rgba(163, 42, 41, 0.2);
+  color: #a32a29;
+}
+
+button.active {
+  color: #a32a29;
+}
+button.active span {
+  margin-left: 10px;
+}
+button.active .mat-icon {
+  background-color: rgba(163, 42, 41, 0.2);
+  color: #a32a29;
+}
+
+@media screen and (min-width: 600px) {
+  .leftcard {
+    width: 100%;
+  }
+  .side-buttons-container {
+    flex-direction: column;
+    padding: 1rem;
+    min-width: none;
+    overflow: hidden;
+  }
+  .btn_list {
+    display: flex;
+    align-self: flex-start;
+  }
+  .side-buttons {
+    gap: 1rem;
+    border: none;
+    flex-direction: row;
+    margin: none;
+  }
+}/*# sourceMappingURL=side-bar-menu.component.css.map */

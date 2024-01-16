@@ -1,0 +1,178 @@
+<!-- <mat-toolbar color="primary" class="toolbar mat-elevation-z8">
+  <p>
+    <mat-icon
+      mat-button
+      matTooltip="Menu"
+      matTooltipPosition="below"
+      matTooltipClass="tooltip"
+      (click)="toggleButton()"
+    >
+      menu
+    </mat-icon>
+  </p>
+
+  <div class="nav">
+    <div class="navbar-search">
+      <div>
+        <img src="assets/images/equity-bank-logo.png" />
+      </div> -->
+<!-- <mat-form-field appearance="outline" class="form-field">
+      <input matInput placeholder="Search" required />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field> -->
+<!-- </div>
+    <div class="navbar-menu">
+      <a routerLink="/home" class="menu-item">
+        <button mat-button>
+          <mat-icon>home</mat-icon>
+          Home
+        </button>
+      </a>
+
+      <div class="menu-item">
+        <button mat-button>
+          <mat-icon>notifications</mat-icon>
+          Notifications
+        </button>
+      </div>
+
+      <div class="menu-item">
+        <button mat-button (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>LogOut
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-toolbar> -->
+
+<!-- =========================================================================== -->
+
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+  <div class="container-fluid">
+      <!-- Left Nav -->
+
+     <!-- <img
+          src="assets/images/equity-bank-logo.png"
+          (click)="toggleButton()"
+        />-->
+
+        <button mat-raised-button class="navbar-toggler" type="button" (click)="toggleButton()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+                  <app-search #searchInput (searchTextChanged)="onSearchTextEntered($event)">
+                    <!-- Place spinner inside this component if possible -->
+                  </app-search>   
+                  <mat-progress-spinner *ngIf="isLoading" class="search-spinner" [mode]="spinnerMode" [diameter]="20"></mat-progress-spinner>
+                  <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport suggestions">
+                    <div *cdkVirtualFor="let word of filteredWords" class="suggestion-item">
+                      <a (click)="onSuggestionClicked(word)">
+                        {{ isLink(word.content) ? processLink(word.content) : word.content }}
+                      </a>
+                    </div>
+                  </cdk-virtual-scroll-viewport>
+               
+            <!--<mat-icon><menu>menu</menu></mat-icon>-->
+
+
+
+      <!-- Right Menu -->
+      <div class="navbar-menu">
+        <!-- Home -->
+        <button routerLink="/home" mat-button>
+          <mat-icon>house</mat-icon><span class="nav-item">Home</span>
+        </button>
+
+
+        <!-- Notification -->
+        <button mat-button>
+          <mat-icon>notifications</mat-icon
+          ><span class="nav-item"> Notifications</span>
+        </button>
+
+        <!-- Me Avatar Menu -->
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>account_circle</mat-icon><span class="nav-item">Me</span>
+        </button>
+
+        <!-- Sub Menu -->
+        <mat-menu #menu="matMenu">
+          <!-- LogOut -->
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>LogOut
+          </button>
+
+          <!-- Account Settings -->
+          <button mat-menu-item routerLink="/user_profile">
+            <mat-icon>person</mat-icon>Profile
+          </button>
+          <button mat-menu-item>
+            <mat-icon>settings</mat-icon>AccountSettings
+          </button>
+        </mat-menu>
+      </div>
+
+      <!-- =========================================================================== -->
+    
+  </div>
+</nav>
+
+<!--
+
+<nav class="navbar navbar-transparent navbar-absolute">
+  <div class="container-fluid">
+      <div class="navbar-header">
+          <button mat-raised-button type="button" class="navbar-toggle" data-toggle="collapse" (click)="sidebarToggle()">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="javascript:void(0)">{{getTitle()}}</a>
+      </div>
+      <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="material-icons">dashboard</i>
+                      <p class="hidden-lg hidden-md">Dashboard</p>
+                  </a>
+              </li>
+              <li class="dropdown">
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="material-icons">notifications</i>
+                      <span class="notification">5</span>
+                      <p class="hidden-lg hidden-md">Notifications</p>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a href="javascript:void(0)">Mike John responded to your email</a></li>
+                      <li><a href="javascript:void(0)">You have 5 new tasks</a></li>
+                      <li><a href="javascript:void(0)">You're now friend with Andrew</a></li>
+                      <li><a href="javascript:void(0)">Another Notification</a></li>
+                      <li><a href="javascript:void(0)">Another One</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="material-icons">person</i>
+                     <p class="hidden-lg hidden-md">Profile</p>
+                  </a>
+              </li>
+          </ul>
+
+          <form class="navbar-form navbar-right" role="search">
+              <div class="form-group form-black is-empty">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="material-input"></span>
+              </div>
+              <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i><div class="ripple-container"></div>
+              </button>
+          </form>
+      </div>
+  </div>
+</nav> -->
+

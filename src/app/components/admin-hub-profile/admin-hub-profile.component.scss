@@ -1,0 +1,109 @@
+.chapter-profile-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 11px;
+  align-items: center;
+}
+.chapter-profile-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.backimage {
+  width: 100%;
+  height: 50px;
+  background-image: url("../../../assets/images/dashleft.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+.chapter-profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: -13%;
+  background-color: #eaedf7;
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .mat-icon {
+    color: #8f8fb1;
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.chapter-title {
+  width: 90%;
+  font-size: 14px;
+  color: #3c4858;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.details-container {
+  width: 80%;
+  margin-top: 5px;
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    color: #3c4858;
+    letter-spacing: 0.2px;
+  }
+}
+.chapter-details {
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  justify-content: baseline;
+  gap: 15px;
+
+  .icon {
+    display: flex;
+
+    background-color: #eaedf7;
+    color: #6259ca;
+    width: 40px !important;
+    height: 40px;
+    border-radius: 11px;
+    justify-content: center;
+    align-items: center;
+    .mat-icon {
+      display: flex;
+      margin-left: 8px;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      color: #3c4858;
+      letter-spacing: 0.2px;
+    }
+    p {
+      margin: 0;
+      color: #8f8fb1;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+}

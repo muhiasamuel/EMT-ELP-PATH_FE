@@ -1,0 +1,212 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="jobform" class="elp-form" (ngSubmit)="onSubmit()">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label" for="jobTitle">Job Title</label>
+              <input
+                type="text"
+                id="jobTitle"
+                placeholder="eg. sofware dev"
+                formControlName="jobTitle"
+                autocomplete="off"
+              />
+            </div>
+            <!-- end date -->
+            <div class="date-end">
+              <label class="form-label" for="jobType">Job Type</label>
+              <input
+                type="text"
+                id="jobType"
+                placeholder="eg.contract"
+                formControlName="jobType"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label" for="jobSalary">Job Salary</label>
+              <input
+                type="number"
+                id="jobSalary"
+                placeholder="eg. 50000"
+                formControlName="jobSalary"
+                autocomplete="off"
+              />
+            </div>
+            <!-- end date -->
+            <div class="date-end">
+              <div class="form-label">Education Ievel</div>
+              <mat-select formControlName="educationLevel"  >
+                <mat-option id="educationLevel"
+                  *ngFor="let education of IevelOptions"
+                  [value]="education"
+                >
+                  {{ education | titlecase }}
+                </mat-option>
+              </mat-select>
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label" for="applicationDeadLine">applicationDeadLine</label>
+              <input
+                type="datetime-local"
+                id="applicationDeadLine"
+                formControlName="applicationDeadLine"
+                autocomplete="off"
+              />
+            </div>
+            <!-- end date -->
+            <div class="date-end">
+              <label class="form-label" for="organization"> Organization</label>
+              <input
+                type="text"
+                id="organization"
+                placeholder="eg Equity"
+                formControlName="organization"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <div class="form-label" > Job Description</div>
+          <!-- input -->
+          <textarea
+            id="jobDescription"
+            placeholder="eg.Proficiency in Microsoft Office Suite "
+            wrap="hard"
+            rows="3"
+            cols="50"
+            formControlName="jobDescription"
+            autocomplete="off"
+          ></textarea>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <div class="form-label"> How To Apply </div>
+          <!-- input -->
+          <textarea
+            placeholder="eg.Proficiency in Microsoft Office Suite "
+            wrap="hard"
+            rows="3"
+            cols="50"
+            id="howToApply"
+            formControlName="howToApply"
+            autocomplete="off"
+          ></textarea>
+        </div>
+
+        <!-- Qualification -->
+        <!-- form field -->
+       <!-- Qualification -->
+<div class="form-field">
+  <!-- label -->
+  <div class="form-label">
+    <div class="add-qualification" (click)="addQualification()">
+      <mat-icon>history_edu</mat-icon>Add Qualification
+    </div>
+  </div>
+  <!-- input (FormArray for jobQualifications) -->
+  <div formArrayName="jobQualifications">
+    <div *ngFor="let qualification of jobQualifications.controls; let i = index">
+      <textarea
+        [formControlName]="i"
+        placeholder="eg.Proficiency in Microsoft Office Suite"
+        wrap="hard"
+        rows="3"
+        cols="50"
+        autocomplete="off"
+      ></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Responsibilities -->
+<!-- form field -->
+<div class="form-field">
+  <!-- label -->
+  <label class="form-label" for="jobResponsibilities">
+    <div class="add-qualification" (click)="addResponsibilities()">
+      <mat-icon>history_edu</mat-icon>Add Responsibilities
+    </div>
+  </label>
+  <!-- input (FormArray for jobResponsibilities) -->
+  <div formArrayName="jobResponsibilities">
+    <div *ngFor="let responsibility of jobResponsibilities.controls; let i = index">
+      <textarea
+        [formControlName]="i"
+        placeholder="eg. Process daily client transactions"
+        wrap="hard"
+        rows="3"
+        cols="50"
+        autocomplete="off"
+      ></textarea>
+    </div>
+  </div>
+</div>
+
+        <!-- Responsibilities list -->
+        <!-- form field -->
+        <div class="form-field" *ngIf="jobResponsibilities.length !== 0">
+          <!-- label -->
+          <label class="form-label" for="jobPoster">Responsibilities </label>
+
+          <ul>
+            <li *ngFor="let data of jobResponsibilities.controls">{{ data }}</li>
+          </ul>
+        </div>
+
+        <div class="form-field">
+          <input
+            type="file"
+            id="jobPoster"
+            name="jobPoster"
+            style="display: none"
+            (change)="onFileChange($event)"
+            accept="image/*"
+          />
+          <div class="select-image">
+            <label for="jobPoster">Select Event Poster</label>
+            <div *ngIf="imageUrl" class="image-item">
+              <img [src]="imageUrl" alt="Profile Image" />
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================================================= -->
+
+        <p>{{ error }}</p>
+
+        <div class="save-button">
+          <button  type="submit" class="button">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div></div>

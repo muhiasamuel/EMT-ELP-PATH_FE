@@ -1,0 +1,105 @@
+<div class="containerHome">
+  <div *ngFor="let user of users" class="user-details-container">
+    <!-- User Details Card -->
+    <div class="user-details-card">
+      <div class="backimage"></div>
+      <div class="user-profile-image">
+        <img [src]="imageurl" *ngIf="imageurl" (error)="handleError($event)"/>
+        <mat-icon *ngIf="!imageurl">person</mat-icon>
+      </div>
+      <p>{{ user.firstName }} {{ user.lastName }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Title: {{ user.title }}</p>
+      <p>Phone: {{ user.phoneNo }}</p>
+    </div>
+
+    <!-- Feeds or Posts Section -->
+    <!-- <div class="feeds-section">
+      <div *ngFor="let feed of user.feeds" class="feed-card">
+        <p>{{ feed.description }}</p>
+        <p>Post Date: {{ feed.postDate | date:'medium' }}</p>
+        
+        <div class="feed-details">
+          <p>Toxic: {{ feed.toxic }}</p>
+          <p>Severe Toxic: {{ feed.severeToxic }}</p>
+          <p>Obscene: {{ feed.obscene }}</p>
+          <p>Threat: {{ feed.threat }}</p>
+          <p>Insult: {{ feed.insult }}</p>
+          <p>Identity Hate: {{ feed.identityHate }}</p>
+          
+          <div class="feed-user-details">
+            <p>User: {{ feed.user.firstName }} {{ feed.user.lastName }}</p>
+            <p>User Email: {{ feed.user.userEmail }}</p>
+          </div>
+          
+          <div class="feed-images-container">
+            <img *ngFor="let image of feed.images" [src]="image" alt="Feed Image" />
+          </div>
+        </div>
+        
+      </div>
+    </div> -->
+
+    <div class="p-2" [class.no-update]="userProfileData !== undefined">
+      <div
+        class="feed-container"
+        [title]="
+          data.toxic ||
+          data.severeToxic ||
+          data.obscene ||
+          data.threat ||
+          data.insult ||
+          data.identityHate
+            ? 'This is a harmful post'
+            : ''
+        "
+        *ngFor="let data of feedsData"
+      >
+        <div class="feed-header">
+          <div class="feed-header-profile">
+            <div class="feed-header-profile-image">
+              <img
+                *ngIf="data.user.profileImage"
+                [src]="data.user.profileImage"
+                onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScuQGyYbgV9HFyiunO9mF6_lnB6MYwcx6t3w&usqp=CAU'"
+              />
+              <mat-icon *ngIf="!data.user.profileImage">person</mat-icon>
+            </div>
+            <div class="feed-header-profile-name">
+              <p class="p1">{{ data.user.firstName }} {{ data.user.lastName }}</p>
+              <!-- <p class="p2">{{ data.postDate | date : "fullDate" }}</p> -->
+              <p class="p2">{{ userProfileData.formattedDate | date : "fullDate" }}</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="feed-body">
+          <div class="feed-text">
+            <p
+              [ngStyle]="
+                data.toxic ||
+                data.severeToxic ||
+                data.obscene ||
+                data.threat ||
+                data.insult ||
+                data.identityHate
+                  ? { color: 'red' }
+                  : null
+              "
+            >
+              {{ data.description }}
+            </p>
+          </div>
+          <div class="feed-image" *ngIf="data.feedImage !== null">
+            <img
+              [src]="'http://52.15.152.26:5555/images/' + link"
+              *ngFor="let link of data.images"
+              onerror="this.style.display='none'"
+            />
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

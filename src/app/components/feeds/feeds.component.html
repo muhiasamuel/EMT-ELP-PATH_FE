@@ -1,0 +1,100 @@
+<div class="p-2" [class.no-update]="userProfileData !== undefined">
+  <div
+    class="feed-container"
+    [title]="
+      data.toxic ||
+      data.severeToxic ||
+      data.obscene ||
+      data.threat ||
+      data.insult ||
+      data.identityHate
+        ? 'This is a harmful post'
+        : ''
+    "
+    *ngFor="let data of feedsData"
+  >
+    <div class="feed-header">
+      <div class="feed-header-profile">
+        <div class="feed-header-profile-image">
+          <img
+            *ngIf="data.user.profileImage"
+            [src]="data.user.profileImage"
+            onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScuQGyYbgV9HFyiunO9mF6_lnB6MYwcx6t3w&usqp=CAU'"
+          />
+          <mat-icon *ngIf="!data.user.profileImage">person</mat-icon>
+        </div>
+        <div class="feed-header-profile-name">
+          <p class="p1">{{ data.user.firstName }} {{ data.user.lastName }}</p>
+          <p class="p2">{{ data.postDate | date : "fullDate" }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="feed-body">
+      <div class="feed-text">
+        <p
+          [ngStyle]="
+            data.toxic ||
+            data.severeToxic ||
+            data.obscene ||
+            data.threat ||
+            data.insult ||
+            data.identityHate
+              ? { color: 'red' }
+              : null
+          "
+        >
+          {{ data.description }}
+        </p>
+      </div>
+ 
+
+<div class="feed-image" *ngIf="data.feedImage !== null">
+  <ng-container *ngIf="data.images.length > 0; else noImages">
+    <img
+      *ngFor="let link of data.images"
+      [src]="'http://52.15.152.26:5555/images/' + link"
+      (error)="handleImageError($event)"
+    />
+  </ng-container>
+  <ng-template #noImages>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScuQGyYbgV9HFyiunO9mF6_lnB6MYwcx6t3w&usqp=CAU"
+      alt="Default Image"
+    />
+  </ng-template>
+</div>
+
+    </div>
+    
+  </div>
+</div>
+
+<!-- <div class="p-2 mat-elevation-z8">
+  <div class="feed-container">
+    <div class="feed-header">
+      <div class="feed-header-profile">
+        <div class="feed-header-profile-image">
+          <img src="assets/images/logo.png" />
+        </div>
+        <div class="feed-header-profile-name">
+          <span>E&M Technologies</span>
+          <p>2hrs</p>
+        </div>
+      </div>
+    </div>
+    <div class="feed-body">
+      <div class="feed-text">
+        <p>
+          EMTech specializes in Software Development, finance and banking
+          Solutions Integrations,Project Delivery & IT infrastructure support in
+          the verticals of Banking, finance and Public sector. For more
+          information visit https://www.emtechhouse.co.ke/
+        </p>
+      </div>
+      <div class="feed-image">
+        <img src="assets/images/m.png" />
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div> -->

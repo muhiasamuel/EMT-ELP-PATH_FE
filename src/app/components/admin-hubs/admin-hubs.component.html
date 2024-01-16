@@ -1,0 +1,37 @@
+<div class="container">
+  <div *ngIf="loading" class="progress">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div class="chapters-container">
+    <!-- single  chapter card  -->
+
+    <div class="chapter-card" *ngFor="let data of hubData">
+      <!-- profile image -->
+      <div class="chapter-profile-image">
+        <img [src]="data.imageUrl" *ngIf="data.imageUrl !== null" />
+        <mat-icon *ngIf="data.imageUrl === null">groups</mat-icon>
+      </div>
+      <!-- chapter title -->
+      <div class="chapter-title">
+        <span>{{ data.hubName | titlecase }}</span>
+      </div>
+      <!-- chater details -->
+      <div class="chapter-details">
+        <p>{{ data.hubDescription | titlecase }}</p>
+      </div>
+      <!-- view button -->
+      <a [routerLink]="['/admin/chapterhome', data.hubId]" class="view">
+        <button class="view-button">
+          <span>View</span>
+        </button>
+      </a>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+  </div>
+  <!-- activity -->
+  <div class="activity-container">
+    <app-admin-ongoing-activities-card></app-admin-ongoing-activities-card>
+    <app-admin-recent-activities-card></app-admin-recent-activities-card>
+    <app-admin-scheduled-activities-card></app-admin-scheduled-activities-card>
+  </div>
+</div>

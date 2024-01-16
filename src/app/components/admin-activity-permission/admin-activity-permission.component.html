@@ -1,0 +1,122 @@
+<!-- Application -->
+<div class="row">
+  <!-- header -->
+  <div class="icon-header">
+    <mat-icon>surfing</mat-icon> <span>Activity</span>
+  </div>
+  <!-- content container -->
+  <div class="content-container">
+    <!-- tables section -->
+    <div class="tables">
+      <!-- activity table -->
+      <div class="table-permissions">
+        <table>
+          <!-- table header -->
+          <tr>
+            <th>
+              <div class="header">
+                <mat-icon>delete</mat-icon>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>permissions</th>
+          </tr>
+          <!-- add/create permission -->
+          <tr>
+            <td>Add/Create Activity</td>
+          </tr>
+          <!-- delete permission -->
+          <tr>
+            <td>Delete Activity</td>
+          </tr>
+          <!-- view permission -->
+          <tr>
+            <td>View Activity</td>
+          </tr>
+          <!-- edit permission -->
+          <tr>
+            <td>Edit Activity</td>
+          </tr>
+        </table>
+      </div>
+      <!-- roles table -->
+      <div class="table-roles">
+        <table>
+          <!-- table header for roles -->
+          <tr>
+            <th *ngFor="let data of adminRole">
+              <div class="mat-header">
+                <mat-icon
+                  matTooltip="Delete Role"
+                  matTooltipPosition="above"
+                  matTooltipClass="tooltip"
+                  (click)="deleteRoleDialog(data.id)"
+                  >delete</mat-icon
+                >
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th *ngFor="let data of adminRole">
+              <div class="header">{{ data.roleName | titlecase }}</div>
+            </th>
+          </tr>
+          <!-- activity checkboxes for Admin, Branch Champion, and Chapter Leader roles -->
+          <!-- add/create activity -->
+          <tr>
+            <td *ngFor="let data of adminRole">
+              <div class="checkbox">
+                <input
+                  type="checkbox"
+                  [checked]="checkboxTrueFalse(data, 'add')"
+                  (change)="handleCheckboxChange($event, data.id, 'add')"
+                />
+              </div>
+            </td>
+          </tr>
+          <!-- delete activity -->
+          <tr>
+            <td *ngFor="let data of adminRole">
+              <div class="checkbox">
+                <input
+                  type="checkbox"
+                  [checked]="checkboxTrueFalse(data, 'delete')"
+                  (change)="handleCheckboxChange($event, data.id, 'delete')"
+                />
+              </div>
+            </td>
+          </tr>
+          <!-- view activity -->
+          <tr>
+            <td *ngFor="let data of adminRole">
+              <div class="checkbox">
+                <input
+                  type="checkbox"
+                  [checked]="checkboxTrueFalse(data, 'view')"
+                  (change)="handleCheckboxChange($event, data.id, 'view')"
+                />
+              </div>
+            </td>
+          </tr>
+          <!-- edit activity -->
+          <tr>
+            <td *ngFor="let data of adminRole">
+              <div class="checkbox">
+                <input
+                  type="checkbox"
+                  [checked]="checkboxTrueFalse(data, 'edit')"
+                  (change)="handleCheckboxChange($event, data.id, 'edit')"
+                />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- save button for activity -->
+    <div class="save-permissions">
+      <button (click)="submitPermissions()">Save</button>
+    </div>
+  </div>
+</div>

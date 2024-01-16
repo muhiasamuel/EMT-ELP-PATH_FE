@@ -1,0 +1,105 @@
+<!-- Nav Bar -->
+<div>
+<nav color="" class="nav bg bg-success">
+  <!-- Left Nav -->
+
+  <div class="navbar-search">
+    <img src="assets/images/equity-bank-logo.png" routerLink="/home" />
+
+
+
+    <div class="search-bar-container">
+      <app-search #searchInput (searchTextChanged)="onSearchTextEntered($event)">
+        <!-- Place spinner inside this component if possible -->
+      </app-search>   
+      <mat-progress-spinner *ngIf="isLoading" class="search-spinner" [mode]="spinnerMode" [diameter]="20"></mat-progress-spinner>
+      <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport suggestions">
+        <div *cdkVirtualFor="let word of filteredWords" class="suggestion-item">
+          <a (click)="onSuggestionClicked(word.content)">
+            {{ isLink(word.content) ? processLink(word.content) : word.content }}
+          </a>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+    
+  </div>
+
+  <!-- Right Menu -->
+  <div>
+    <button routerLink="/admin/dashboard" mat-button>
+      <mat-icon>dashboard</mat-icon><span class="nav-item">Dashboard</span>
+    </button>
+    
+  </div>
+  <div class="navbar-menu">
+    <!-- Home -->
+    <div class="button-list"> 
+
+    <button routerLink="/home" mat-button>
+      <mat-icon>home</mat-icon><span class="nav-item">Home</span>
+    </button>
+
+
+
+    <!-- Notification -->
+    <button [matMenuTriggerFor]="notifications" mat-button>
+      <mat-icon>notifications</mat-icon
+      ><span class="nav-item"
+        matBadge="2"
+        matBadgeSize="small"
+     
+      >
+        Notifications</span
+      >
+    </button>
+    
+
+    <!-- Me Avatar Menu -->
+    <button [matMenuTriggerFor]="menu" mat-button>
+      <mat-icon>account_circle</mat-icon><span class="nav-item">Me</span>
+    </button>
+     
+
+</div>
+    <mat-menu #notifications="matMenu">
+      <div class="media">
+        <!-- <div class="main-img-user"></div> -->
+        <div class="media-body">
+          <p>
+            <strong>EGF</strong> Scheduled an activity <br />
+            <span>Oct 13 02:56am</span>
+          </p>
+        </div>
+      </div>
+      <div class="media">
+        <!-- <div class="main-img-user"></div> -->
+        <div class="media-body">
+          <p>
+            <strong>UON Chapter</strong> Posted a New Event! <br />
+            <span>Oct 24 08:56am</span>
+          </p>
+        </div>
+      </div>
+    </mat-menu>
+
+    <!-- Sub Menu -->
+    <mat-menu #menu="matMenu">
+      <!-- LogOut -->
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>LogOut
+      </button>
+
+      <!-- Account Settings -->
+      <button mat-menu-item routerLink="/user_profile">
+        <mat-icon>person</mat-icon>Profile
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>AccountSettings
+      </button>
+    </mat-menu>
+  </div>
+
+  <!-- =========================================================================== -->
+
+</nav>
+</div>

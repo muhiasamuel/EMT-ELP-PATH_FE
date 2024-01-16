@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="makeElpform" class="elp-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Pf Number </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="pfNumber"
+            placeholder="eg. 574838K"
+            formControlName="pfNumber"
+          />
+        </div>
+        <p>{{ error }}</p>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="makeElpform.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

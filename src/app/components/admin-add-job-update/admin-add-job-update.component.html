@@ -1,0 +1,107 @@
+<!-- admin-news-udate-putform.component.html -->
+
+<div class="main-container">
+    <div class="container">
+      <div class="form-container">
+        <form #uploadForm="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+          <!-- Title and Content fields -->
+          <div class="form-group">
+            <label for="jobTitle">jobTitle:</label>
+            <input type="text" id="jobTitle" name="jobTitle" [(ngModel)]="newsForm.value.jobTitle"  required placeholder="jobTitle">
+          </div>
+          <div class="form-group">
+            <label for="title">jobDescription:</label>
+            <input type="text" id="jobDescription" name="jobDescription" [(ngModel)]="newsForm.value.jobDescription"  required placeholder="jobDescription">
+          </div>
+          <div class="form-group">
+            <label for="howToApply">howToApply:</label>
+            <input type="text" id="howToApply" name="howToApply" [(ngModel)]="newsForm.value.howToApply"  required placeholder="howToApply">
+          </div>
+          <div class="form-group">
+            <label for="title">applicationDeadLine:</label>
+            <input type="date" id="applicationDeadLine" name="applicationDeadLine" [(ngModel)]="newsForm.value.applicationDeadLine"  required placeholder="DeadLine">
+          </div>
+          <div class="form-group">
+            <label for="title">jobType:</label>
+            <input type="text" id="jobType" name="jobType" [(ngModel)]="newsForm.value.jobType"  required placeholder="JobType">
+          </div>
+          <div class="form-group">
+            <label for="organization">Title:</label>
+            <input type="text" id="organization" name="organization" [(ngModel)]="newsForm.value.organization"  required placeholder="Organization">
+          </div>
+          <div class="form-group">
+            <!-- label -->
+            <div class="form-label">
+              <div class="add-qualification" >
+                <mat-icon>history_edu</mat-icon>Add Qualification
+              </div>
+            </div>
+            <!-- input (FormArray for jobQualifications) -->
+            <div *ngFor="let qualification of newsForm.value.getAll('jobQualifications'); let i = index">
+              <textarea
+                name="jobQualifications"
+                [(ngModel)]="jobQualifications"
+                placeholder="eg.Proficiency in Microsoft Office Suite"
+                wrap="hard"
+                rows="3"
+                cols="50"
+                autocomplete="off"
+              ></textarea>
+            </div>
+          </div>
+        
+          <!-- Responsibilities -->
+          <div class="form-group">
+            <!-- label -->
+            <div class="form-label">
+              <div class="add-responsibility" >
+                <mat-icon>add</mat-icon>Add Responsibility
+              </div>
+            </div>
+            <!-- input (FormControl for jobResponsibilities) -->
+            <div *ngFor="let qualification of newsForm.value.getAll('jobResponsibilities'); let i = index">
+              <textarea
+              name="jobResponsibilities"
+              [(ngModel)]='jobResponsibilities'
+              placeholder="eg. Project management and coordination"
+              wrap="hard"
+              rows="3"
+              cols="50"
+              autocomplete="off"
+            ></textarea>
+            </div>
+         >
+          </div>
+        
+
+          <div class="form-group">
+            <label for="jobSalary">jobSalary:</label>
+            <input type="text" id="jobSalary" name="jobSalary" [(ngModel)]="newsForm.value.jobSalary"  required placeholder="jobSalary">
+          </div>
+
+          <div class="form-group">
+            <label for="educationLevel">educationLevel:</label>
+            <input type="text" id="educationLevel" name="educationLevel" [(ngModel)]="newsForm.value.educationLevel"  required placeholder="educationLevel">
+          </div>
+
+          <!-- File input for the image -->
+          <br>
+          <div class="form-group">
+            <label for="jobPoster">Image:</label>
+            <input type="file" id="jobPoster" name="jobPoster" (change)="onFileChange($event)" required>
+          </div>
+          <div class="image-preview">
+            <img *ngIf="previewImage" [src]="previewImage" alt="Image Preview" style="max-width: 100%; max-height: 200px;">
+          </div>
+          <div class="submit-cancel">
+          <button type="submit" [disabled]="newsForm.invalid">{{ data?.id ? 'Update' : 'Add' }}</button>
+          
+            <button  (click)="onCancel()">Cancel</button>
+          
+        </div>
+        </form>
+      </div>
+   
+    </div>
+  </div>
+  

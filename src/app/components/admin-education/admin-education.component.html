@@ -1,0 +1,66 @@
+<div class="education-contaner">
+  <!-- row 1-->
+  <div class="grades-container">
+    <!-- education header -->
+    <div class="educations-header">
+      <div class="school-name">
+        <p>School Name :</p>
+        <div class="select_school" [formGroup]="selectSchool">
+          <mat-select
+            formControlName="id"
+            name="id"
+            [placeholder]="schoolPlaceholderValue"
+          >
+            <div class="add-school" (click)="addschoolDialog()">
+              <mat-icon>history_edu</mat-icon>Add School
+            </div>
+            <mat-option
+              *ngFor="let school of schoolOptions"
+              [value]="school.id"
+            >
+              {{ school.schoolName }}
+            </mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div
+        class="add-grades"
+        (click)="eduformDialog()"
+        *ngIf="selectSchool.valid"
+      >
+        <mat-icon>add_circle_outline</mat-icon>Add Grades
+      </div>
+    </div>
+    <!-- grade card -->
+    <div class="grade-card" *ngFor="let data of educationdata">
+      <!-- grade card column-1 -->
+      <div class="card-item">
+        <!-- column 1 -->
+        <div class="grade-card-item">
+          <p>{{ data.opening_date }}</p>
+          <p>Term{{ data.term }}</p>
+          <p>Form{{ data.form }}</p>
+        </div>
+        <!-- column 2 -->
+        <div class="grade-card-item">
+          <p>Opener Exam</p>
+          <p>{{ data.openingGrade }}</p>
+        </div>
+
+        <!-- column 3 -->
+        <div class="grade-card-item">
+          <p>Mid Term Exam</p>
+          <p>{{ data.midTermGrade }}</p>
+        </div>
+        <!-- column 4 -->
+        <div class="grade-card-item">
+          <p>Closing Exam</p>
+          <p>{{ data.closingGrade }}</p>
+        </div>
+      </div>
+      <!--  grade card column-2-->
+      <div class="card-item-button"><mat-icon>edit</mat-icon></div>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------ -->
+  </div>
+</div>

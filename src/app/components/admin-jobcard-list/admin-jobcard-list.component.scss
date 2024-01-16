@@ -1,0 +1,94 @@
+.maincontainter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #6d88ad63;
+  border-radius: 11px;
+  min-width: 350px;
+  color: #332222;
+}
+.subcontainer {
+  width: 95%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  
+}
+a {
+  text-decoration: none;
+}
+.jobcard-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding: 0.4rem;
+  gap: 10px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+  // padding: 15px;
+  // border-bottom: 1px solid #3c4858;
+}
+.jobcard-container:hover {
+  background-color: white;
+  border: none;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 11px;
+  img {
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+  }
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+
+.position {
+  color: #3c4858;
+  font-size: 16px;
+  font-weight: 500;
+  
+}
+.companyname {
+  color: #3c4858;
+  font-size: 13px;
+  font-weight: 500;
+}
+.location {
+  color: #3c4858;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 0;
+
+}
+.deadline-date {
+  color: #3c4858;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 600px){
+
+
+}
+@media screen and (min-width: 780px){
+  .subcontainer{
+    min-width: 30rem;
+  }
+  .jobcard-container{
+    width: 45%;
+  }
+  
+}

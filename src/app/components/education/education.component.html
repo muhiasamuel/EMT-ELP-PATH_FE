@@ -1,0 +1,49 @@
+<div class="main-container">
+  <div
+    class="add"
+    matTooltip="Add Education"
+    matTooltipPosition="left"
+    matTooltipClass="tooltip"
+    (click)="eformDialog('add')"
+    *ngIf="!viewer"
+  >
+    <mat-icon>add_circle_outline</mat-icon>Add
+  </div>
+  <div class="row" *ngFor="let item of rowData">
+    <div class="container">
+      <div
+        class="add"
+        matTooltip="Edit Education"
+        matTooltipPosition="left"
+        matTooltipClass="tooltip"
+        (click)="eformDialog('edit')"
+        *ngIf="!viewer"
+      >
+        <mat-icon>edit</mat-icon>
+      </div>
+      <div class="content">
+        <p class="content-title">
+          Institution Name:
+          {{
+            (item.institution.name ? item.institution.name : "Institution Name") | titlecase
+          }}
+        </p>
+        <p class="content-course">Course: {{ item.course.name | titlecase }}</p>
+        <p>
+          <i>Grade: {{ item.grade ? item.grade : "Grade" }}</i>
+        </p>
+        <div class="date">
+          <div class="start_date">
+            <label>Joined In: </label>
+            <p>{{ item.start_date | date }}</p>
+          </div>
+          <div class="end_date">
+            <label> Completed On: </label>
+            <p>{{ item.end_date ? (item.end_date | date) : "Current" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>

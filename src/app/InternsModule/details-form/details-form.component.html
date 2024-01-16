@@ -1,0 +1,88 @@
+<div class="main-container">
+    <form [formGroup]="myForm">
+        <div class="header">
+            <img src="assets/images/logo2.png" alt="equity logo" class="logo">
+            <h3>Equity Bank 2024 Interns</h3>
+        </div>
+
+        <div class="card">
+            <!-- contact details -->
+            <div class="row">
+                    <div class="heading"><h5>Contact Information</h5></div>
+                    <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="col-form-label">Email</label>
+                            <input type="text" class="form-control" placeholder="enter your email" formControlName="email">
+                            <small class="text-danger" *ngIf="email?.invalid && (email?.touched || email?.dirty)">correct email required</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-form-label">Phone Number</label>
+                            <input type="number" class="form-control" placeholder="enter your phone number" formControlName="phoneNo">
+                            <small class="text-danger" *ngIf="phoneNo?.invalid && (phoneNo?.touched || phoneNo?.dirty)"></small>
+                        </div>
+                    </div>
+            </div>
+    
+            <!-- school-details -->
+            <div class="row">
+                <div class="heading"><h5>School Information</h5></div>
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="col-form-label">Institution Name</label>
+                        <input type="text" class="form-control" placeholder="enter institution name" formControlName="institutionName">
+                        <small class="text-danger" *ngIf="institutionName?.invalid && (institutionName?.dirty || institutionName?.touched)">institution is required</small> 
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-form-label">Year of Study</label>
+                        <!-- <select class="form-control" id="yearsList"></select> -->
+                        <ng-select
+                            [items]="options"
+                            [bindLabel]="'$implicit'"
+                            [bindValue]="'$implicit'"
+                            [autofocus]="true"
+                            placeholder="Select an option"
+                            [(ngModel)]="selectedOption"
+                            [searchable]="true"    
+                            (change) = "onSelectionChange()"
+                            formControlName="yearOfStudy"
+                            >
+                        </ng-select>
+                        <small class="text-danger" *ngIf="yearOfStudy?.invalid && (yearOfStudy?.touched || yearOfStudy?.dirty)">year of study is required</small>
+                    </div>
+                </div>
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="col-form-label">Course Name</label>
+                        <input type="text" class="form-control" placeholder="enter course name" formControlName="courseName">
+                        <small *ngIf="courseName?.invalid && (courseName?.dirty || courseName?.touched)">provide a course name</small>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Scholar Information -->
+            <div class="row">
+                <div class="heading"><h5>Scholar Information</h5></div>
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="col-form-label">Home Branch</label>
+                        <input type="text" class="form-control" placeholder="enter home branch name" formControlName="homeBranch">
+                        <small class="text-danger" *ngIf="homeBranch?.invalid && (homeBranch?.dirty || homeBranch?.touched)">home branch is required</small>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-form-label">Selection Year</label>
+                        <input type="number" class="form-control" placeholder="selection year" maxlength="4" formControlName="selectionYear">
+                        <small class="text-danger" *ngIf="selectionYear?.invalid && (selectionYear?.dirty || selectionYear?.touched)">enter an year</small>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- submit-button -->
+            <div class="btn-container">
+                <button type="button" class="btn btn-primary submit-btn" >Submit Information</button>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Copyright &copy; {{currentYear}}. Equity Bank Limited. All Rights Reserved</p>
+        </div>
+    </form>
+</div>

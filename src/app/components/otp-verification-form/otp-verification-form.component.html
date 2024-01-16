@@ -1,0 +1,30 @@
+<div class="main-container">
+<mat-card class="card">
+    <h2>How would you like to be verified?</h2>
+    <p>Select on of the options below</p>
+    <div class="form">
+      
+      <span class="label" >
+        <p class="input-size">By SMS</p>
+        <div class="contacts">
+        <p mat-line>{{contact.phone}}</p>
+        <mat-radio-button   color="primary" class=" notranslate mat-primary mat-ligature-font" aria-hidden="true"></mat-radio-button>
+    </div>
+      </span>
+      <span class="label" >
+        <p class="input-size">By Email</p>
+        <div class="contacts">
+        <p mat-line>{{contact.email}}</p>
+        <mat-radio-button   color="primary" class=" notranslate mat-primary mat-ligature-font" aria-hidden="true"></mat-radio-button>
+    </div>
+      </span>
+    </div>
+  
+    <div>
+      <button mat-raised-button color="primary" (click)="otpformDialog()" (click)=" generateOTP()" >Send OTP</button>
+    </div>
+</mat-card>
+</div>
+
+<app-admin-users-widgets></app-admin-users-widgets>
+  

@@ -1,0 +1,17 @@
+<div class="post">
+  <div class="post-profile-image">
+    <div class="image">
+      <img [src]="imageUrl" *ngIf="imageUrl" />
+      <mat-icon *ngIf="!imageUrl">person</mat-icon>
+    </div>
+  </div>
+  <div class="post-input">
+    <input
+      type="text"
+      name="post"
+      placeholder="Start Post"
+      (click)="openDialog()"
+      required
+    />
+  </div>
+</div>

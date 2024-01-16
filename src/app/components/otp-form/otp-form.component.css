@@ -1,0 +1,49 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.otp-container {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 1rem;
+}
+
+.otp-header {
+  display: flex;
+  width: 100%;
+  color: #a32a29;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.otpform {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.otpform input {
+  box-sizing: border-box;
+  font-size: 36px;
+  border-radius: 6px;
+  padding: 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+}/*# sourceMappingURL=otp-form.component.css.map */

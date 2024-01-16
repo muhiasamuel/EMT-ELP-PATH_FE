@@ -1,0 +1,46 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="branchform" class="elp-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Branch Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="branchName"
+            placeholder="eg. Uhuru"
+            formControlName="branchName"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Additional Information</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="additionalInformation"
+            placeholder="eg. Location"
+            formControlName="additionalInformation"
+          />
+        </div>
+
+        <p>{{ error }}</p>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="branchform.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

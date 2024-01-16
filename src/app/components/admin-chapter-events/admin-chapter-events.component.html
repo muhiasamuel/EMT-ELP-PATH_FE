@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="main-container" >
+    <!-- sub main container -->
+    <div class="submain-container" *ngFor="let data of eventsData">
+      <div class="content-container">
+        <!-- row1 -->
+        <div class="image">
+          <img [src]="'data:' + data.imageUrl.type + ';base64,' + data.imageUrl.data" />
+        </div>
+
+        <!-- row 2 -->
+        <div class="iconimage">
+          <!-- icon container -->
+          <div class="iconinfo">
+            <mat-icon>event</mat-icon>
+            <span>{{ data.eventDate | date }}</span>
+          </div>
+          <!-- icon container -->
+          <div class="iconinfo">
+            <mat-icon>groups_outline</mat-icon>
+            <span>{{ data.organizer }}</span>
+          </div>
+          <!-- icon container -->
+          <div class="iconinfo">
+            <mat-icon>schedule</mat-icon>
+            <span>{{ data.eventDate | date : "shortTime" }}</span>
+          </div>
+          <!-- icon container -->
+          <div class="iconinfo" *ngIf="data.location">
+            <mat-icon>location_on</mat-icon>
+            <span>{{ data.location }}</span>
+          </div>
+          <!-- icon container -->
+          <div class="iconinfo" *ngIf="data.link">
+            <mat-icon>link</mat-icon>
+            <span>{{ data.link }}</span>
+          </div>
+        </div>
+
+        <!-- row3 -->
+        <div class="details">
+          <!-- title -->
+          <div class="title">
+            <p>Event Description</p>
+          </div>
+          <!-- description -->
+          <div class="description">
+            <p>
+              {{ data.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- mat divider -->
+    </div>
+    <!-------------------------------------------------------------------------------------------------->
+  </div>
+</div>

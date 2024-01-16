@@ -1,0 +1,152 @@
+<div class="main-container">
+  <div class="exit-post">
+    <div class="button">
+      <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+        <img src="assets/images/x.svg" height="20" />
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="profileForm"
+        class="profile-form"
+        (ngSubmit)="submit()"
+        enctype="multipart/form-data"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <span>Edit Profile</span>
+          <!-- label -->
+          <label class="form-label">Title*</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="title"
+            placeholder="eg. Software Engineer"
+            formControlName="title"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <label for="" class="form-label">Job Status</label>
+          <mat-select formControlName="status" name="status">
+            <mat-option *ngFor="let job of jobStatus" [value]="job.value">
+              {{ job.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        
+        <!-- scholar category -->
+        <div class="form-field">
+          <label for="" class="form-label">Scholar Category</label>
+          <mat-select formControlName="category" name="category">
+            <mat-option *ngFor="let category of scholarCategories" [value]="category">
+              {{ category }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <label for="" class="form-label"> Country</label>
+          <mat-select formControlName="currentCountryofResidence" name="country">
+            <mat-option
+              *ngFor="let country of countryList"
+              [value]="country.name"
+            >
+              {{ country.name }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <div class="form-field">
+          <label for="" class="form-label"> City</label>
+          <mat-select formControlName="currentCityofResidence" name="city">
+            <mat-option *ngFor="let city of cityList" [value]="city">
+              {{ city }}
+            </mat-option>
+          </mat-select>
+
+        </div>
+
+        <!-- form field -->
+        <!-- <div class="form-field">
+          <label for="" class="form-label"> City</label>
+          <mat-select formControlName="city" name="city">
+            <mat-option *ngFor="let city of cities" [value]="cities.name">
+              {{ cities.name }}
+            </mat-option>
+          </mat-select>
+        </div> -->
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Phone Number</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="phoneNo"
+            min="0"
+            placeholder="eg. 0712345678"
+            formControlName="phoneNo"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Email Address</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="email"
+            placeholder="eg. example@elp.com"
+            formControlName="email"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Website Link</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="website"
+            placeholder="eg. www.website.com"
+            formControlName="website"
+          />
+        </div>
+
+        <!-- form field -->
+        <!-- <div class="form-field">
+          <input
+            type="file"
+            id="imagefile"
+            name="file"
+            style="display: none"
+            (change)="onFileChange($event)"
+            accept="image/*"
+          />
+          <div class="select-image">
+            <label for="imagefile">Select Profile Image</label>
+            <div *ngIf="imageUrl" class="image-item">
+              <img [src]="imageUrl" alt="Profile Image" />
+            </div>
+          </div>
+        </div> -->
+
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" type="submit" class="button">
+            Save
+          </button>
+        </div>
+      </form>
+      <!-- <button (click)="getdata()">getdata</button> -->
+    </div>
+  </div>
+</div>

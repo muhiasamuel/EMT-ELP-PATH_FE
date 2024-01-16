@@ -1,0 +1,147 @@
+<div class="container">
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/assets/images/bank-logo.png" class="img_logo" alt="" />
+      </div>
+      <div class="nav-item-login">
+        <ul class="item_nav">
+          <li class="list"><a href="">Home</a></li>
+          <li class="list"><a href="">Contact</a></li>
+        </ul>
+        <a href="" routerLink="/interns-2024" class="login">ELP Interns</a>
+        <a href="" routerLink="/login" class="login">Login</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="headline">
+      <div class="item-info2">
+        <div class="item-inf">
+        
+          <div class="image2">
+            <img *ngFor="let item of list" src="{{ item.img }}" alt="" />
+          </div>
+          <div class="head">
+            <h1>Connecting Scholars, Elp Path</h1>
+            <p>
+              Empowering a continent by creating better livelihoods through
+              scholars interaction globally .
+            </p>
+            <br />
+            <p>
+              Discover ELP, where scholars from shared origins unite, fostering
+              lasting connections as they journey through diverse academic paths,
+              all from the same place
+            </p>
+            <a href="" routerLink="/login" class="login2">Let`s Connect</a>
+            <a href="" routerLink="/interns-2024" class="intern">Are you a current Wings to Fly Intern? Register Here</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            {{newsLetterData.title}}
+          </div>
+          <div class="card-body">
+            <div class="card-date">
+              Date: {{newsLetterData.date | date}}
+            </div>
+            <div class="card-content">
+              {{newsLetterData.description}}
+            </div>
+            <!-- pdf preview -->
+            <!-- <div class="pdf-view">
+              <ngx-extended-pdf-viewer
+              [src]="pdfUrl"
+              [height]="'500px'"
+            ></ngx-extended-pdf-viewer>
+            </div> -->
+            <button (click)="downloadFile()" [disabled]="loading">
+              <span *ngIf="!loading">NewsLetter</span>
+              <span *ngIf="loading">loading...</span>
+            </button>
+          </div>
+        </div>
+        
+      </div>
+   
+
+      <div class="images">
+        <img src="/assets/images/landing_page/global_net.png" alt="img1" />
+      </div>
+    </section>
+
+    <section class="cards">
+      <h2 class="bg-red-100">SCHOLARS</h2>
+      <ul>
+        <li class="card_list" *ngFor="let item of cards">
+          <div class="div-img">
+            <img [src]="item.image" alt="" />
+          </div>
+          <div class="counts">{{ item.counts }}</div>
+          <div class="scholar">{{ item.scholar }}</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="news-updates">
+    <h2>NEWS & UPDATES</h2>
+      <ul class="newsletter-list" >
+      <li class="newsletter" *ngFor="let item of newsUpate">
+        <div class="header">
+          <h1>News and Updates</h1>
+        </div>
+        <div class="content">
+          <div class="article">
+            <h2>{{item.title}}</h2>
+            <p>{{item.message}}</p>
+          </div>
+          <div class="posters">
+            <div class="poster">
+              <img [src]="item.image" alt="Poster 1">
+            </div>
+            <!-- <div class="poster">
+              <img [src]="item.img2" alt="Poster 2">
+            </div> -->
+            <!-- Add more posters as needed -->
+          </div>
+         
+        </div>
+       
+      </li>
+    </ul>
+    
+    </section>
+
+    <section class="oppot-job">
+      <h2 class="title-job">Job Opportunities</h2>
+      <div class="jobs">
+        <div class="application">
+          <app-admin-jobcard-list></app-admin-jobcard-list>
+        </div>
+      </div>
+    </section>
+
+    <section class="faqs">
+      <h2 class="bg-red-100">Frequently asked Questions</h2>
+      <ul class="list-que">
+        <li class="item-que" *ngFor="let item of faqs">
+          <button class="faq-head" (click)="isOpen(item)">
+            <span>{{ item.faq }}</span>
+            <fa-icon [icon]="faPlus"></fa-icon>
+          </button>
+          <div class="faq-content" *ngIf="!item.isHidden">
+            {{ item.counts }}
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="spotlight">
+      <app-spotlight-source></app-spotlight-source>
+     
+    </section>
+  </main>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>

@@ -1,0 +1,161 @@
+<div class="main-container">
+  <div class="exit-post">
+    <div class="button">
+      <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+        <img src="assets/images/x.svg" height="20" />
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="eduForm" class="education-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field"><span>Add Education</span>
+          <!-- label -->
+          <label class="form-label">Institution Name </label>
+          <mat-select formControlName="school_name" name="institution" (selectionChange)="onInstitutionSelectionChange($event)">
+            <!-- <mat-select-trigger>
+              <span *ngIf="!loading">{{eduForm.get('school_name')?.value.name || 'Select Institution'}}</span>
+              <span *ngIf="loading">loading...</span>
+            </mat-select-trigger> -->
+            <mat-option
+              *ngFor="let school of institutionOptions; let i = index"
+              [value]="school"
+            >
+              {{ school.name }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <label for="" class="form-label">Cluster</label>
+          <mat-select
+            formControlName="clusters"
+            name="clusters"
+            (valueChange)="getCourses()"
+          >
+            <mat-option
+              *ngFor="let cluster of clusterOptions"
+              [value]="cluster.id"
+            >
+              {{ cluster.name }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field" *ngIf="courses">
+          <label class="form-label"> Courses</label>
+          <mat-select formControlName="course" name="course" (selectionChange)="onCourseSelectionChange($event)">
+            <mat-option *ngFor="let course of courseOptions" [value]="course.id">
+              {{ course.name }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <!-- <div class="form-field"> -->
+        <!-- label -->
+        <!-- <label class="form-label">Grade </label> -->
+        <!-- input -->
+        <!-- <input
+            type="text"
+            formControlName="grade"
+            placeholder="eg. First Class Honors, B+"
+            required
+          />
+        </div> -->
+
+        <!-- <div class="form-field">
+          <mat-select
+            type="text"
+            formControlName="grade"
+            placeholder="Grade"
+            required
+            (selectionChange)="onGradeSelectionChange($event)"
+          >
+            <mat-option *ngFor="let grade of grades" [value]="grade">{{
+              grade
+            }}</mat-option></mat-select
+          >
+        </div> -->
+
+        <div class="form-field">
+          <label class="form-label">Still In School</label>
+          <mat-select
+            type="text"
+            formControlName="stillLearning"
+            placeholder=""
+            required
+            (selectionChange)="onStillLearningChange($event)"
+          >
+            <mat-option *ngFor="let item of items" [value]="item.item">{{
+              item.value
+            }}</mat-option></mat-select
+          >
+        </div>
+
+        <div class="form-field" *ngIf="ongoing">
+          <label class="form-label">Year Of Study</label>
+          <mat-select
+            type="text"
+            formControlName="yearOfStudy"
+            placeholder=""
+            required
+            (selectionChange)="onYearOfStudyChange($event)"
+          >
+            <mat-option *ngFor="let year of years" [value]="year">{{
+              "Year "+year
+            }}</mat-option></mat-select
+          >
+        </div>
+
+        <div class="form-field" *ngIf="ongoing">
+          <label class="form-label">Semester / Session</label>
+          <mat-select
+            type="text"
+            formControlName="semester"
+            placeholder=""
+            required
+            (selectionChange)="onSemesterSelectionChange($event)"
+          >
+            <mat-option *ngFor="let sem of sessions" [value]="sem">{{
+              sem
+            }}</mat-option></mat-select
+          >
+        </div>
+
+        <!-- <div class="form-field">
+          <mat-radio-group aria-label="Select an option" [(ngModel)]="ongoing">
+            <mat-radio-button [value]="ongoing" onchange="ongGoing()">On-Going</mat-radio-button>
+            <mat-radio-button [value]="true">Completed</mat-radio-button>
+          </mat-radio-group>          
+        </div> -->
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Duration </label>
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label">Start date</label>
+              <input type="date" formControlName="start_date" />
+            </div>
+            <!-- end date -->
+            <div class="date-end" *ngIf="!ongoing">
+              <label class="form-label">Complete date</label>
+              <input type="date" formControlName="completion_date" />
+            </div>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" class="button" mat-button>Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

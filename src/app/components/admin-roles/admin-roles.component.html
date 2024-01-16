@@ -1,0 +1,55 @@
+<div class="maincontainer">
+  <div class="container">
+    <!-- row1 -->
+    <div class="row1">
+      <div class="row1content">
+        <!-- info -->
+        <div class="info">
+          <p>Roles</p>
+
+          <span>Add Roles To Assign to system Users</span>
+        </div>
+        <!-- add button -->
+        <div class="addroles">
+          <button (click)="addRole()">Add Sytem Roles</button>
+        </div>
+      </div>
+    </div>
+    <!-- permission components------------------------------------- -->
+
+    <!-- Application permission -->
+    <app-admin-applications-permission
+      (notifyParent)="onNotify()"
+    ></app-admin-applications-permission>
+    <!-- chapters permission -->
+    <app-admin-chapters-permission
+      (notifyParent)="onNotify()"
+    ></app-admin-chapters-permission>
+    <!-- events permission -->
+    <app-admin-events-permission
+      (notifyParent)="onNotify()"
+    ></app-admin-events-permission>
+    <!-- activity permission -->
+    <app-admin-activity-permission
+      (notifyParent)="onNotify()"
+    ></app-admin-activity-permission>
+    <!-- admins permission -->
+    <app-admin-admins-permission
+      (notifyParent)="onNotify()"
+    ></app-admin-admins-permission>
+    <!-- roles permissions -->
+    <app-admin-roles-permission
+      (notifyParent)="onNotify()"
+    ></app-admin-roles-permission>
+    <!-- profile permissions -->
+    <app-user-profile-permission
+      (notifyParent)="onNotify()"
+    ></app-user-profile-permission>
+    <!-- feeds permissions -->
+    <app-user-feeds-permission
+      (notifyParent)="onNotify()"
+    ></app-user-feeds-permission>
+
+    <!------------------------------------------------------------------------------------->
+  </div>
+</div>

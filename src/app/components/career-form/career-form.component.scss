@@ -1,0 +1,126 @@
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 11px;
+}
+.main-container {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit-post {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-right: 3px;
+
+  .button {
+    margin-top: 0;
+    border: none;
+
+    button {
+      background-color: white;
+      border: 0;
+    }
+  }
+  .button:hover {
+    button {
+      background-color: #ffffff;
+    }
+  }
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 90%;
+  border-radius: 5px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  gap: 10px;
+  border-radius: 6px;
+}
+.education-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 4px;
+  input {
+    width: 95%;
+    height: 25px;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+  }
+  input::placeholder {
+    color: #dee2e6;
+  }
+  input:focus {
+    outline: none;
+  }
+  label {
+    font-size: 14px;
+    color: var(--neutral-600, #475569);
+  }
+}
+.calendar-input {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  .date-start {
+    width: 45%;
+  }
+  .date-end {
+    width: 45%;
+  }
+}
+.chekbox {
+  display: flex;
+  align-items: center;
+  input {
+    width: 20px;
+  }
+}
+.save-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  button {
+    font-weight: 600;
+    border: 0;
+    padding: 10px 20px;
+    color: #ffffff;
+    border-radius: 100px;
+    background: #a32a29;
+  }
+}
+::ng-deep .close {
+  font-size: 13px;
+}
+span{
+  font-size: 16px;
+  color: var(--neutral-600, #475569);
+  text-align: center;
+}

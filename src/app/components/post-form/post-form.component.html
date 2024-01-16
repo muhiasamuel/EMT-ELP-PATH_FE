@@ -1,0 +1,68 @@
+<div class="post-container">
+  <!-- row 1 -->
+  <div class="row-1">
+    <div class="profile-image">
+      <div class="image">
+        <img [src]="imageData" *ngIf="imageData" />
+        <mat-icon *ngIf="!imageData">person</mat-icon>
+      </div>
+    </div>
+    <div class="exit-post">
+      <div class="button">
+        <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+          <img src="assets/images/x.svg" height="20" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- row 2 -->
+  <div class="post-content">
+    <form [formGroup]="postForm" (ngSubmit)="handlingFeedsSubmit()">
+      <div class="post-input-text">
+        <textarea
+          placeholder="Write something..."
+          rows="5"
+          cols="50"
+          name="Geeks"
+          wrap="hard"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <!-- action -->
+      <div class="actions">
+        <input
+          type="file"
+          id="imagefile"
+          name="images"
+          formControlName="images"
+          (change)="onFileChange($event)"
+          style="display: none"
+          accept="image/*"
+          multiple
+        />
+        <div class="single-action">
+          <label
+            for="imagefile"
+            matTooltip="Upload photo"
+            matTooltipClass="close"
+            ><mat-icon>photo</mat-icon></label
+          >
+          <div *ngIf="imageUrl" class="image-item">
+            <img [src]="imageUrl" alt="Post Image" />
+          </div>
+        </div>
+      </div>
+      <!-- send -->
+      <div class="send-post">
+        <button
+          mat-button
+          class="send-post-button"
+          type="submit"
+          (keydown.enter)="submit()"
+        >
+          <mat-icon>send</mat-icon>Post
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.all-content {
+  padding: 0.5rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.graphs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.graph {
+  width: 70%;
+  height: 60vh;
+  background-color: white;
+  border-radius: 11px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  .table-container {
+    background-color: white;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+}

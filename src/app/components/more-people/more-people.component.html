@@ -1,0 +1,42 @@
+<div class="people-maincontainer">
+  <div class="people-homecontainer">
+    <!-- <div class="hubs-column-1">
+      <app-side-bar-menu></app-side-bar-menu>
+    </div> -->
+    <div class="people-column-2">
+      <div class="all-people">
+        <!-- single peoplecard -->
+        <div class="cards-people" *ngFor="let data of PeopleProfileData">
+          <img src="assets/images/profile card.png" />
+
+          <div class="people-profile-image">
+            <img *ngIf="data.profileImage" [src]="data.profileImage" />
+            <mat-icon *ngIf="!data.profileImage">person</mat-icon>
+
+            <!-- <span>{{ data.firstName }} {{ data.lastName }}</span> -->
+            <span>{{data.scholarName}}</span>
+          </div>
+          <div class="people-details">
+            <p>
+              Comes from {{ data.branchName }}
+            </p>
+          </div>
+          <div class="more">
+            <a [routerLink]="['/userprofile', data.userId]">
+              <button class="more-button">
+                <div class="more-image-button">
+                  <mat-icon>face</mat-icon>
+                  <!-- <img src="assets/images/Icon.svg" /> -->
+                </div>
+
+                <div class="more-text">
+                  <span>Profile</span>
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

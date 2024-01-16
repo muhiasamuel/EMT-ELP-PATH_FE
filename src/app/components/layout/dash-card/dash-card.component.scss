@@ -1,0 +1,42 @@
+.mat-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0, 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 16px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+    text-align: center;
+    // border: 2px solid crimson;
+}
+
+.header {
+    background-color: wheat;
+    padding: 0px 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// .title {
+//     color: #3c4858;
+//     font-size: 14px;
+//     font-weight: 500;
+//     letter-spacing: -0.138px;
+//     margin-left: 0;
+//     padding-right: 16px;
+// }
+
+
+.icon {
+    margin-left: 30;
+    color: #6259ca;
+    padding-left: 25px;
+}
+
+.content {
+    padding: 0px;
+    flex-grow: 1;
+}
+

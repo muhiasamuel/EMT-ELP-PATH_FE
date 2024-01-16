@@ -1,0 +1,156 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  //   margin-top: auto;
+}
+.image-header {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-containter {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background-color: #a32a29;
+  border: #a32a29;
+  border-style: solid;
+  border-width: thin;
+
+  border-radius: 6px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-header {
+  display: flex;
+  width: 100%;
+  color: #a32a29;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  justify-content: center;
+  margin-top: 30%;
+  margin-bottom: 30%;
+}
+.form-field {
+  display: flex;
+  width: 98%;
+  height: 30%;
+  justify-content: center;
+}
+::ng-dep .form ng-untouched ng-pristine ng-invalid {
+  display: flex;
+}
+span {
+  color: red;
+  font-weight: 400;
+}
+
+.register-form {
+  margin-top: 10%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+
+  input::placeholder {
+    color: #392e2d;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 10px;
+  }
+  .form {
+    width: 60%;
+  }
+
+  .card-content {
+    // padding-bottom: 16px;
+    width: 10%;
+  }
+
+  // ::ng-deep input {
+  //   width: 100%;
+  //   height: 40% !important;
+  //   outline: none;
+  //   border: 0;
+  //   border-radius: 5px;
+  //   background: #fff;
+  // }
+}
+.register-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  button {
+    border: 0;
+    padding: 10px 30px;
+    color: #ffffff;
+    border-radius: 100px;
+    background: #0359ae;
+  }
+}
+.have-account-text {
+  display: flex;
+  justify-content: center;
+  P {
+    color: #a32a29;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    a {
+      cursor: default;
+      font-weight: 500;
+      font-size: 14px;
+      color: #a32a29;
+    }
+    a:hover {
+      translate: translateY(-5px);
+    }
+  }
+}
+.footer {
+  margin-top: 6px;
+}
+.names {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.passwords {
+  // display: flex;
+  width: 100%;
+  flex-direction: row;
+  // justify-content: space-between;
+}
+.mat-icon {
+  color: #4f4544;
+}
+
+.mat-mdc-card-content {
+  display: flex;
+  padding: 0 16px;
+  flex-direction: column;
+}

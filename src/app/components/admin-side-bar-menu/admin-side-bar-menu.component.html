@@ -1,0 +1,199 @@
+<div class=" side-button-container">
+  <!-- side buttons  -->
+  <!-- dashboard -->
+  
+  <a routerLink="dashboard" class="button-link">
+    <button class="side-buttons">
+      <mat-icon class="menu-bar">menu</mat-icon>
+    
+    </button>
+  </a>
+
+  <a routerLink="dashboard" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>dashboard</mat-icon>
+      <span> Dashboard </span>
+    </button>
+  </a>
+
+  <a routerLink="scholarstable" class="button-link">
+    <button class="side-buttons">
+      <mat-icon> groups </mat-icon>
+      <span>All Scholars</span>
+    </button>
+  </a>
+  <!-- applications -->
+  <!-- <a routerLink="applications" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>assignment</mat-icon>
+      <span> Applications </span>
+    </button>
+  </a> -->
+
+  <!-- Scholars -->
+  <!-- <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title>
+          <mat-icon>school</mat-icon> <span>Scholars</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header> -->
+
+      <!-- view Elimu -->
+      <!-- <a routerLink="elimutable" class="button-link">
+        <button class="side-buttons">
+          <mat-icon> groups </mat-icon> <span>Elimu</span>
+        </button>
+      </a> -->
+      <!-- TVETs -->
+      <!-- <a routerLink="tvettable" class="button-link">
+        <button class="side-buttons">
+          <mat-icon> groups </mat-icon> <span>TVET</span>
+        </button>
+      </a> -->
+      <!-- view wings to fly-->
+      <!-- <a routerLink="wtfstable" class="button-link">
+        <button class="side-buttons">
+          <mat-icon> groups </mat-icon> <span>W2fs</span>
+        </button>
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion> -->
+
+  <!-- Chapters -->
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title>
+          <mat-icon>groups_add</mat-icon> <span>Chapters</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- add chapters -->
+      <!-- <a class="button-link" (click)="addChapterDialog()">
+        <button class="side-buttons">
+          <mat-icon>group_add</mat-icon> <span>Add Chapters</span>
+        </button>
+      </a> -->
+      <!-- view chapters -->
+      <a routerLink="chapters" class="button-link">
+        <button class="side-buttons">
+          <mat-icon>school </mat-icon>
+          <span>Institutional Chapters</span>
+        </button>
+      </a>
+      <a routerLink="regional-chapters" class="button-link">
+        <button class="side-buttons">
+          <mat-icon>location_on </mat-icon>
+          <span>Regional Chapters</span>
+        </button>
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Hubs -->
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title>
+          <mat-icon>groups_add</mat-icon> <span>Hubs</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- add chapters -->
+      <a class="button-link" (click)="addHubDialog()">
+        <button class="side-buttons">
+          <mat-icon>group_add</mat-icon> <span>Add Hubs</span>
+        </button>
+      </a>
+      <!-- view chapters -->
+      <a routerLink="hubs" class="button-link">
+        <button class="side-buttons">
+          <mat-icon>visibility </mat-icon>
+          <span>View Hubs</span>
+        </button>
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- events -->
+  <a routerLink="eventshome" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>event</mat-icon> <span>Events</span>
+    </button>
+  </a>
+  <!-- Job Opportunities -->
+  <a [routerLink]="[{ outlets: { primary: 'jobs' } }]" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>key</mat-icon>
+      <span>Opportunities</span>
+    </button>
+  </a>
+  
+    <!--User newsUpdate-->
+    <a routerLink="newsUpdate" class="button-link">
+      <button class="side-buttons">
+        <mat-icon>update</mat-icon>
+        <span>User News&Update</span>
+      </button>
+    </a>
+  <!--User Feedback-->
+  <a routerLink="userfeedback" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>feedback</mat-icon>
+      <span> User Feedback </span>
+    </button>
+  </a>
+
+<!-- survey -->
+<a routerLink="survey" class="button-link">
+  <button class="side-buttons">
+    <mat-icon> forum</mat-icon>
+    <span> Survey</span>
+  </button>
+</a>
+
+  <!-- spotlight -->
+  <a routerLink="spotlight" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>airplay</mat-icon>
+      <span> Spotlight </span>
+    </button>
+  </a>
+  
+
+  <a routerLink="NewsLetter" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>NewsLetter</mat-icon>
+      <span>NewsLetter </span>
+    </button>
+  </a>
+
+  <!-- admins -->
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title>
+          <mat-icon>admin_panel_settings</mat-icon> <span>Admins</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- add chapters -->
+      <a class="button-link" (click)="addAdminDialog()">
+        <button class="side-buttons">
+          <mat-icon> add_moderator </mat-icon>
+          <span>Add Admin</span>
+        </button>
+      </a>
+      <!-- view admins-->
+      <a routerLink="adminsview" class="button-link">
+        <button class="side-buttons">
+          <mat-icon> manage_accounts </mat-icon> <span>View Admins</span>
+        </button>
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!--roles-->
+  <a routerLink="roles" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>security</mat-icon> <span>Roles</span>
+    </button>
+  </a>
+</div>

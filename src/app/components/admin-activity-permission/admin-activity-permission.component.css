@@ -1,0 +1,119 @@
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 20px;
+  margin-bottom: 3px;
+}
+.icon-header .mat-icon {
+  color: #6259ca;
+}
+.icon-header span {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 11px;
+  overflow: auto;
+}
+
+.tables {
+  display: flex;
+  width: 95%;
+  gap: 10px;
+}
+
+.table-permissions th {
+  color: white;
+}
+.table-permissions th mat-icon {
+  color: white;
+}
+
+.table-roles {
+  width: 500px;
+  overflow: auto;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  table-layout: fixed;
+}
+
+.header {
+  width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mat-header {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mat-header .mat-icon {
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  color: #6259ca;
+  font-size: 15px;
+}
+.mat-header .mat-icon:hover {
+  color: red;
+}
+
+th {
+  padding: 6px 0;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+td {
+  padding: 6px 0;
+  letter-spacing: 0.2px;
+  font-size: 13.5px;
+  white-space: nowrap;
+  height: 25px;
+}
+
+.save-permissions {
+  padding: 15px 0;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.save-permissions button {
+  border: 0;
+  color: #fff;
+  background-color: #6259ca;
+  padding: 8px 15px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+::ng-deep .tooltip {
+  font-size: 13px;
+}/*# sourceMappingURL=admin-activity-permission.component.css.map */

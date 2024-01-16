@@ -1,0 +1,46 @@
+<div class="main-container">
+  <div class="exit-post">
+    <div class="button">
+      <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+        <img src="assets/images/x.svg" height="20" />
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="profileForm"
+        class="education-form"
+        (ngSubmit)="submit()"
+        enctype="multipart/form-data"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <div class="image-container">
+            <div class="image">
+              <div *ngIf="imageUrl" class="image-item">
+                <img [src]="imageUrl" alt="Image" />
+              </div>
+              <div *ngIf="!imageUrl" class="image-item">
+                <span><mat-icon>person</mat-icon></span>
+              </div>
+            </div>
+            <input
+              type="file"
+              id="imagefile"
+              style="display: none"
+              (change)="onFileChange($event)"
+              accept="image/*"
+              name="file"
+            />
+            <label for="imagefile">Select Image</label>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button type="submit" class="button" (click)="updateProfilePic()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

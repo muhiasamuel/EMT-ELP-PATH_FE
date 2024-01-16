@@ -1,0 +1,46 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="schoolform" class="elp-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">School Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="schoolName"
+            placeholder="eg. Uhuru High"
+            formControlName="schoolName"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Additional Information</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="additionalInformation"
+            placeholder="eg. Location"
+            formControlName="additionalInformation"
+          />
+        </div>
+
+        <p>{{ error }}</p>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="schoolform.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

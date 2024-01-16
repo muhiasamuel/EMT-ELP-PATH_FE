@@ -1,0 +1,140 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 20rem;
+  gap: 10px;
+  padding: 10px;
+}
+.container .card-nav {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: white;
+}
+.container .card-nav .header {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 10px 0;
+  margin-left: 2.5%;
+  border-radius: 11px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+.container .card-nav .header .header-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  gap: 10px;
+  color: #6259ca;
+}
+.container .chapters-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2rem;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.container .chapter-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 18rem;
+  max-height: 18rem;
+  background-color: white;
+  border-radius: 11px;
+  align-items: center;
+  justify-content: center;
+}
+.container .chapter-card:hover .chapter-profile-image {
+  background-color: white;
+}
+.container .chapter-card:hover .chapter-profile-image img {
+  width: 70px;
+  height: 70px;
+}
+.container .chapter-profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+}
+.container .chapter-profile-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all 0.9s ease 0s;
+}
+.container .chapter-profile-image .mat-icon {
+  color: #8f8fb1;
+  font-size: 40px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .chapter-title {
+  width: 90%;
+  font-size: 16px;
+  color: #3c4858;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+.container .chapter-details {
+  width: 80%;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: #8f8fb1;
+  margin-bottom: 0.25rem !important;
+}
+.container .chapter-details p {
+  margin: 0;
+}
+.container .view-button {
+  border: 0;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background-color: #6259ca;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.container .view-button:hover {
+  background-color: #403fad;
+}
+.container .activity-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.container .mat-select-trigger {
+  display: flex;
+  align-items: center;
+}
+.container .mat-form-field + .filter-input {
+  margin: 0;
+}
+.container .filter-dropdown {
+  display: flex;
+  flex: 1;
+}
+.container .filter-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.container .filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}/*# sourceMappingURL=admin-regional-chapters.component.css.map */

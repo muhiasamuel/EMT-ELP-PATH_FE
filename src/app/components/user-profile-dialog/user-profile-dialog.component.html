@@ -1,0 +1,229 @@
+<!-- =============================================== -->
+
+<div class="container">
+  <div class="user-profile-container">
+    <!-- row 1 personal info -->
+    <div class="personal-info-containter">
+      <div class="user-info">
+        <div class="profile-image">
+          <div class="image" *ngIf="imageurl">
+            <img [src]="imageurl" />
+          </div>
+          <div class="image" *ngIf="!imageurl">
+            <span><mat-icon>person</mat-icon></span>
+          </div>
+
+          <!-- ================Edit if image exists============= -->
+
+          <!-- =========If there's no image Add========= -->
+
+          <div class="user-title">
+            <p *ngIf="profileData">
+              {{ profileData.user.firstName }} {{ profileData.user.lastName }}
+            </p>
+            <p *ngIf="!profileData">User Name</p>
+          </div>
+        </div>
+
+        <!-- =======================USER-DETAILS======================================= -->
+
+        <div class="user-details">
+          <div class="user-title">
+            <span *ngIf="profileData"
+              >{{ profileData.title ? profileData.title : "Title" }}
+            </span>
+            <span *ngIf="!profileData"> Title </span>
+            <!-- <span *ngIf="profileData"
+              >{{ profileData.status ? profileData.status : "" }}
+            </span>
+            <span>{{ profileData.country ? profileData.country : "" }}</span> -->
+          </div>
+
+          <div class="h-line">
+            <hr />
+          </div>
+
+          <div class="job">
+            <div class="contact-item">
+              <mat-icon>work_outline</mat-icon>
+
+              <span *ngIf="profileData">{{
+                profileData.job ? profileData.job : "Job Status"
+              }}</span>
+              <span *ngIf="!profileData">Job Status</span>
+            </div>
+          </div>
+
+          <div class="country">
+            <div class="contact-item">
+              <mat-icon>place</mat-icon>
+
+              <span *ngIf="profileData">{{
+                profileData.location ? profileData : "Country"
+              }}</span>
+              <span *ngIf="!profileData">Country</span>
+            </div>
+          </div>
+          <div class="city">
+            <div class="contact-item">
+              <mat-icon>location_city</mat-icon>
+
+              <span *ngIf="profileData">{{
+                profileData.location ? profileData : "City"
+              }}</span>
+              <span *ngIf="!profileData">City</span>
+            </div>
+          </div>
+
+          <div class="user-contacts">
+            <div class="contact-item">
+              <mat-icon>account_balance</mat-icon>
+              <span *ngIf="profileData">{{
+                profileData.user.branch ? profileData.user.branch : "Branch"
+              }}</span>
+              <span *ngIf="!profileData"> Branch </span>
+              <!-- <span> Branch </span> -->
+            </div>
+          </div>
+        </div>
+        <!-- ======Profile Details Cont========================================== -->
+        <!-- <div class="v-line"></div> -->
+
+        <div class="user-details-cont">
+          <div class="job">
+            <div class="contact-item">
+              <mat-icon>school</mat-icon>
+
+              <span *ngIf="profileData">{{
+                profileData.job ? profileData.job : "Scholar Category"
+              }}</span>
+              <span *ngIf="!profileData">Scholar Category</span>
+            </div>
+          </div>
+          <div class="job">
+            <div class="contact-item">
+              <mat-icon>calendar_month</mat-icon>
+
+              <span *ngIf="profileData">{{
+                profileData.job ? profileData.job : "Scholar Year"
+              }}</span>
+              <span *ngIf="!profileData">Scholar Year</span>
+            </div>
+          </div>
+
+          <div class="user-contacts">
+            <div class="contact-item">
+              <mat-icon>phone</mat-icon>
+              <span *ngIf="profileData">{{ profileData.phoneNo }}</span>
+              <span *ngIf="!profileData"> Phone Number </span>
+            </div>
+
+            <div class="contact-item">
+              <mat-icon>email</mat-icon>
+              <span *ngIf="profileData"> {{ profileData.user.userEmail }}</span>
+
+              <span *ngIf="!profileData"> Email</span>
+            </div>
+            <div class="contact-item">
+              <mat-icon>link</mat-icon>
+              <span *ngIf="profileData"> {{ profileData.website }}</span>
+              <span *ngIf="!profileData"> Web Link</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================SOCIAL-LINKS=================================== -->
+      <!-- <div class="v-line"></div> -->
+      <div class="user-social-links">
+        <a href="https://www.linkedIn.com" class="social-link">
+          <img src="assets/images/ln.svg" />
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://www.facebook.com" class="social-link">
+          <img src="assets/images/fb.svg" />
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com" class="social-link">
+          <img src="assets/images/ig.svg" height="25" />
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.twitter.com" class="social-link">
+          <img src="assets/images/tw.svg" />
+          <span>Twitter</span>
+        </a>
+        <a href="https://www.github.com" class="social-link">
+          <img src="assets/images/git.svg" />
+          <span>Github</span>
+        </a>
+        <a href="https://www.baobabplatform.org/" class="social-link">
+          <img
+            src="assets/images/cobrand-logo-14c0bc87 1.jpg"
+            width="25px"
+            height="25px"
+          />
+          <span>Baobab</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- row 2 tabs -->
+
+    <!-- ===========================TABS============================== -->
+
+    <div class="card-tab-container">
+      <!-- single card tab bio -->
+      <button class="single-card-tab" (click)="showTab('bio')">
+        <div class="tab-content">
+          <div class="tab-icon"><mat-icon>assignment</mat-icon></div>
+          <div class="tab-text">Bio</div>
+        </div>
+      </button>
+      <!-- single card tab education -->
+      <button class="single-card-tab" (click)="showTab('education')">
+        <div class="tab-content">
+          <div class="tab-icon"><mat-icon>school</mat-icon></div>
+          <div class="tab-text">Education</div>
+        </div>
+      </button>
+      <!-- single card tab career -->
+      <button class="single-card-tab" (click)="showTab('career')">
+        <div class="tab-content">
+          <div class="tab-icon"><mat-icon>card_travel</mat-icon></div>
+          <div class="tab-text">Career</div>
+        </div>
+      </button>
+      <!-- single card tab Skills-->
+      <button class="single-card-tab" (click)="showTab('skills')">
+        <div class="tab-content">
+          <div class="tab-icon"><mat-icon>engineering</mat-icon></div>
+          <div class="tab-text">Skills</div>
+        </div>
+      </button>
+      <!-- single card tab post -->
+    </div>
+    <!-- row 3 tab body -->
+    <div class="tab-body">
+      <ng-container *ngIf="activeTab === 'bio'">
+        <app-bio [userIdadmin]="info.data.id"></app-bio>
+      </ng-container>
+
+      <ng-container *ngIf="activeTab === 'education'">
+        <app-education [userIdadmin]="info.data.id"></app-education>
+      </ng-container>
+
+      <ng-container *ngIf="activeTab === 'career'">
+        <!--  -->
+        <app-career [userIdadmin]="info.data.id"></app-career>
+        <!--  -->
+      </ng-container>
+
+      <ng-container *ngIf="activeTab === 'skills'">
+        <!--  -->
+        <app-skills [userIdadmin]="info.data.id"></app-skills>
+        <!--  -->
+        <app-skills> </app-skills>
+      </ng-container>
+    </div>
+  </div>
+</div>

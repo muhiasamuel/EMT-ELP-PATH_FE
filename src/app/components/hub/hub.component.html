@@ -1,0 +1,46 @@
+<div class="all-hubs">
+  <!-- single hubcard -->
+  <div class="cards-hub" *ngFor="let data of hubData">
+    <!-- <img src="assets/images/Card background.png" /> -->
+
+    <a
+      class="hub-profile-image"
+      [routerLink]="['/sidebarhome/chapterhome', data.hubId]"
+    >
+      <img [src]="data.imageUrl" *ngIf="data.imageUrl !== null" />
+      <mat-icon *ngIf="data.imageUrl === null">groups</mat-icon>
+    </a>
+    <div class="hub-profile-title">
+      <span>{{ data.hubName | titlecase }}</span>
+    </div>
+    <div class="hub-details">
+      <p>
+        {{ data.hubDescription | titlecase }}
+      </p>
+    </div>
+    <div class="join" *ngIf="data.hubMember === 'no'">
+      <!-- <a
+                [routerLink]="['/admin/chapterhome', data.chapterId]"
+                class="view"
+              > -->
+      <button class="join-button" (click)="joinHub(data.hubId)">
+        <!-- <mat-icon>add_circle_outline</mat-icon> -->
+        Join
+      </button>
+
+      <!-- </a> -->
+    </div>
+
+    <div class="join" *ngIf="data.hubMember === 'yes'">
+      <!-- <a
+                [routerLink]="['/admin/chapterhome', data.chapterId]"
+                class="view"
+              > -->
+      <button class="join-button" (click)="leaveHub(data.hubId)">
+        <!-- <mat-icon>remove_circle_outline</mat-icon> -->
+        <span>Leave</span>
+      </button>
+      <!-- </a> -->
+    </div>
+  </div>
+</div>

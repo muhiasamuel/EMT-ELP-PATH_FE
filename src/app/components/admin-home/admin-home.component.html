@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+  <!-- sidenav #row1 -->
+
+  <mat-sidenav mode="side"  [opened]="!isShowing">
+    <!-- sidenav header -->
+
+    <div class="sidenav-header">
+      <h1>ELPath</h1>
+    </div>
+
+    <!-- sidenav buttons -->
+    <app-admin-side-bar-menu></app-admin-side-bar-menu>
+  </mat-sidenav>
+
+  <!-- Main Content #row2 /Graphs/tables etc. -->
+  <mat-sidenav-content mat-elevation-z9 >
+    <app-admin-navbar style="position: fixed; right:0 ; left:0; z-index: 5;"></app-admin-navbar>
+
+    <!-- main navbar -->
+
+    <!-- <p>
+          <mat-icon mat-button (click)="toggle()"> menu_open </mat-icon>
+        </p> -->
+
+    <div class="all-content" style="z-index: 2;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

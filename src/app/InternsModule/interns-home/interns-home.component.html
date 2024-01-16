@@ -1,0 +1,34 @@
+<div class="main-container">
+    <div class="header">
+        <h1>Fill the form below</h1>
+    </div>
+    <div class="content">
+        <mat-card>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <mat-card-content>
+                    <h4>Provide the Following</h4>
+                    <p>
+                        <mat-form-field appearance="outline" class="form-field" formControlName="fullName">
+                          <mat-label>Full Name</mat-label>
+                          <input matInput placeholder="">
+                          <mat-icon matSuffix>person</mat-icon>
+                        </mat-form-field>
+                        <!-- <mat-error *ngIf="myForm.get('fullName')?.hasError('required')">full name is required</mat-error> -->
+                      </p>
+                      <p>
+                        <!-- <mat-error *ngIf="myForm.get('fullName')?.hasError('required')">full name is required</mat-error> -->
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Index Number</mat-label>
+                            <input matInput placeholder="">
+                            <mat-icon matSuffix>numbers</mat-icon>
+                        </mat-form-field>
+                        <!-- <mat-error *ngIf="myForm.get('fullName')?.invalid && myForm.get('fullName')?.touched">full name is required</mat-error> -->
+                      </p>
+                      <div class="submit-btn">
+                        <button mat-raised-button type="submit" class="btn">Continue</button>
+                      </div>
+                </mat-card-content>
+            </form>
+        </mat-card>
+    </div>
+</div>

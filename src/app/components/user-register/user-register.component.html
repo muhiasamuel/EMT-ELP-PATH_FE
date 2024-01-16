@@ -1,0 +1,105 @@
+<div class="main-container">
+  <div class="image-header"><img src="assets/images/logo2.png" /></div>
+
+  <mat-card class="register-containter">
+    <mat-card-title>
+      <div class="register-header">Register</div>
+    </mat-card-title>
+    <mat-card-content class="card-content">
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div class="names">
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input
+                matInput
+                type="text"
+                name="firstName"
+                placeholder="John"
+                formControlName="firstName"
+              />
+            </mat-form-field>
+          </p>
+
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Second Name</mat-label>
+              <input
+                matInput
+                type="text"
+                name="lastName"
+                placeholder="Doe"
+                required
+                formControlName="lastName"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <p>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Scholar Code</mat-label>
+            <input
+              matInput
+              type="text"
+              name="scholarNumber"
+              placeholder="PF No. / Scholar Code"
+              formControlName="scholarNumber"
+            />
+          </mat-form-field>
+          <span *ngIf="errorScholarNo">{{ errorScholarNo }}</span>
+        </p>
+
+        <p>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <input
+              matInput
+              type="text"
+              name="userEmail"
+              placeholder="example@g.com"
+              required
+              formControlName="userEmail"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <span *ngIf="errorEmail">{{ errorEmail }}</span>
+        </p>
+        <div class="passwords">
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                name="userPassword"
+                placeholder="Enter Password"
+                formControlName="userPassword"
+              />
+              <mat-icon matSuffix (click)="hide = !hide">{{
+                hide ? "visibility_off" : "visibility"
+              }}</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+        <!-- <div class="register-button"> -->
+        <button
+          class="register-button"
+          (keydown.enter)="(submit)"
+          [disabled]="registerForm.invalid"
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+      <div class="have-account-text">
+        <p>
+          Already have an account?
+          <a routerLink="">Log in</a>
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<!-- =================================================================== -->

@@ -1,0 +1,134 @@
+<div class="table-main-container">
+  <div *ngIf="loading" class="progress">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div class="table-container">
+    <div class="table-head-nav">
+      <div class="search">
+        <div>
+          <h2>Scholars</h2>
+        </div>
+        <div>
+          <input
+            (keyup)="applyFilter($event)"
+            matInput
+            placeholder="Filter Table"
+          />
+        </div>
+      </div>
+
+      <div
+        class="add-applicant"
+        (click)="applicationDialog('wtfs')"
+        matTooltip="Add Wtfs"
+        matTooltipPosition="right"
+        matTooltipClass="tooltip"
+      >
+        <mat-icon>add</mat-icon>
+      </div>
+    </div>
+    <div class="table">
+      <table mat-table [dataSource]="dataSource" matSort #empTbSort="matSort">
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- namen Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.applicantFirstName | titlecase }}
+            {{ element.applicantLastName | titlecase }}
+          </td>
+        </ng-container>
+        <!-- status Column -->
+        <ng-container matColumnDef="applicationStatus">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.applicationStatus | titlecase }}
+          </td>
+        </ng-container>
+        <!-- scholar code Column -->
+        <ng-container matColumnDef="scholarcode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Scholar Code
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.scholarCode | uppercase }}
+          </td>
+        </ng-container>
+
+        <!-- Year Column -->
+        <ng-container matColumnDef="dateOfAwarding">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Date Awarded
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.dateOfAwarding }}
+          </td>
+        </ng-container>
+
+        <!-- branch Column -->
+        <ng-container matColumnDef="branch">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Branch</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.branch.branchName | titlecase }}
+          </td>
+        </ng-container>
+        <!-- profile buttons -->
+        <ng-container matColumnDef="button">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <!-- profile  -->
+            <button
+              class="profile"
+              (click)="
+                profileDialog(
+                  element.user.id,
+                  element.user.firstName,
+                  element.user.lastName
+                )
+              "
+              matTooltip="View Profile"
+              matTooltipPosition="left"
+              matTooltipClass="tooltip"
+              [disabled]="element.user === null"
+            >
+              <mat-icon>person</mat-icon>
+            </button>
+            <!-- journey -->
+            <button
+              class="journey"
+              (click)="journeyDialog(element.id)"
+              matTooltip="View Journey"
+              matTooltipPosition="above"
+              matTooltipClass="tooltip"
+            >
+              <mat-icon>airline_stops</mat-icon>
+            </button>
+            <!-- make ELP -->
+            <button
+              class="make-elp"
+              (click)="makeElpFormDialog(element.id)"
+              matTooltip="make ELP"
+              matTooltipPosition="above"
+              matTooltipClass="tooltip"
+            >
+              <mat-icon>school</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        #paginator
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

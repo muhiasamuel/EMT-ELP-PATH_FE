@@ -1,0 +1,49 @@
+.survey-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.survey-header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=text],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.message {
+  height: 250px;
+}
+
+button {
+  background-color: #0e0e23;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d1d49;
+}
+
+.select {
+  background-color: white;
+  width: 100%; /* Set your desired width */
+  margin-bottom: 16px;
+}/*# sourceMappingURL=admin-survey.component.css.map */

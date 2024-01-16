@@ -1,0 +1,49 @@
+<div class="scholar-summary-container">
+  <!-- row 1 scholar summary header -->
+  <div class="scholar-summary-header">
+    <div class="header-text"><h5>Scholar Summary</h5></div>
+    <div class="header-button"></div>
+
+    <!-- row 2 tabs -->
+  </div>
+  <div class="card-tab-container">
+    <!-- single card tab bio -->
+    <div class="single-card-tab" (click)="showTab('application')">
+      <a class="tab-content">
+        <div class="tab-icon"><mat-icon>assignment</mat-icon></div>
+        <div class="tab-text">Application</div>
+      </a>
+    </div>
+    <!-- single card tab education -->
+    <div class="single-card-tab" (click)="showTab('education')">
+      <div class="tab-content">
+        <div class="tab-icon"><mat-icon>school</mat-icon></div>
+        <div class="tab-text">Education</div>
+      </div>
+    </div>
+    <!-- single card tab career -->
+    <div class="single-card-tab" (click)="showTab('expenses')">
+      <div class="tab-content">
+        <div class="tab-icon"><mat-icon>attach_money</mat-icon></div>
+        <div class="tab-text">Expenses</div>
+      </div>
+    </div>
+  </div>
+  <!-- row 3 tab body -->
+  <div class="tab-body">
+    <ng-container *ngIf="activeTab === 'application'">
+      <app-admin-application-info
+        [applicantid]="data.data"
+      ></app-admin-application-info>
+    </ng-container>
+
+    <ng-container *ngIf="activeTab === 'education'">
+      <app-admin-education [applicantid]="data.data"></app-admin-education>
+    </ng-container>
+
+    <ng-container *ngIf="activeTab === 'expenses'">
+      <app-admin-expenses [applicantid]="data.data"></app-admin-expenses>
+    </ng-container>
+  </div>
+  <!-- <router-outlet></router-outlet> -->
+</div>

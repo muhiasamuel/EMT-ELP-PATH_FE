@@ -1,0 +1,226 @@
+.major-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-container {
+  width: 90vw;
+}
+
+.image-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.login-containter {
+  width: 90vw;
+  border: none;
+  border-radius: 6px;
+}
+
+.login-header {
+  display: flex;
+  width: 100%;
+  color: #a32a29;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+::ng-deep .mat-step-text-label {
+  font-size: smaller;
+}
+
+.form-field {
+  width: 100%;
+  height: 3rem;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form .form-field {
+  width: 100%;
+}
+.login-form .form-field input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+}
+.login-form .form-field input::-moz-placeholder {
+  color: #392e2d;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 10px;
+}
+.login-form .form-field input::placeholder {
+  color: #392e2d;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 10px;
+}
+.login-form .login-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form .login-button .buttons .mat-button {
+  margin-right: 1rem;
+}
+.login-form .login-button .buttons .pf-buttons {
+  display: flex;
+  width: 100%;
+  gap: 2%;
+}
+.login-form .register-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form button {
+  border: 0;
+  padding: 10px 30px;
+  color: #ffffff;
+}
+.login-form ::ng-deep mdc-button .mdc-button__label {
+  color: #392e2d;
+}
+.login-form .reset {
+  display: flex;
+  padding: 10px;
+  color: #a32a29;
+  font-size: 10px;
+}
+.login-form .reset a {
+  font-weight: 500;
+  color: #a32a29;
+  text-decoration: none;
+}
+
+.have-account-text P {
+  color: #a32a29;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: default;
+}
+.have-account-text P a {
+  cursor: default;
+  font-weight: 400;
+  font-size: 14px;
+  color: #a32a29;
+}
+.have-account-text P a:hover {
+  translate: translateY(-5px);
+}
+
+.footer {
+  margin-top: 10px;
+}
+
+.input-size {
+  height: 20px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  max-height: 30px !important;
+}
+
+.error-message {
+  display: flex;
+}
+.error-message p {
+  color: red;
+  font-size: small;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.mat-icon {
+  color: #4f4544;
+}
+
+a {
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+::ng-deep html {
+  --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-selected-checkmark-color: #fff;
+  --mdc-checkbox-selected-focus-icon-color: #a32a29;
+  --mdc-checkbox-selected-hover-icon-color: #a32a29;
+  --mdc-checkbox-selected-icon-color: #a32a29;
+  --mdc-checkbox-selected-pressed-icon-color: #a32a29;
+  --mdc-checkbox-unselected-focus-icon-color: #212121;
+  --mdc-checkbox-unselected-hover-icon-color: #212121;
+  --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-checkbox-selected-focus-state-layer-color: #f17e81;
+  --mdc-checkbox-selected-hover-state-layer-color: #f17e81;
+  --mdc-checkbox-selected-pressed-state-layer-color: #f17e81;
+  --mdc-checkbox-unselected-focus-state-layer-color: black;
+  --mdc-checkbox-unselected-hover-state-layer-color: black;
+  --mdc-checkbox-unselected-pressed-state-layer-color: black;
+}
+
+::ng-deep .mat-mdc-checkbox label {
+  cursor: pointer;
+  font-size: small;
+}
+
+::ng-deep .mat-mdc-checkbox {
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.checkbox a {
+  text-decoration: underline;
+}
+
+.userlogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  .main-container {
+    width: 40vw;
+  }
+  .login-containter {
+    width: 40vw;
+  }
+}
+.error {
+  color: red;
+}/*# sourceMappingURL=user-login.component.css.map */

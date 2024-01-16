@@ -1,0 +1,128 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="activityForm"
+        class="chapter-form"
+        (ngSubmit)="submit()"
+        enctype="multipart/form-data"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Activity title </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="activityName"
+            placeholder="eg. Engineering"
+            formControlName="activityName"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label"> Contribution </label>
+          <!-- input -->
+          <input
+            type="number"
+            name="contribution"
+            placeholder="eg. Engineering"
+            formControlName="contribution"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Activity Type</label>
+
+          <!-- select -->
+
+          <mat-select formControlName="activityType" name="activityType">
+            <mat-option
+              *ngFor="let type of activityTypeOptions"
+              [value]="type.id"
+            >
+              {{ type.typeName }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Description </label>
+          <textarea
+            placeholder="Event description..."
+            rows="6"
+            cols="50"
+            name="activityDescription"
+            placeholder="eg. Everything engineering"
+            formControlName="activityDescription"
+            wrap="hard"
+          ></textarea>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Event Location </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="activityLocation"
+            placeholder="eg. Nairobi"
+            formControlName="activityLocation"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label">Date</label>
+              <input
+                type="datetime-local"
+                name="activityDate"
+                formControlName="activityDate"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <input
+            type="file"
+            id="imagefile"
+            name="file"
+            style="display: none"
+            (change)="onFileChange($event)"
+            accept="image/*"
+          />
+          <div class="select-image">
+            <label for="imagefile">Select Activity Poster</label>
+            <div *ngIf="imageUrl" class="image-item">
+              <img [src]="imageUrl" alt="Profile Image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="activityForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

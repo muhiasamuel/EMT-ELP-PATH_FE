@@ -1,0 +1,423 @@
+.nav {
+  
+  background-color: rgb(54, 219, 238);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  left:0;
+  right: 0;
+  mat-icon {
+    font-size: large;
+    color: #051e34;
+  }
+}
+
+.navbar-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+  img {
+    height: 40px;
+    cursor: pointer;
+  }
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  .button-list{
+    display: flex;
+    align-items: center;
+  
+
+    button{
+      padding-left: 5px;
+      border: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:baseline;
+      background:white;
+      :hover {
+        color: crimson;
+      }
+    
+    }
+  }
+ 
+}
+
+.nav-item {
+  padding-left: 8px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #051e34;
+  height: 100%;
+}
+
+.menu-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+
+  img {
+    height: 30px;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+.menu-item-profile-image {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  width: 71px;
+  img {
+    height: 30px;
+    border-radius: 50%;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: flex-start;
+}
+.main-img-user {
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+.media-body {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 13px;
+  flex: 1;
+}
+.media {
+  border-bottom: 1px solid rgba(123, 65, 216, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 10px;
+  gap: 2%;
+  cursor: pointer;
+}
+.media-body strong {
+  font-weight: 500;
+}
+.menu-item:hover {
+  transform: translateY(-5px);
+  border-bottom: 3px solid #a32a29;
+  color: #a32a29;
+  cursor: pointer;
+}
+.menu-item:focus:active {
+  color: #a32a29;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #051e34;
+}
+
+::ng-deep .mat-mdc-menu-item.mdc-list-item {
+  font-size: 13px;
+}
+
+::ng-deep .mat-icon {
+  font-size: 20px;
+}
+
+.mat-mdc-menu-item .mat-icon {
+  margin-right: 0px;
+}
+
+
+
+
+
+
+.navbar-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  img {
+    height: 40px;
+    cursor: pointer;
+  }
+ 
+  .searchMain {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+  }
+
+  .imageSearch {
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    padding-left: 5%;
+    align-items: center;
+  }
+  .searchSvg {
+    width: 20px;
+    height: 20px;
+    color: brown;
+  }
+  input {
+    width: 100%;
+    height: 1.5rem;
+    border-radius: 23px;
+    border-color: #a32a29;
+    padding-left: 2rem;
+  }
+  input::placeholder {
+    display: none;
+    font-weight: bold;
+    color: #a32a29;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  mat-icon {
+  margin-right: 0;
+}
+}
+
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #051e34;
+  height: 100%;
+ 
+}
+.menu-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  width: 71px;
+  img {
+    height: 30px;
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+}
+.menu-item-profile-image {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  width: 71px;
+  img {
+    height: 30px;
+    border-radius: 50%;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+.menu-item:hover {
+  transform: translateY(-5px);
+  border-bottom: 3px solid #a32a29;
+  color: #a32a29;
+  cursor: pointer;
+}
+.menu-item:focus:active {
+  color: #a32a29;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #051e34;
+}
+
+::ng-deep .mat-mdc-menu-item.mdc-list-item {
+  font-size: 13px;
+}
+
+::ng-deep .mat-icon {
+  font-size: 20px;
+}
+
+.mat-mdc-menu-item .mat-icon {
+  margin-right: 0px;
+}
+.nav-item {
+  display: none;
+}
+
+.example-viewport {
+  height: 40px;
+  max-height: 40px;
+  width: 100%;
+  overflow: auto;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 10
+
+}
+.suggestion-item {
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  border-radius: 4px; 
+  /* Maintain other styles from your original list items */
+}
+a {
+  text-decoration: none;
+  color: #555;
+  font-size: small;
+  display: block; 
+  padding: 10px; 
+  &:hover {
+    background-color: #f0f0f0; 
+  }
+}
+.example-viewport::-webkit-scrollbar {
+  width: 12px; 
+}
+
+.example-viewport::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.example-viewport::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.example-viewport::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.search-spinner {
+  position: absolute;
+  right: 60px; // Adjust as needed
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (min-width: 600px) {
+  .nav {
+    padding: 0 4rem;
+  }
+
+  .navbar-search {
+    display: flex;
+  }
+
+  .button-list{
+    gap:3vw;
+  }
+
+
+  .navbar-search {
+    display: flex;
+    gap: 13vw;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .nav {
+    padding: 0 10vw;
+  }
+
+  .nav-item {
+    display: block;
+  }
+
+.navbar-search{
+  gap: 10vw;
+}
+
+  .button-list{
+    gap:1rem;
+  }
+  
+}
+.search-bar-container {
+  position: relative; 
+}
+
+.suggestions {
+  position: absolute; // This will position the suggestions relative to the search bar container
+  top: 100%; // Position it right below the search barS
+  right: 0;
+  z-index: 4;
+  left:0; // Ensure it's above other content
+  cursor: pointer;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-radius: 4px; 
+  }
+
+  li {
+    padding: 10px; 
+    &:hover {
+      background-color: #f0f0f0; 
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #555;
+    font-size: small;
+    display: block; 
+    padding: 10px; 
+    &:hover {
+      background-color: #f0f0f0; 
+    }
+  }
+}

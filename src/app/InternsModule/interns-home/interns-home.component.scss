@@ -1,0 +1,37 @@
+.main-container {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+h1 {
+    font-size: xx-large;
+    color: #a57070;
+    font-weight: lighter;
+    text-align: center;
+}
+.content {
+    justify-content: center;
+    // margin-left: 25%;
+    // margin-right: 25%;
+    // width: 50%;
+    display: flex;
+    align-items: center;
+}
+mat-card {
+    width: 35%;
+}
+mat-form-field {
+    width: 100%;
+    margin-right: 10%;
+}
+.form-control.ng-touched.ng-invalid {
+    border: 3px solid brown;
+}
+
+.form-control.ng-touched.ng-valid {
+    border: 3px solid green;
+}
+.mat-mdc-raised-button.btn {
+    width: 100%;
+    background-color: crimson;
+}
+

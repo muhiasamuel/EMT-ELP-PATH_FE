@@ -1,0 +1,23 @@
+<div class="main-container">
+  <div class="otp-container">
+    <div class="card">
+      <mat-card-title>
+        <div class="otp-header">Verification</div>
+      </mat-card-title>
+      <mat-card-title>
+        <div class="otp-header">Enter your OTP here</div></mat-card-title
+      >
+    </div>
+    <div class="otpform">
+        <input type="text" maxlength="6" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Enter OTP"/>
+    </div>
+    <div class="button">
+        <button mat-raised-button color="primary" (click)="validateOTP()" [class.auth-spinner]="loading">Verify</button>
+    </div>
+    <div class="card1">
+      <p>Didn't get an OTP? <a (click)="generateOTP()">Resend</a></p>
+    </div>
+  </div>
+</div>
+
+  

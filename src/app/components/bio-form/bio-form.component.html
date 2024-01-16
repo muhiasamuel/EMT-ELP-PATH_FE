@@ -1,0 +1,36 @@
+<div class="main-container">
+  <div class="exit-post">
+    <div class="button">
+      <button mat-dialog-close matTooltip="Close" matTooltipClass="close">
+        <img src="assets/images/x.svg" height="20" />
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-container">
+      <form #bio="ngForm" class="bio-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Bio</label>
+          <!-- input -->
+
+          <textarea
+            name="description"
+            id=""
+            cols="30"
+            rows="15"
+            placeholder="About yourself.."
+            [(ngModel)]="textareaData"
+          ></textarea>
+        </div>
+
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" type="submit" class="button">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

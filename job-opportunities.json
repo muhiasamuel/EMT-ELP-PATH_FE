@@ -1,0 +1,45 @@
+{
+  "jobOpportunities":[{
+    "id":1,
+    "jobTitle": "Software Developer",
+    "jobType": "Contract",
+    "jobSalary": 50000,
+    "educationIevel": "Bachelor's Degree",
+    "applicationDeadLine": "2023-11-30T14:00:00",
+    "organisation": "Equity",
+    "jobDescription": "Proficiency in Microsoft Office Suite",
+    "howToApply": "Proficiency in Microsoft Office Suite",
+    "qualification": "Proficiency in Microsoft Office Suite",
+    "responsibility": "Process daily client transactions",
+    "img":"/assets/images/landing_page/event3.jpg"
+  },
+  {
+    "id":2,
+    "jobTitle": "Web Designer",
+    "jobType": "Full-time",
+    "jobSalary": 60000,
+    "educationIevel": "Bachelor's Degree",
+    "applicationDeadLine": "2023-12-15T16:30:00",
+    "organisation": "Tech Corp",
+    "jobDescription": "UI/UX design skills required",
+    "howToApply": "Send your portfolio to careers@techcorp.com",
+    "qualification": "Experience in Adobe Creative Suite",
+    "responsibility": "Design and optimize website layouts",
+    "img":"/assets/images/landing_page/event1.jpg"
+  },
+  {
+    "id":3,
+    "jobTitle": "Data Analyst",
+    "jobType": "Internship",
+    "jobSalary": 30000,
+    "educationIevel": "Master's Degree",
+    "applicationDeadLine": "2023-12-10T12:00:00",
+    "organisation": "Data Insights Inc",
+    "jobDescription": "Analyze data and generate reports",
+    "howToApply": "Submit your resume and a cover letter to apply",
+    "qualification": "Statistics or Data Science background",
+    "responsibility": "Compile and analyze datasets",
+    "img":"/assets/images/landing_page/event2.jpg"
+  }]
+
+}

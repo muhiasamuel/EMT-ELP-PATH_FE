@@ -1,0 +1,126 @@
+<div class="maincontainer">
+    <div class="container">
+     
+      <div class="row1">
+        <div class="row1content">
+        
+          <div class="info">
+            <p>News and Update</p>
+  
+            <span>Add  News and Updates</span>
+          </div>
+         
+          <div class="addroles">
+            <button (click)="addJob()">Add News$Updates</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="table-container">
+    <div class="table-head-nav">
+      <div class="search">
+        <div>
+          <h2>Scholars</h2>
+        </div>
+        <div>
+          <input
+            (keyup)="applyFilter($event)"
+            matInput
+            placeholder="Filter Table"
+          />
+        </div>
+      </div>
+  
+      <div
+        class="add-applicant"
+        
+        matTooltip="Add Sportlight"
+        matTooltipPosition="right"
+        matTooltipClass="tooltip"
+      >
+        <mat-icon (click)="addJob()">add</mat-icon>
+      </div>
+    </div>
+    <div class="table">
+    
+      <table mat-table [dataSource]="dataSource" matSort #empTbSort="matSort">
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+        <!-- namen Column -->
+        <ng-container matColumnDef="No">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>No</th>
+          <td mat-cell *matCellDef="let element let index=index">
+            {{ index+1 }}
+           
+          </td>
+        </ng-container>
+        <!-- status Column -->
+        <ng-container matColumnDef="Title">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.title | titlecase }}
+          </td>
+        </ng-container>
+  
+        <!-- Year Column -->
+        <ng-container matColumnDef="Content">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Content </th>
+          <td mat-cell *matCellDef="let element">{{ element.message }}</td>
+        </ng-container>
+  
+        <!-- branch Column -->
+        <ng-container matColumnDef="Image" [ngStyle]="">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+          <td mat-cell *matCellDef="let element">
+            <img [src]="element.image" style="width: 5rem; height:5rem; padding:2rem" alt="">
+          </td>
+        </ng-container>
+        <!-- profile buttons -->
+        <ng-container matColumnDef="Action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <!-- profile  -->
+            <button
+              class="profile"
+          
+              matTooltip="View Profile"
+              matTooltipPosition="left"
+              matTooltipClass="tooltip"
+              (click)="updateRecord(element.id)"
+          
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <!-- journey -->
+            <button
+              class="journey"
+             
+              matTooltip="View Journey"
+              matTooltipPosition="right"
+              matTooltipClass="tooltip"
+              (click)="deleterRecord(element.id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        #paginator
+        [length]="100"
+        [pageSize]="2"
+        [pageSizeOptions]="[5, 10,20, 100]"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+
+
+  
+  

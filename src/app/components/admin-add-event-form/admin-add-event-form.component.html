@@ -1,0 +1,149 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="eventForm"
+        class="chapter-form"
+        (ngSubmit)="submit()"
+        enctype="multipart/form-data"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Event Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="eventName"
+            placeholder="eg. Engineering"
+            formControlName="eventName"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label"> Event Organizer </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="organizer"
+            placeholder="eg. Engineering"
+            formControlName="organizer"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Description </label>
+          <textarea
+            placeholder="Event description..."
+            rows="6"
+            cols="30"
+            name="eventDescription"
+            placeholder="eg. Everything engineering"
+            formControlName="eventDescription"
+            wrap="hard"
+          ></textarea>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Event Type </label>
+
+          <mat-radio-group
+            [(ngModel)]="eventType"
+            (ngModelChange)="onEventTypeChange($event)"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <mat-radio-button value="Online">Online</mat-radio-button>
+            <mat-radio-button value="Physical">Physical</mat-radio-button>
+            <mat-radio-button value="Both">Both</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!-- if event Type is both or one -->
+
+        <!-- form field -->
+        <div
+          class="form-field"
+          *ngIf="eventType === 'Both' || eventType === 'Physical'"
+        >
+          <!-- label -->
+          <label class="form-label">Location </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="location"
+            placeholder="eg. Nairobi"
+            formControlName="location"
+          />
+        </div>
+
+        <!-- form field -->
+        <div
+          class="form-field"
+          *ngIf="eventType === 'Both' || eventType === 'Online'"
+        >
+          <!-- label -->
+          <label class="form-label">Online Link </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="eventLink"
+            placeholder="eg. www.example.com"
+            formControlName="eventLink"
+          />
+        </div>
+
+        <!------------------------------------------------------------------------------------------------>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label">Date</label>
+              <input
+                type="datetime-local"
+                name="eventDate"
+                formControlName="eventDate"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <input
+            type="file"
+            id="imagefile"
+            name="file"
+            style="display: none"
+            (change)="onFileChange($event)"
+            accept="image/*"
+          />
+          <div class="select-image">
+            <label for="imagefile">Select Event Poster</label>
+            <div *ngIf="imageUrl" class="image-item">
+              <img [src]="imageUrl" alt="Profile Image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="submit()"
+            type="submit"
+            class="button"
+            [disabled]="eventForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

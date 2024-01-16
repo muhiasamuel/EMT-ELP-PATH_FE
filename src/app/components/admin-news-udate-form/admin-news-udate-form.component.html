@@ -1,0 +1,28 @@
+
+<div class="main-container">
+    <div class="container ">
+    <div class="form-container">
+   
+    <form #uploadForm="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <!-- Title and Content fields -->
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" [(ngModel)]="formData.title" required placeholder="Title">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="message">Content</label>
+          <textarea id="message" name="messsage" id="message" [(ngModel)]="formData.message" required placeholder="message"></textarea>
+        </div>
+      
+        <!-- File input for the image -->
+        <br>
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" (change)="onFileChange($event)" required>
+      </div>
+      <button type="submit">Submit:</button>
+      </form>
+    </div>
+    </div>
+    </div>

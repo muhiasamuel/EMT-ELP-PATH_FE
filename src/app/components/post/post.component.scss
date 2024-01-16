@@ -1,0 +1,62 @@
+.post {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  padding: 22px 0px;
+  border: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  
+
+  border: 1px solid #dee2e6;
+  .post-profile-image {
+    width: 10%;
+    height: 100%;
+    .image {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      background-color: #eaedf7;
+      img {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+      .mat-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 30px;
+        color: #515050;
+      }
+    }
+  }
+  .post-input {
+    width: 80%;
+    display: flex;
+
+    input {
+      width: 90%;
+      height: 43px;
+      border-radius: 23px;
+      border: 1px solid var(--neutral-400, #94a3b8);
+      padding-left: 10px;
+    }
+    input:focus {
+      outline: none;
+    }
+    input::placeholder {
+      color: #8f8fb1;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      padding-left: 10px;
+    }
+  }
+}

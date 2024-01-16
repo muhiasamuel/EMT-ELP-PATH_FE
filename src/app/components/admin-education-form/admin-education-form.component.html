@@ -1,0 +1,98 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="eduform" class="education-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Form </label>
+
+          <!-- select -->
+          <mat-select formControlName="form" name="form">
+            <mat-option *ngFor="let form of formsOptions" [value]="form.value">
+              {{ form.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Term </label>
+
+          <!-- select -->
+          <mat-select formControlName="term" name="term">
+            <mat-option *ngFor="let term of termsOptions" [value]="term.value">
+              {{ term.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Opener Exam Grade </label>
+
+          <!-- select -->
+          <mat-select formControlName="openingGrade" name="openingGrade">
+            <mat-option
+              *ngFor="let grade of gradesOptions"
+              [value]="grade.value"
+            >
+              {{ grade.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Mid Term Exam Grade </label>
+
+          <!-- select -->
+          <mat-select formControlName="midTermGrade" name="midTermGrade">
+            <mat-option
+              *ngFor="let grade of gradesOptions"
+              [value]="grade.value"
+            >
+              {{ grade.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Closing Exam Grade </label>
+          <!-- select -->
+
+          <mat-select formControlName="closingGrade" name="closingGrade">
+            <mat-option
+              *ngFor="let grade of gradesOptions"
+              [value]="grade.value"
+            >
+              {{ grade.viewValue }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div class="date">
+              <label class="form-label">Start date</label>
+              <input
+                type="date"
+                name="opening_date"
+                formControlName="opening_date"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button (keydown.enter)="(submit)" class="button">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

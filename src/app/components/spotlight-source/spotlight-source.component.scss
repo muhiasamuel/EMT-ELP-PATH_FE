@@ -1,0 +1,121 @@
+
+li{
+    list-style: none;
+}
+
+.container-spot{
+display: flex;
+
+
+    .btn1{
+        height: 5rem;
+        width: 2rem;
+        top:50%;
+        left:1rem;
+        position: absolute;
+        background:none;
+        border: none;
+    }
+
+    .btn2{
+        height: 5rem;
+        width: 2rem;
+        top:50%;
+        right:1rem;
+        position: absolute;
+        background:none;
+        border: none;
+    }
+    
+    
+    .spot-card{
+        width: 85vw;
+        display: flex;
+        gap: 0.5em;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem;
+        
+        .spotItem{
+        padding: 0.3rem;
+        background: #fff; 
+      
+        width:  100%;
+      
+        
+        
+        box-shadow: 5px 5px 5px #e9e6e6;
+
+        h4{
+            color: #2e2525;
+            font-size: larger;
+            padding-top: 5px;
+            border-top: #2e2525 solid 1px;
+        }
+        .spot-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+           
+                max-width: 15rem;
+                height: 15rem;
+            }
+            
+        }
+
+        .item-details{
+            height: 13rem;
+            
+            .btn-par{
+                height: 8rem;
+                z-index: -1;
+                button{
+                   font-size: 1rem;
+                   border-radius: 1rem;
+                   border: 1px solid #a57070;
+                   background: none;
+                   min-width: 4rem;
+                }
+            }
+        }
+        }
+        .date-spot{
+            display: flex;
+            padding:10px 0 5px 0;
+            flex-direction: row;
+            justify-content: space-between;
+            .item-highlight{
+                color: #a57070;
+                padding: 0 10px;
+                font-weight: bolder;
+            }
+            .spot-date{
+                color:#a57070;
+                display: flex;
+                gap: 8px;
+                
+
+            }
+
+
+        }
+
+
+    }
+}
+@media  screen and (min-width: 600px){
+   
+    .container-spot{
+        .spot-card{
+            li{
+                max-width: 25vw;
+            }
+            
+        }
+    
+
+    }
+    
+}

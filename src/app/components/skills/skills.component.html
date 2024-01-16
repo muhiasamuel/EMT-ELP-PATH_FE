@@ -1,0 +1,22 @@
+<div class="main-container">
+  <div
+    class="add"
+    matTooltip="Add Skill"
+    matTooltipPosition="left"
+    matTooltipClass="tooltip"
+    (click)="sformDialog()"
+    *ngIf="!viewer"
+  >
+    <mat-icon>add_circle_outline</mat-icon>Add Skill
+  </div>
+  <div class="skill-card">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <section class="example-section" *ngFor="let skill of skillsData">
+          <p class="example-h2">{{ skill.name }}</p>
+          <h2>.</h2>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

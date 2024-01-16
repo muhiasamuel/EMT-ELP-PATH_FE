@@ -1,0 +1,250 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.containerHome {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  border-bottom: #bfc1c7 2px solid;
+}
+
+.maincontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.homecontainer {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  padding-top: 0.2rem;
+}
+
+.profile {
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+}
+.profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.leftcard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.column-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100vw;
+  border-radius: 0;
+}
+
+.column-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  width: 100vw;
+  border-radius: none;
+  overflow: auto;
+}
+
+.update-profile-container {
+  background-color: white;
+  border-radius: none;
+  padding: 0.5em !important;
+  border: solid rgb(219, 216, 216) 0.2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.update-profile-container img {
+  width: 100%;
+  height: 35%;
+}
+.update-profile-container p {
+  font-size: 0.9em;
+  color: #3c4858;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.update-profile-container .update-profile {
+  display: flex;
+  justify-content: center;
+}
+.update-profile-container .update {
+  background-color: #a32a29;
+  color: #ffffff;
+}
+
+.skills-progress {
+  margin: 1em 0;
+  width: 90%;
+  border: 5px solid rgba(128, 128, 128, 0.203);
+  border-radius: 0.6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1em;
+}
+.skills-progress .mat-progress {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.skills-progress .mat-progress h4 {
+  font-size: larger;
+  color: #3f51b5;
+}
+.skills-progress p {
+  font-size: small;
+  font-weight: 400;
+  color: rgba(128, 128, 128, 0.915);
+}
+.skills-progress .progress-title {
+  color: #3c4858;
+  font-weight: 500;
+  font-size: medium;
+  margin: 0;
+  margin-top: 1em;
+}
+
+.update:hover {
+  transform: translateY(-2px);
+}
+
+.column-3 {
+  border-radius: none;
+  gap: 0.7em;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_card {
+  display: none;
+}
+
+/*-------media query for mobile screen-------*/
+@media screen and (min-width: 600px) {
+  .containerHome {
+    height: 100vh;
+  }
+  .maincontainer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 1rem;
+    bottom: 1rem;
+    height: 90vh;
+  }
+  .homecontainer {
+    height: 100%;
+    grid-template-columns: auto auto;
+    gap: 1em;
+  }
+  .navbar {
+    border: none;
+  }
+  .column-1 {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    width: 25vw;
+    border-radius: 0.3rem;
+    overflow: auto;
+    height: 100%;
+  }
+  .feed-people-cont {
+    gap: 1em;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    width: 60vw;
+    height: 100%;
+    overflow: auto;
+  }
+  .feed-people-cont .column-2 {
+    overflow: hidden;
+    border-radius: 0.3rem;
+    width: 100%;
+  }
+  .feed-people-cont .column-3 {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 0.3rem;
+  }
+  .profile_card {
+    display: block;
+  }
+  .update-profile-container {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+@media screen and (min-width: 780px) {
+  .containerHome {
+    height: 100vh;
+  }
+  .maincontainer {
+    height: 95vh;
+  }
+  .homecontainer {
+    grid-template-columns: auto auto;
+    height: 100%;
+  }
+  .column-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 18vw;
+    overflow: auto;
+    height: 96%;
+  }
+  .feed-people-cont {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 100%;
+  }
+  .feed-people-cont .column-2 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 40vw;
+    overflow-y: auto;
+    height: 100%;
+    gap: 0;
+  }
+  .feed-people-cont .column-3 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 18vw;
+    overflow: auto;
+    height: 100%;
+    gap: 0;
+  }
+}/*# sourceMappingURL=home.component.css.map */

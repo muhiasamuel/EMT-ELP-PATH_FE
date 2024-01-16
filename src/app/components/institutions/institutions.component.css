@@ -1,0 +1,19 @@
+.odd-row {
+  background-color: white;
+}
+
+.even-row {
+  background-color: #eee;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto";
+}
+
+.institution-title {
+  color: gray;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-weight: normal;
+}/*# sourceMappingURL=institutions.component.css.map */

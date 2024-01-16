@@ -1,0 +1,61 @@
+<!-- single  user card  -->
+
+<div class="user-profile-card" routerLink="/user_profile">
+  <!-- background image -->
+  <div class="backimage"></div>
+  <!-- profile image -->
+  <div class="user-profile-image">
+    <img [src]="imageurl" *ngIf="imageurl" (error)="handleError($event)"/>
+    <mat-icon *ngIf="!imageurl">person</mat-icon>
+  </div>
+  <!-- user title -->
+  <div class="user-title" routerLink="/user_profile">
+    <span>{{ userInfo?.firstName }} {{ userInfo?.lastName }}</span>
+  </div>
+
+  <!-- mat divider -->
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+
+  <!-- user details container -->
+  <div class="details-container">
+    <!-- user details -->
+    <div class="user-details">
+      <div class="icon"><mat-icon>phone</mat-icon></div>
+      <div class="text">
+        <span>Phone No</span>
+        <p>{{ profileData?.phoneNo }}</p>
+      </div>
+    </div>
+    <!----------------------------------------------------->
+    <!-- user details -->
+    <div class="user-details">
+      <div class="icon"><mat-icon>mail</mat-icon></div>
+      <div class="text">
+        <span>Email <Address></Address></span>
+        <p>{{ profileData?.email }}</p>
+      </div>
+    </div>
+    <!----------------------------------------------------->
+
+    <!-- user details -->
+    <div class="user-details">
+      <div class="icon"><mat-icon>title</mat-icon></div>
+      <div class="text">
+        <span>Title</span>
+        <p>{{ profileData?.title }}</p>
+      </div>
+    </div>
+    <!----------------------------------------------------->
+    <!-- user details -->
+    <div class="user-details">
+      <div class="icon"><mat-icon>link</mat-icon></div>
+      <div class="text">
+        <span>Weblink</span>
+        <p>{{ profileData?.website }}</p>
+      </div>
+    </div>
+    <!----------------------------------------------------->
+  </div>
+</div>

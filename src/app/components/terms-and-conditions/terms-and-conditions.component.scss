@@ -1,0 +1,52 @@
+.terms{
+    max-width: 460px;
+    background-color: white;
+    margin-top: 0px;
+    // margin-left: 50px;
+    color: black;
+    font-family: 'roboto';
+    padding: 60px 30px;
+    overflow: hidden;
+  }
+  .ts-cs{
+    padding: 0px 0px;
+    height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+  }
+  .ts-cs::-webkit-scrollbar{
+    width: 2px;
+    background-color: black;
+  }
+  .ts-cs::-webkit-scrollbar-thumb{
+    background-color: white;
+  }
+  span{
+    color: rgb(121, 3, 3);
+  }
+  .button{
+    display: flex;
+    padding: 0 0px;
+    justify-content: space-between; 
+  }
+  .btn{
+    height: 40px;
+    width: calc(50% - 6px);
+    border: 0;
+    border-radius: 6px;
+    font-size: 19px;
+    font-weight: 400;
+    color: white;
+    transition: .3s linear;
+  }
+  .red-btn{
+    background-color: rgb(121, 3, 3);
+  }
+  .gray-btn{
+    background-color: gray;
+  }
+  h4,b{
+    font-weight: 400;
+  }

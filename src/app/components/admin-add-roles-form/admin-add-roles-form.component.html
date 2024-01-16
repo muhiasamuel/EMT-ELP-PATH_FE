@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="roleform" class="elp-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Role Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="roleName"
+            placeholder="eg. branch champion"
+            formControlName="roleName"
+          />
+        </div>
+        <p>{{ error }}</p>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="roleform.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

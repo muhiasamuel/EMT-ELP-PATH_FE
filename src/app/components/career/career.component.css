@@ -1,0 +1,107 @@
+.main-container {
+  width: 100%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  border-radius: 6px;
+}
+
+.add {
+  background-color: #eaedf7;
+  color: #6259ca;
+  border: 0;
+  border-radius: 12px;
+  padding: 5px 6px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-size: small;
+  align-items: center;
+}
+.add .mat-icon {
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+.add:hover {
+  transform: translateY(-2px);
+}
+
+.row {
+  width: 100%;
+}
+
+.edit {
+  background-color: #eaedf7;
+  color: #6259ca;
+  border: 0;
+  border-radius: 12px;
+  padding: 2px 3px;
+  display: flex;
+  justify-content: right;
+  margin-left: 1rem;
+  font-size: small;
+}
+.edit .mat-icon {
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.content {
+  width: 80%;
+  font-size: 14px;
+  color: #3c4858;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+  margin-left: 1rem;
+}
+
+.title {
+  font-weight: 550;
+}
+
+.company-name {
+  font-weight: 450;
+}
+
+::ng-deep .tooltip {
+  font-size: 13px;
+}
+
+.date {
+  display: flex;
+  gap: 10px;
+}
+.date label {
+  color: #3c4858;
+  font-weight: 500;
+  font-size: 14px;
+}
+.date .start_date {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.date .end_date {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}/*# sourceMappingURL=career.component.css.map */

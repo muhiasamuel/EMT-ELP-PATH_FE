@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="card-nav">
+    <div class="header">
+        <div class="header-icon">
+          <mat-icon>school</mat-icon><span>All Institutional Chapters </span>
+        </div>
+    </div>
+    <div>
+        <div class="filter-container">
+            <mat-form-field  class="filter-dropdown">
+                <mat-label >Filter By</mat-label>  
+                <mat-select [(value)]="selectedFilter" 
+                            (selectionChange)="showFilterInput = true">
+                            <mat-option value="chapterId">chapter Id</mat-option>
+                            <mat-option value="chapterName">chapter Name</mat-option>                   
+                </mat-select>    
+            </mat-form-field>
+            <div class="filter-input" *ngIf="showFilterInput">
+                <input matInput placeholder="Filter" #filterInput>
+                <mat-icon (click)="applyFilter(filterInput.value)">search</mat-icon>   
+            </div>
+        </div>
+        <form [formGroup]="filterform">
+          <mat-form-field class="m-l-3" *ngIf="selected == 'ci'">
+              <input matInput (dateChange)="filterChapter()"
+                  placeholder="Enter Chapter ID"
+                  formControlName="chapterId">
+              <mat-icon matSuffix (click)="getChapterById()">search
+              </mat-icon>
+          </mat-form-field>
+  
+          <mat-form-field class="m-l-3" *ngIf="selected == 'cn'">
+            <input matInput (dateChange)="filterChapter()"
+                placeholder="Enter Chapter Name"
+                formControlName="chapterName">
+            <mat-icon matSuffix (click)="getChapterByName()">search
+            </mat-icon>
+        </mat-form-field>
+  
+        </form>
+  
+  </div>
+   
+  </div>
+  <div class="chapters-container">
+    <!-- single  chapter card  -->
+  
+    <div class="chapter-card" *ngFor="let data of filteredData">
+      <!-- profile image -->
+      <div class="chapter-profile-image" id="item_card">
+        <img src="{{data.image}}"/>
+        <mat-icon >groups</mat-icon>
+      </div>
+      <!-- chapter title -->
+      <div class="chapter-title" id="item_card" >
+        <span>{{ data.chapterName | titlecase }}</span>
+      </div>
+      <!-- chater details -->
+      <div class="chapter-details"id="item_card" >
+        <p>{{ data.chapterDescription | titlecase }}</p>
+      </div>
+      <!-- view button -->
+      <a [routerLink]="['/admin/chapterhome', data.chapterId]" class="view" id="item_card">
+        <button class="view-button">
+          <span>View</span>
+        </button>
+      </a>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+  </div>
+    <!-- activity -->
+  <div class="activity-container">
+    <app-admin-ongoing-activities-card></app-admin-ongoing-activities-card>
+    <app-admin-recent-activities-card></app-admin-recent-activities-card>
+    <app-admin-scheduled-activities-card></app-admin-scheduled-activities-card>
+  </div>
+  </div>
+  

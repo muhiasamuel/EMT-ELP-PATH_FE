@@ -1,0 +1,127 @@
+.p-2 {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.feed-container {
+  padding: 0.5rem !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  background-color: white;
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.feed-header-profile {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+.feed-header-profile .feed-header-profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feed-header-profile .feed-header-profile-image img {
+  margin: auto;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.feed-header-profile .feed-header-profile-image .mat-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #515050;
+}
+
+.feed-header-profile-name {
+  width: 100%;
+}
+.feed-header-profile-name .p1 {
+  color: #3c4858;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.feed-header-profile-name .p2 {
+  color: #acabab;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.feed-text p {
+  color: #3c4858;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.feed-image {
+  max-width: 100%;
+  height: 70vh;
+  text-align: center;
+  background-color: white;
+  overflow: hidden; /* Hide overflowing images */
+}
+.feed-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 11px;
+  margin-bottom: 10px; /* Add margin between images */
+}
+.feed-image button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.feed-action {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.feed-action button {
+  border: none;
+  color: #2a2a2a;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feed-action button img {
+  width: 30%;
+}
+
+.feed-action button:hover {
+  color: #a32a29;
+  translate: 1px;
+}
+
+.feed-action button:focus {
+  color: #a32a29;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}/*# sourceMappingURL=feeds.component.css.map */

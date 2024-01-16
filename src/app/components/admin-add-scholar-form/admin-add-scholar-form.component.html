@@ -1,0 +1,155 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form [formGroup]="addscholarform" class="elp-form" (ngSubmit)="submit()">
+        <!-- form field -->
+        <div class="form-field"><span>Add Scholar</span>
+          <!-- label -->
+          <label class="form-label">First Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="applicantFirstName"
+            placeholder="eg. Denis"
+            formControlName="scholarFirstName"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Last Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="applicantLastName"
+            placeholder="eg. Mutuku"
+            formControlName="scholarLastName"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">PF/Sch Code </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="pfNumber"
+            placeholder="eg. 574838K"
+            formControlName="pfNumber"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <!-- input -->
+          <mat-select
+            class="select-list"
+            placeholder="Home Branch"
+            formControlName="branch"
+          >
+            <mat-option
+              *ngFor="let branch of homebranches"
+              [value]="branch.name"
+              >{{ branch.name }}</mat-option
+            >
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <!-- input -->
+          <mat-select placeholder="Donor" formControlName="donor">
+            <mat-option *ngFor="let donor of donors" [value]="donor">{{
+              donor
+            }}</mat-option>
+          </mat-select>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <mat-select
+            placeholder="Gender"
+            formControlName="applicantGender"
+            name="id"
+          >
+            <mat-option *ngFor="let gender of genderOptions" [value]="gender">
+              {{ gender }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <mat-select
+            placeholder="Scholar Category"
+            formControlName="scholarCategory"
+            name="id"
+          >
+            <mat-option
+              *ngFor="let category of scholarCategories"
+              [value]="category.value"
+            >
+              {{ category.value }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <mat-select
+            placeholder="Home County"
+            formControlName="homeCounty"
+            name="id"
+          >
+            <mat-option
+              *ngFor="let location of locationOptions"
+              [value]="location"
+            >
+              {{ location | titlecase }}
+            </mat-option>
+          </mat-select>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <mat-select
+            placeholder="Selection Year"
+            formControlName="scholarYear"
+            name="id"
+          >
+            <mat-option *ngFor="let year of range" [value]="year">
+              {{ year }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+
+          <label class="form-label"> Date Of Birth</label>
+          <input
+            type="date"
+            name="applicantDOB"
+            formControlName="applicantDOB"
+          />
+        </div>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="addscholarform.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

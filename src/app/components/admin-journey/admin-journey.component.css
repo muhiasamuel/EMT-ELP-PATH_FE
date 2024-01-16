@@ -1,0 +1,79 @@
+.scholar-summary-container {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scholar-summary-header {
+  width: 100%;
+  display: flex;
+}
+
+.header-text {
+  margin-left: 2%;
+}
+.header-text h6 {
+  font-size: 18px;
+  font-weight: 400px;
+}
+
+.card-tab-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.single-card-tab {
+  width: 33%;
+  border: 1px solid #dee2e6;
+}
+
+.tab-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  gap: 10px;
+  color: #6259ca;
+  background-color: white;
+}
+.tab-content .tab-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6259ca;
+  cursor: default;
+}
+
+.tab-content:hover {
+  color: white;
+  background-color: #6259ca;
+}
+.tab-content:hover .tab-text {
+  color: white;
+  cursor: default;
+}
+
+a .tab-content:active {
+  color: white;
+  background-color: #6259ca;
+}
+a .tab-content:active .tab-text {
+  color: white;
+  cursor: default;
+}
+
+.tab-text {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.tab-body {
+  width: 100%;
+  height: 100%;
+  background-color: #eaedf7;
+}/*# sourceMappingURL=admin-journey.component.css.map */

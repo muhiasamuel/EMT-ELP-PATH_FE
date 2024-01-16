@@ -1,0 +1,149 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="applicationform"
+        class="education-form"
+        (ngSubmit)="submit()"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">First Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="applicantFirstName"
+            placeholder="eg. Denis"
+            formControlName="applicantFirstName"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Last Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="applicantLastName"
+            placeholder="eg. Mutuku"
+            formControlName="applicantLastName"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Branch </label>
+
+          <!-- select -->
+          <div formGroupName="branch">
+            <mat-select formControlName="id" name="id">
+              <mat-option>
+                <div class="add-branch" (click)="addbranchDialog()">
+                  <mat-icon>account_balance</mat-icon>Add Branch
+                </div>
+              </mat-option>
+              <mat-option
+                *ngFor="let branch of branchOptions"
+                [value]="branch.id"
+              >
+                {{ branch.branchName | titlecase }}
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Gender</label>
+          <mat-select formControlName="applicantGender" name="id">
+            <mat-option *ngFor="let gender of genderOptions" [value]="gender">
+              {{ gender }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Location</label>
+          <mat-select formControlName="location" name="id">
+            <mat-option
+              *ngFor="let location of locationOptions"
+              [value]="location"
+            >
+              {{ location | titlecase }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <div class="date-start">
+              <label class="form-label"> Date Of Birth</label>
+              <input
+                type="date"
+                name="applicantDOB"
+                formControlName="applicantDOB"
+              />
+            </div>
+            <!-- start date -->
+            <div class="date-start">
+              <label class="form-label">Application Date</label>
+              <input
+                type="date"
+                name="dateOfApplication"
+                formControlName="dateOfApplication"
+              />
+            </div>
+
+            <!-- end date -->
+            <div
+              class="date-end"
+              *ngIf="applicationform.value.applicationStatus === 'AWARDED'"
+            >
+              <label class="form-label">Date Awarded</label>
+              <input
+                type="date"
+                name="dateOfAwarding"
+                formControlName="dateOfAwarding"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div
+              class="date-start"
+              *ngIf="applicationform.value.applicationStatus === 'AWARDED'"
+            >
+              <label class="form-label">Interview Date</label>
+              <input
+                type="date"
+                name="dateOfInterview"
+                formControlName="dateOfInterview"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="applicationform.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

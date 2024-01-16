@@ -1,0 +1,25 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="applicationform"
+        class="education-form"
+        (ngSubmit)="submit()"
+      >
+        <div class="action-buttons" *ngIf="data.reject !== undefined">
+          <div class="reject-text">
+            Are you sure you want to reject this Application?
+          </div>
+          <div class="reject-cancel">
+            <button (keydown.enter)="(submit)" type="submit" class="reject">
+              Reject
+            </button>
+            <button (keydown.enter)="(submit)" class="cancel" mat-dialog-close>
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

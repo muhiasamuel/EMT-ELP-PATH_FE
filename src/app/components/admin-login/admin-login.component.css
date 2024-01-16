@@ -1,0 +1,140 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-header {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-containter {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.login-header {
+  display: flex;
+  width: 100%;
+  color: #a32a29;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  justify-content: center;
+  margin-top: 50%;
+}
+
+.login-form {
+  margin-top: 10%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.login-form .form-field {
+  width: 100%;
+}
+.login-form .form-field input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+}
+.login-form .form-field input::-moz-placeholder {
+  color: #392e2d;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 10px;
+}
+.login-form .form-field input::placeholder {
+  color: #392e2d;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 10px;
+}
+.login-form .login-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form button {
+  border: 0;
+  padding: 10px 30px;
+  color: #ffffff;
+  border-radius: 30%;
+  background: #0359ae;
+}
+.login-form .reset {
+  display: flex;
+  padding: 10px;
+  color: #a32a29;
+  font-size: 10px;
+}
+.login-form .reset a {
+  font-weight: 500;
+  color: #a32a29;
+  text-decoration: none;
+}
+
+.have-account-text P {
+  color: #a32a29;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: default;
+}
+.have-account-text P a {
+  cursor: default;
+  font-weight: 400;
+  font-size: 14px;
+  color: #a32a29;
+}
+.have-account-text P a:hover {
+  translate: translateY(-5px);
+}
+
+.footer {
+  margin-top: 10px;
+}
+
+.input-size {
+  height: 20px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  max-height: 45px !important;
+}
+
+.error-message p {
+  color: red;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.mat-icon {
+  color: #4f4544;
+}
+
+a {
+  text-decoration: none;
+}/*# sourceMappingURL=admin-login.component.css.map */

@@ -1,0 +1,91 @@
+li {
+  list-style: none;
+}
+
+.container-spot {
+  display: flex;
+}
+.container-spot .btn1 {
+  height: 5rem;
+  width: 2rem;
+  top: 50%;
+  left: 1rem;
+  position: absolute;
+  background: none;
+  border: none;
+}
+.container-spot .btn2 {
+  height: 5rem;
+  width: 2rem;
+  top: 50%;
+  right: 1rem;
+  position: absolute;
+  background: none;
+  border: none;
+}
+.container-spot .spot-card {
+  width: 85vw;
+  display: flex;
+  gap: 0.5em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.container-spot .spot-card .spotItem {
+  padding: 0.3rem;
+  background: #fff;
+  width: 100%;
+  box-shadow: 5px 5px 5px #e9e6e6;
+}
+.container-spot .spot-card .spotItem h4 {
+  color: #2e2525;
+  font-size: larger;
+  padding-top: 5px;
+  border-top: #2e2525 solid 1px;
+}
+.container-spot .spot-card .spotItem .spot-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-spot .spot-card .spotItem .spot-img img {
+  max-width: 15rem;
+  height: 15rem;
+}
+.container-spot .spot-card .spotItem .item-details {
+  height: 13rem;
+}
+.container-spot .spot-card .spotItem .item-details .btn-par {
+  height: 8rem;
+  z-index: -1;
+}
+.container-spot .spot-card .spotItem .item-details .btn-par button {
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #a57070;
+  background: none;
+  min-width: 4rem;
+}
+.container-spot .spot-card .date-spot {
+  display: flex;
+  padding: 10px 0 5px 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container-spot .spot-card .date-spot .item-highlight {
+  color: #a57070;
+  padding: 0 10px;
+  font-weight: bolder;
+}
+.container-spot .spot-card .date-spot .spot-date {
+  color: #a57070;
+  display: flex;
+  gap: 8px;
+}
+
+@media screen and (min-width: 600px) {
+  .container-spot .spot-card li {
+    max-width: 25vw;
+  }
+}/*# sourceMappingURL=spotlight-source.component.css.map */

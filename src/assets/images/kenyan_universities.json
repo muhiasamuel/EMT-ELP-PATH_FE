@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "chapterName": "University of Nairobi",
+        "chapterDescription": "A world-class university committed to scholarly excellence."
+    },
+    {
+        "id": 2,
+        "chapterName": "Kenyatta University",
+        "chapterDescription": "Provides quality education and fosters research and innovation."
+    },
+    {
+        "id": 3,
+        "chapterName": "Moi University",
+        "chapterDescription": "A leading institution in nurturing creativity and innovation."
+    },
+    {
+        "id": 4,
+        "chapterName": "Strathmore University",
+        "chapterDescription": "Offers all-round quality in academic and moral education."
+    },
+    {
+        "id": 5,
+        "chapterName": "Jomo Kenyatta University of Agriculture and Technology",
+        "chapterDescription": "Setting trends in higher education, research and innovation."
+    },
+    {
+        "id": 6,
+        "chapterName": "Egerton University",
+        "chapterDescription": "A premier Agricultural Public University in Kenya."
+    },
+    {
+        "id": 7,
+        "chapterName": "Maseno University",
+        "chapterDescription": "A center of excellence in training, research, and development."
+    },
+    {
+        "id": 8,
+        "chapterName": "Masinde Muliro University of Science and Technology",
+        "chapterDescription": "Committed to innovation and technology for societal development."
+    },
+    {
+        "id": 9,
+        "chapterName": "Technical University of Kenya",
+        "chapterDescription": "The Technical University of Kenya is a vibrant institution known for engineering and technology programs."
+    },
+    {
+        "id": 10,
+        "chapterName": "Technical University of Mombasa",
+        "chapterDescription": "Offering competitive technological education in Kenya."
+    }
+]

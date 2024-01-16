@@ -1,0 +1,65 @@
+<div class="main-container">
+  <mat-card class="login-containter">
+    <div class="image-header"><img src="assets/images/logo2.png" /></div>
+
+    <mat-card-title>
+      <div class="login-header">Login</div>
+    </mat-card-title>
+
+    <mat-card-content>
+      <!-- ==============LOGIN-============================ -->
+
+      <form [formGroup]="loginRegForm" (ngSubmit)="loginSubmit()">
+        <p>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label class="input-size">Email</mat-label>
+            <input
+              matInput
+              type="text"
+              name="userEmail"
+              autocomplete="off"
+              formControlName="userEmail"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'text' : 'password'"
+              name="userPassword"
+              formControlName="userPassword"
+              autocomplete="off"
+            />
+            <mat-icon matSuffix (click)="hide = !hide">{{
+              hide ? "visibility" : "visibility_off"
+            }}</mat-icon>
+          </mat-form-field>
+        </p>
+        <div class="login-button">
+          <button
+            (keydown.enter)="loginSubmit()"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="loginRegForm.invalid"
+          >
+            Log in
+          </button>
+        </div>
+        <br />
+        <div class="reset">
+          <p>Forgot Password?<a routerLink="resetpassword"> Click</a></p>
+        </div>
+      </form>
+
+      <!-- ==================================== -->
+
+      <div class="error-message" *ngIf="error">
+        <p>{{ error }}!</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

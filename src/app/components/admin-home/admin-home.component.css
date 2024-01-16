@@ -1,0 +1,32 @@
+.all-content {
+  margin-top: 6%;
+  width: 100%;
+}
+
+mat-sidenav {
+  margin-top: 3rem;
+  width: 12rem;
+  border-right: none;
+  background: #0e0e23;
+  color: #757575;
+  text-align: center;
+}
+mat-sidenav .sidenav-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+  border-bottom: 1px solid rgba(240, 240, 255, 0.1);
+}
+mat-sidenav .sidenav-header h1 {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+}
+
+.mat-sidenav-container {
+  height: 100vh;
+  background-color: #eaedf7;
+  width: 100%;
+  overflow: hidden;
+}/*# sourceMappingURL=admin-home.component.css.map */

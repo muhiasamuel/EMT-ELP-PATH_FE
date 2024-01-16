@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+        <!-- Left Nav -->
+  
+       <!-- <img
+            src="assets/images/equity-bank-logo.png"
+            (click)="toggleButton()"
+          />-->
+  
+          <button mat-raised-button class="navbar-toggler" type="button" (click)="toggleButton()">
+              <span class="navbar-toggler-icon icon-bar"></span>
+              <span class="navbar-toggler-icon icon-bar"></span>
+              <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  <div class="input-group no-border">
+                    <app-search #searchInput (searchTextChanged)="onSearchTextEntered($event)">
+                      <!-- Place spinner inside this component if possible -->
+                    </app-search>   
+                    <mat-progress-spinner *ngIf="isLoading" class="search-spinner" [mode]="spinnerMode" [diameter]="20"></mat-progress-spinner>
+                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport suggestions">
+                      <div *cdkVirtualFor="let word of filteredWords" class="suggestion-item">
+                        <a (click)="onSuggestionClicked(word)">
+                          {{ isLink(word.content) ? processLink(word.content) : word.content }}
+                        </a>
+                      </div>
+                    </cdk-virtual-scroll-viewport>
+                  </div>
+           </div>   
+              <!--<mat-icon><menu>menu</menu></mat-icon>-->
+  
+  
+  
+        <!-- Right Menu -->
+        <ul class="navbar-nav navbar-nav">
+          <li class="nav-item">
+            <button class="nav-link"  routerLink="/home" mat-button>
+              <mat-icon>house</mat-icon><span class="nav-item">Home</span>
+            </button>
+          </li>
+          <li class="nav-item">
+                    <!-- Notification -->
+          <button mat-button>
+            <mat-icon>notifications</mat-icon
+            ><span class="nav-item"> Notifications</span>
+          </button>
+          </li>
+          <li class="nav-item">
+                    <!-- Me Avatar Menu -->
+          <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>account_circle</mat-icon><span class="nav-item">Me</span>
+          </button>
+          </li>
+        </ul>
+          <!-- Home -->
+  
+          <!-- Sub Menu -->
+          <mat-menu #menu="matMenu">
+            <!-- LogOut -->
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>LogOut
+            </button>
+  
+            <!-- Account Settings -->
+            <button mat-menu-item routerLink="/user_profile">
+              <mat-icon>person</mat-icon>Profile
+            </button>
+            <button mat-menu-item>
+              <mat-icon>settings</mat-icon>AccountSettings
+            </button>
+          </mat-menu>
+        </div>
+  
+   
+  </nav>

@@ -1,0 +1,488 @@
+<div class="major-container">
+
+<div class="main-container">
+  <mat-card class="login-containter">
+    <div class="image-header"><img src="assets/images/logo2.png" /></div>
+
+    <mat-card-title>
+      <div class="login-header" *ngIf="login">Login</div>
+    </mat-card-title>
+    <mat-card-title>
+      <div class="login-header" *ngIf="register">Register</div>
+    </mat-card-title>
+
+    <mat-card-content>
+      <mat-horizontal-stepper #stepper>
+        <!-- ============PF/SCH NUMBER======================== -->
+        <mat-step
+          [stepControl]="pfForm"
+          *ngIf="!(register || login || scholarVerify)"
+        >
+          <form
+            [formGroup]="pfForm"
+            (ngSubmit)="pfSubmit()"
+            *ngIf="!(register || login || scholarVerify)"
+          >
+            <ng-template matStepLabel>Enter PF or Scholar Code</ng-template>
+            <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label class="input-size">PF/SCHOLAR CODE</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="pfNo"
+                  autocomplete="off"
+                  formControlName="pfNo"
+                />
+                <!-- <mat-icon matSuffix>email</mat-icon> -->
+              </mat-form-field>
+            </p>
+
+            <div class="login-button">
+              <div class="pf-buttons">
+                <button
+                  (keydown.enter)="(pfSubmit)"
+                  mat-raised-button
+                  color="primary"
+                  type="submit"
+                  [disabled]="pfForm.invalid"
+                >
+                  Submit
+                </button>
+                <a class="forgot-link" (click)="showForm('forgotPf')">
+                  Forgot PF/Sch
+                </a>
+              </div>
+            </div>
+          </form>
+
+          <!-- <div>
+            <button mat-button matStepperNext class="back-next">
+              <mat-icon iconPositionEnd>next</mat-icon> 
+            </button>
+          </div> -->
+        </mat-step>
+        <!--====================================================-->
+
+        <!-- ==============Scholar Ver========================= -->
+        <mat-step
+          [stepControl]="scholarVerForm"
+          *ngIf="!login || scholarVerify"
+        >
+          <form
+            [formGroup]="scholarVerForm"
+            (ngSubmit)="scholarVerSubmit()"
+           
+          >
+            <ng-template matStepLabel>Verify Scholar Details</ng-template>
+            <!-- <p></p> -->
+            <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label class="input-size">First Name</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="firstName"
+                  autocomplete="off"
+                  formControlName="firstName"
+                />
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label class="input-size">Second Name</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="lastName"
+                  autocomplete="off"
+                  formControlName="lastName"
+                />
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field
+                class="form-field"
+                appearance="outline"
+                formGroupName="highSchool"
+              >
+                <mat-label>High School</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="schoolName"
+                  formControlName="schoolName"
+                  autocomplete="off"
+                />
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field
+                class="form-field"
+                appearance="outline"
+                formGroupName="branch"
+              >
+                <mat-label>Home Branch</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="branchName"
+                  formControlName="branchName"
+                  autocomplete="off"
+                />
+              </mat-form-field>
+            </p>
+
+            <!-- <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Date Of Birth</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="dob"/>
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="picker2"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+              </mat-form-field>
+            </p> -->
+
+            <div class="register-button">
+              <p>
+                <button
+                  (keydown.enter)="scholarVerSubmit()"
+                  (click)="scholarVerSubmit()"
+                  mat-raised-button
+                  color="primary"
+                  type="submit"
+                >
+                  Verify
+                </button>
+              </p>
+            </div>
+          </form>
+          <div>
+            <button mat-button matStepperPrevious>
+              Back
+              <mat-icon>navigate_before</mat-icon>
+            </button>
+            <button mat-button matStepperNext>
+              <mat-icon iconPositionEnd>navigate_next</mat-icon> Next
+            </button>
+          </div>
+        </mat-step>
+
+        <!-- ==================================== -->
+        <!-- ==============REGISTER-============================= -->
+        <mat-step [stepControl]="additionalRegForm" *ngIf="!login || register">
+          <form
+            [formGroup]="additionalRegForm"
+            (ngSubmit)="registerSubmit()"
+          >
+                      <!-- *ngIf="register" -->
+            <ng-template matStepLabel>Register</ng-template>
+
+            <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label class="input-size">UserName</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="userName"
+                  autocomplete="off"
+                  formControlName="userName"
+                />
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label class="input-size">Email</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  name="userEmail"
+                  autocomplete="off"
+                  formControlName="userEmail"
+                />
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  [type]="hide ? 'text' : 'password'"
+                  name="userPassword"
+                  formControlName="userPassword"
+                  autocomplete="off"
+                  id="password"
+                />
+                
+                <mat-icon matSuffix (click)="hide = !hide">{{
+                  hide ? "visibility" : "visibility_off"
+                }}</mat-icon>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input
+                  matInput
+                  [type]="hide ? 'text' : 'password'"
+                  name="confirmPassword"
+                  formControlName="confirmPassword"
+                  autocomplete="off"
+                  id="confirmPassword"
+                />
+                <mat-icon matSuffix (click)="hide = !hide">{{
+                  hide ? "visibility" : "visibility_off"
+                }}</mat-icon>
+              </mat-form-field>
+            </p>
+            <div *ngIf="passwordsDoNotMatch()" class="error">
+              Passwords do not match.
+            </div>
+
+            <div class="checkbox">
+             <div> <mat-checkbox #checkbox formControlName="isChecked">
+            </mat-checkbox></div>
+               <div> <p>
+                I Agree to the
+                <a (click)="tcformDialog()">Terms and Conditions</a>
+              </p></div>
+              
+              <!-- <mat-checkbox
+                >Agree to the Privacy Policy Agree to the Privacy PolicyAgree to
+                the Privacy PolicyAgree to the Privacy PolicyAgree to the
+                Privacy PolicyAgree to the Privacy PolicyAgree to the Privacy
+                Policy</mat-checkbox -->
+            </div>
+
+            <div class="register-button">
+              <p>
+                <button
+                  (keydown.enter)="registerSubmit()"
+                  mat-raised-button
+                  color="primary"
+                  type="submit"
+                  [disabled]="additionalRegForm.invalid"
+                 
+                >
+                  Register
+                </button>
+              </p>
+            </div>
+          </form>
+        </mat-step>
+
+        <!-- ==============Forgot PF Form======================= -->
+        <form
+          [formGroup]="forgotPfForm"
+          (ngSubmit)="forgotPfSubmit()"
+          *ngIf="showForm('forgotPf')"
+        >
+          <p>Verify Your Scholar Details Below</p>
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label class="input-size">Full Name</mat-label>
+              <input
+                matInput
+                type="text"
+                name="fullName"
+                autocomplete="off"
+                formControlName="fullName"
+              />
+            </mat-form-field>
+          </p>
+
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>High School</mat-label>
+              <input
+                matInput
+                type="text"
+                name="highschool"
+                formControlName="highschool"
+                autocomplete="off"
+              />
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Home Branch</mat-label>
+              <input
+                matInput
+                type="text"
+                name="branch"
+                formControlName="branch"
+                autocomplete="off"
+              />
+            </mat-form-field>
+          </p>
+
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Date Of Birth</mat-label>
+              <input matInput [matDatepicker]="picker2" />
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker2"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+          </p>
+
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Parent/Guardian</mat-label>
+              <input
+                matInput
+                type="text"
+                name="parentName"
+                formControlName="parentName"
+                autocomplete="off"
+              />
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Current Email</mat-label>
+              <input
+                matInput
+                type="text"
+                name="email"
+                formControlName="email"
+                autocomplete="off"
+              />
+            </mat-form-field>
+          </p>
+
+          <div class="register-button">
+            <p>
+              <button
+                (keydown.enter)="(forgotPfForm)"
+                mat-raised-button
+                color="primary"
+                type="submit"
+              >
+                Verify
+              </button>
+            </p>
+          </div>
+        </form>
+
+        <!-- ==================================== -->
+
+        
+
+        <!-- ==================================== -->
+      </mat-horizontal-stepper>
+      <!-- ====================LOGIN-============================ -->
+
+      <form class="userlogin" [formGroup]="loginRegForm" (ngSubmit)="loginSubmit()" *ngIf="login">
+        <p>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label class="input-size">Email</mat-label>
+            <input
+              matInput
+              type="text"
+              name="userEmail"
+              autocomplete="off"
+              formControlName="scholarEmail"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'text' : 'password'"
+              name="userPassword"
+              formControlName="scholarPassword"
+              autocomplete="off"
+            />
+            <mat-icon matSuffix (click)="hide = !hide">{{
+              hide ? "visibility" : "visibility_off"
+            }}</mat-icon>
+          </mat-form-field>
+        </p>
+        <div class="login-button">
+          <button
+            (keydown.enter)="loginSubmit()"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="loginRegForm.invalid"
+          >
+            Log in
+          </button>
+        </div>
+        <br />
+        <div class="reset">
+          <p>Forgot Password?<a routerLink="resetpassword"> Click</a></p>
+        </div>
+      </form>
+
+      <!-- ==================================== -->
+
+      <!-- ==============REGISTER-============================ -->
+
+      <!-- <form 
+        [formGroup]="loginRegForm"
+        (ngSubmit)="registerSubmit()"
+        *ngIf="register"
+      >
+        <p>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label class="input-size">Email</mat-label>
+            <input
+              matInput
+              type="text"
+              name="userEmail"
+              autocomplete="off"
+              formControlName="userEmail"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'text' : 'password'"
+              name="userPassword"
+              formControlName="userPassword"
+              autocomplete="off"
+            />
+            <mat-icon matSuffix (click)="hide = !hide">{{
+              hide ? "visibility" : "visibility_off"
+            }}</mat-icon>
+          </mat-form-field>
+        </p>
+        <div class="login-button">
+          <button
+            (keydown.enter)="(registerSubmit)"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="loginRegForm.invalid"
+          >
+            Register
+          </button>
+        </div>
+      </form> -->
+
+      <!-- ==================================== -->
+
+      <div class="error-message" *ngIf="error">
+        <p>{{ error }}!</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>

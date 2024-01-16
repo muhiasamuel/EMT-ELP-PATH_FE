@@ -1,0 +1,46 @@
+.main-container {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    margin-top: 10px;
+    // height: 100vh;
+}
+.heading {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.footer {
+    text-align: center;
+}
+.card {
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.form-field {
+    padding-right: 15px;
+}
+.form-control:focus {
+    outline: 2px solid crimson;
+    box-shadow: none
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit-btn {
+    width: 50%;
+    background-color: #ad3128;
+}
+
+.logo {
+    width: 48px;
+    margin-right: 10px;
+}

@@ -1,0 +1,147 @@
+/* user-details.component.scss */
+.user-details-container .user-details-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+}
+.user-details-container .backimage {
+  width: 100%;
+  height: 4rem;
+  background-image: url("../../../assets/images/profile card.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.user-details-container .feeds-section .feed-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+}
+.user-details-container .feeds-section .feed-card p {
+  margin: 5px 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.p-2 {
+  height: 100%;
+}
+
+.feed-container {
+  padding: 0.5rem !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  background-color: white;
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.feed-header-profile {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+.feed-header-profile .feed-header-profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feed-header-profile .feed-header-profile-image img {
+  margin: auto;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.feed-header-profile .feed-header-profile-image .mat-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #515050;
+}
+
+.feed-header-profile-name {
+  width: 100%;
+}
+.feed-header-profile-name .p1 {
+  color: #3c4858;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.feed-header-profile-name .p2 {
+  color: #acabab;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.feed-text p {
+  color: #3c4858;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.feed-image {
+  max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+  text-align: center; /* Center the image horizontally within the container */
+  background-color: white; /* Set a background color for padding (optional) */
+}
+.feed-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 50vh;
+  border-radius: 11px;
+}
+
+.feed-action {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.feed-action button {
+  border: none;
+  color: #2a2a2a;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feed-action button img {
+  width: 30%;
+}
+
+.feed-action button:hover {
+  color: #a32a29;
+  translate: 1px;
+}
+
+.feed-action button:focus {
+  color: #a32a29;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}/*# sourceMappingURL=user-details.component.css.map */

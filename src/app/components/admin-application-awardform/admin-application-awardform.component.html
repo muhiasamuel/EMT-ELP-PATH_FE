@@ -1,0 +1,77 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="applicationform"
+        class="education-form"
+        (ngSubmit)="submit()"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <div class="calendar-input">
+            <div class="date-end">
+              <!-- label -->
+              <label class="form-label">Scholar Code</label>
+              <!-- input -->
+              <input
+                type="text"
+                name="scholarCode"
+                placeholder="eg. 478539R"
+                formControlName="scholarCode"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- end date -->
+            <div
+              class="date-end"
+              *ngIf="applicationform.value.applicationStatus === 'AWARDED'"
+            >
+              <label class="form-label">Date Awarded</label>
+              <input
+                type="date"
+                name="dateOfAwarding"
+                formControlName="dateOfAwarding"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- input  calender-->
+          <div class="calendar-input">
+            <!-- start date -->
+            <div
+              class="date-start"
+              *ngIf="applicationform.value.applicationStatus === 'AWARDED'"
+            >
+              <label class="form-label">Interview Date</label>
+              <input
+                type="date"
+                name="dateOfInterview"
+                formControlName="dateOfInterview"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="award-button" *ngIf="data.award !== undefined">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="award"
+            [disabled]="applicationform.invalid"
+          >
+            Award
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

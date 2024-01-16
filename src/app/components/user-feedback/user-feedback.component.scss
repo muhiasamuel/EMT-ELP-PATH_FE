@@ -1,0 +1,58 @@
+a {
+  text-decoration: none;
+}
+.p-2 {
+  background-color: white;
+  border-radius: 6px;
+  
+  border: 1px solid #dee2e6;
+
+}
+
+.user-feedback-header {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.user-feedback-header span {
+  color: #3c4858;
+  font-size: 16px;
+  font-weight: 500;
+}
+.feedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0px;
+  border-radius: 10px;
+  gap: 0.4rem;
+}
+
+.feedback-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  gap: 10px;
+}
+.input {
+  width: 90%;
+  border-radius: 6px;
+  border: 1px solid grey;
+  height: 2rem;
+  padding-left: 1rem;
+}
+
+.submit {
+  background-color: #a32a29;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+.submit:hover {
+  transform: translateY(-2px);
+}

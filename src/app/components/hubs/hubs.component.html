@@ -1,0 +1,45 @@
+<div class="all-hubs">
+  <!-- single hubcard -->
+  <div class="cards-hub" *ngFor="let data of chapterData">
+    <!-- <img src="assets/images/Card background.png" /> -->
+
+    <a
+      class="hub-profile-image"
+      [routerLink]="['/sidebarhome/chapterhome', data.chapterId]"
+    >
+      <img [src]="data.imageUrl" />
+    </a>
+    <div class="hub-profile-title">
+      <span>{{ data.chapterName | titlecase }}</span>
+    </div>
+    <div class="hub-details">
+      <p>
+        {{ data.chapterDescription | titlecase }}
+      </p>
+    </div>
+    <div class="join" *ngIf="data.chapterMember === 'no'">
+      <!-- <a
+              [routerLink]="['/admin/chapterhome', data.chapterId]"
+              class="view"
+            > -->
+      <button class="join-button" (click)="joinChapter(data.chapterId)">
+        <!-- <mat-icon>add_circle_outline</mat-icon> -->
+        Join
+      </button>
+
+      <!-- </a> -->
+    </div>
+
+    <div class="join" *ngIf="data.chapterMember === 'yes'">
+      <!-- <a
+              [routerLink]="['/admin/chapterhome', data.chapterId]"
+              class="view"
+            > -->
+      <button class="join-button" (click)="leaveChapter(data.chapterId)">
+        <!-- <mat-icon>remove_circle_outline</mat-icon> -->
+        <span>Leave</span>
+      </button>
+      <!-- </a> -->
+    </div>
+  </div>
+</div>

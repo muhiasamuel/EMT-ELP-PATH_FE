@@ -1,0 +1,109 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 90%;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.04), 0px 20px 25px -5px rgba(163, 42, 41, 0.1);
+  border-radius: 15px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 80%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  gap: 10px;
+  border-radius: 15px;
+}
+
+.elp-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 2%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 4px;
+}
+.form-field input {
+  width: 95%;
+  height: 25px;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  color: #1b1b1b;
+  border: 1px solid #dee2e6;
+}
+.form-field input::-moz-placeholder {
+  color: #c9cccf;
+}
+.form-field input::placeholder {
+  color: #c9cccf;
+}
+.form-field label {
+  font-size: 14px;
+  color: var(--neutral-600, #475569);
+}
+
+p {
+  margin: 0;
+  color: red;
+}
+
+.save-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.save-button .button {
+  font-weight: 600;
+  padding: 10px 20px;
+  color: #6259ca;
+  border-radius: 100px;
+  border: 1px solid #6259ca;
+  background: #fff;
+}
+.save-button button:hover {
+  background: #6259ca;
+  color: #fff;
+}
+.save-button button:disabled {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: 500;
+  border: 0;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 15px;
+}
+
+::ng-deep.mat-mdc-select-arrow {
+  padding-right: 20px;
+  padding-top: 10px;
+}/*# sourceMappingURL=admin-make-elp-form.component.css.map */

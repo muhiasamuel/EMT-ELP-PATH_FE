@@ -1,0 +1,79 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="activityForm"
+        class="chapter-form"
+        (ngSubmit)="submit()"
+        enctype="multipart/form-data"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Organization Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="organizationName"
+            placeholder="eg. M tech"
+            formControlName="organizationName"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label"> Organization Location</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="organizationLocation"
+            placeholder="eg. Nairobi"
+            formControlName="organizationLocation"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label"> Industry</label>
+          <!-- input -->
+          <input
+            type="text"
+            name="industry"
+            placeholder="eg. Finance"
+            formControlName="industry"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <input
+            type="file"
+            id="imagefile"
+            name="file"
+            style="display: none"
+            (change)="onFileChange($event)"
+            accept="image/*"
+          />
+          <div class="select-image">
+            <label for="imagefile">Select Activity Poster</label>
+            <div *ngIf="imageUrl" class="image-item">
+              <img [src]="imageUrl" alt="Profile Image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="activityForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

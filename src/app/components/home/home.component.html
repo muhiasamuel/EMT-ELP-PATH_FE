@@ -1,0 +1,60 @@
+<div class="containerHome">
+  <app-navbar class="navbar"></app-navbar>
+
+  <div class="maincontainer">
+    <div class="homecontainer">
+      <!--first columns user profile and sibar menu (hubs,projects...)!-->
+      <div class="column-1">
+        <!--user profile card!-->
+
+        <div class="leftcard">
+          <app-user-profile-card class="profile_card"></app-user-profile-card>
+
+          <!--sidebar menu (hubs,projects...)!-->
+          <div><app-side-bar-menu></app-side-bar-menu></div>
+        </div>
+      </div>
+      <div class="feed-people-cont">
+      <!--second column ,update profile,start a post,feeds....!-->
+      <div class="column-2">
+        <!--update profile div!-->
+
+        <div class="update-profile-container" *ngIf="profileCompletion != 100">
+          <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+          <img src="assets/images/Background.png" />
+
+          <div class="skills-progress">
+            <p class="progress-title">Your Profile Progress</p>
+            <p>Maximize networking potential by completing your profile.</p>
+            <div class="mat-progress">
+              <mat-progress-bar mode="determinate" [value]="profileCompletion" color="primary">
+              </mat-progress-bar>
+              <h4>{{ profileCompletion ? profileCompletion : 0 }}%</h4>
+            </div>
+          </div>
+          <div class="update-profile">
+            <a routerLink="/user_profile">
+              <button mat-button class="update">Complete Profile</button></a
+            >
+          </div>
+        </div>
+
+        <!--Add a post or post something div!-->
+        <app-post></app-post>
+
+        <!--feeds div ,includes recent posts from other users as well as hubs
+       !-->
+        <!-- feeds component -->
+        <div class="feeds-container">
+          <app-feeds></app-feeds>
+        </div>
+      </div>
+      <!--column 3 ,has discover people to join!-->
+      <div class="column-3">
+        <app-more-people-card></app-more-people-card>
+        <app-user-feedback></app-user-feedback>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

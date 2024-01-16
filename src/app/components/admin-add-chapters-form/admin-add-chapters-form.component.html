@@ -1,0 +1,83 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form
+        [formGroup]="chapterForm"
+        class="chapter-form"
+        (ngSubmit)="submit()"
+        enctype="multipart/form-data"
+      >
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Chapter Name </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="chapterName"
+            placeholder="eg. Engineering"
+            formControlName="chapterName"
+          />
+        </div>
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Description </label>
+          <!-- input -->
+          <input
+            type="text"
+            name="chapterDescription"
+            placeholder="eg. Everything engineering"
+            formControlName="chapterDescription"
+          />
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <!-- label -->
+          <label class="form-label">Chapter Type</label>
+
+          <!-- select -->
+
+          <mat-select formControlName="chapterType" name="chapterType">
+            <mat-option
+              *ngFor="let type of chapterTypeOptions"
+              [value]="type.id"
+            >
+              {{ type.chapterTypeName }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <!-- form field -->
+        <div class="form-field">
+          <input
+            type="file"
+            id="imagefile"
+            name="image"
+            style="display: none"
+            (change)="onFileChange($event)"
+            accept="image/*"
+          />
+          <div class="select-image">
+            <label for="imagefile">Select Profile Image</label>
+            <div *ngIf="imageUrl" class="image-item">
+              <img [src]="imageUrl" alt="Profile Image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="save-button">
+          <button
+            (keydown.enter)="(submit)"
+            type="submit"
+            class="button"
+            [disabled]="chapterForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
