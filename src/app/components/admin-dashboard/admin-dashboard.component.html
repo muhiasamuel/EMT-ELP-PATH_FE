@@ -141,61 +141,55 @@
     <div class="container-fluid row">
       <div class="col-md-6 col-lg-2 col-xlg-3">
         <div class="card card-hover p-1">
-                <div class="box bg-success text-center pt-1 pb-1 ">
-                  <h6 class="box text-center card bg-warning text-white p-4">{{ scholarStats.scholarCount }}</h6>
+                <div class="box bg-danger text-center pt-1 pb-1 ">
+                  <h6 class="box text-center card bg-warning text-white p-2"><mat-icon>school</mat-icon></h6>
                   <h5 class="font-light text-white">Total Scholars</h5> 
-                    <h1 class="font-light text-white"><mat-icon>school</mat-icon></h1>
+                    <h4 class="font-light text-white">{{ scholarStats.scholarCount }}</h4>
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-2 col-xlg-3">
           <div class="card card-hover p-1">
               <div class="box bg-transparent text-center pt-1 pb-1 ">
-                <h6 class="box text-center card bg-danger text-white p-4">{{ scholarStats.localScholars }}</h6>
-                <h4 class="font-light text-black">Local Scholars</h4> 
-                  <h1 class="font-light text-black"><mat-icon>man</mat-icon></h1>
+                <h6 class="box text-center card bg-danger text-white p-2"><mat-icon>man</mat-icon></h6>
+                <h5 class="font-light text-black">Local Scholars</h5> 
+                  <h4 class="font-light text-black">{{ scholarStats.localScholars }}</h4>
               </div>
           </div>
       </div>
       <div class="col-md-6 col-lg-2 col-xlg-3">
         <div class="card card-hover p-1">
             <div class="box bg-secondary text-center pt-1 pb-1 ">
-              <h6 class="box text-center card bg-primary text-white p-4">{{ scholarStats.globalScholars }}</h6>
+              <h6 class="box text-center card bg-primary text-white p-2"><mat-icon>woman</mat-icon></h6>
               <h4 class="font-light text-white">Global Scholars</h4> 
-                <h1 class="font-light text-white"><mat-icon>woman</mat-icon></h1>
+                <h4 class="font-light text-white">{{ scholarStats.globalScholars }}</h4>
             </div>
         </div>
     </div>
     <div class="col-md-6 col-lg-2 col-xlg-3">
       <div class="card card-hover p-1">
           <div class="box bg-primary text-center pt-1 pb-1 ">
-            <h6 class="box text-center card bg-success text-white p-4">{{ scholarStats.donors }}</h6>
-            <h4 class="font-light text-white">Total Donors</h4> 
-            <div class="icon">
-              <h1 class="font-light text-white"><mat-icon>public</mat-icon></h1>
-            </div>          
+            <h6 class="box text-center card bg-success text-white p-2"><mat-icon>public</mat-icon></h6>
+            <h5 class="font-light text-white">Total Donors</h5>
+              <h4 class="font-light text-white">{{ scholarStats.donors }}</h4>         
           </div>        
       </div>
     </div> 
     <div class="col-md-6 col-lg-2 col-xlg-3">
       <div class="card card-hover p-1">
           <div class="box bg-warning text-center pt-1 pb-1 ">
-            <h6 class="box text-center card bg-secondary text-white p-4">{{ scholarStats.tvetScholars }}</h6>
+            <h6 class="box text-center card bg-secondary text-white p-2"><mat-icon>public</mat-icon></h6>
             <h4 class="font-light text-white">Tvet Scholars</h4> 
-            <div class="icon">
-              <h1 class="font-light text-white"><mat-icon>public</mat-icon></h1>
-            </div>          
+              <h4 class="font-light text-white">{{ scholarStats.tvetScholars }}</h4>         
           </div>        
       </div>
     </div> 
     <div class="col-md-6 col-lg-2 col-xlg-3" routerLink="/scholarstable">
       <div class="card card-hover p-1">
           <div class="box bg-danger text-center pt-1 pb-1 ">
-            <h6 class="box text-center card bg-transparent text-blacck p-4">{{ scholarStats.localVersity }}</h6>
-            <h4 class="font-light text-white">Local University</h4> 
-            <div class="icon">
-              <h1 class="font-light text-white"><mat-icon>public</mat-icon></h1>
-            </div>          
+            <h6 class="box text-center card bg-transparent text-blacck p-2"><mat-icon>public</mat-icon></h6>
+            <h4 class="font-light text-white">Local University</h4>
+              <h4 class="font-light text-white">{{ scholarStats.localVersity }}</h4>          
           </div>        
       </div>
     </div>    
