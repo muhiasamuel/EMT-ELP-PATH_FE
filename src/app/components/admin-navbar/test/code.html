@@ -1,75 +1,154 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-    <div class="container-fluid">
-        <!-- Left Nav -->
+<div class="side-button-container">
+  <!-- side buttons  -->
+  <!-- dashboard -->
+ <div>
+    <a routerLink="dashboard" class="button-link">
+      <img  style="height:10vh; width: 50%; background: whitesmoke;" src={{logoimg}} class="rounded-circle p-2 " alt="logo">  
+  </a>
+ </div> 
+
+
+  <a routerLink="scholarstable" class="button-link">
+    <button class="side-buttons">
+      <mat-icon> groups </mat-icon>
+      <span>All Scholars</span>
+    </button>
+  </a>
   
-       <!-- <img
-            src="assets/images/equity-bank-logo.png"
-            (click)="toggleButton()"
-          />-->
+  <!-- Chapters -->
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title>
+          <mat-icon>groups_add</mat-icon> <span>Chapters</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- add chapters -->
+      <!-- <a class="button-link" (click)="addChapterDialog()">
+        <button class="side-buttons">
+          <mat-icon>group_add</mat-icon> <span>Add Chapters</span>
+        </button>
+      </a> -->
+      <!-- view chapters -->
+      <a routerLink="chapters" class="button-link">
+        <button class="side-buttons">
+          <mat-icon>school </mat-icon>
+          <span>Institutional Chapters</span>
+        </button>
+      </a>
+      <a routerLink="regional-chapters" class="button-link">
+        <button class="side-buttons">
+          <mat-icon>location_on </mat-icon>
+          <span>Regional Chapters</span>
+        </button>
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Hubs -->
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title>
+          <mat-icon>groups_add</mat-icon> <span>Hubs</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- add chapters -->
+      <a class="button-link" (click)="addHubDialog()">
+        <button class="side-buttons">
+          <mat-icon>group_add</mat-icon> <span>Add Hubs</span>
+        </button>
+      </a>
+      <!-- view chapters -->
+      <a routerLink="hubs" class="button-link">
+        <button class="side-buttons">
+          <mat-icon>visibility </mat-icon>
+          <span>View Hubs</span>
+        </button>
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- events -->
+  <a routerLink="eventshome" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>event</mat-icon> <span>Events</span>
+    </button>
+  </a>
+  <!-- Job Opportunities -->
+  <a [routerLink]="[{ outlets: { primary: 'jobs' } }]" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>key</mat-icon>
+      <span>Opportunities</span>
+    </button>
+  </a>
   
-          <button mat-raised-button class="navbar-toggler" type="button" (click)="toggleButton()">
-              <span class="navbar-toggler-icon icon-bar"></span>
-              <span class="navbar-toggler-icon icon-bar"></span>
-              <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                  <div class="input-group no-border">
-                    <app-search #searchInput (searchTextChanged)="onSearchTextEntered($event)">
-                      <!-- Place spinner inside this component if possible -->
-                    </app-search>   
-                    <mat-progress-spinner *ngIf="isLoading" class="search-spinner" [mode]="spinnerMode" [diameter]="20"></mat-progress-spinner>
-                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport suggestions">
-                      <div *cdkVirtualFor="let word of filteredWords" class="suggestion-item">
-                        <a (click)="onSuggestionClicked(word)">
-                          {{ isLink(word.content) ? processLink(word.content) : word.content }}
-                        </a>
-                      </div>
-                    </cdk-virtual-scroll-viewport>
-                  </div>
-           </div>   
-              <!--<mat-icon><menu>menu</menu></mat-icon>-->
+    <!--User newsUpdate-->
+    <a routerLink="newsUpdate" class="button-link">
+      <button class="side-buttons">
+        <mat-icon>update</mat-icon>
+        <span>User News&Update</span>
+      </button>
+    </a>
+  <!--User Feedback-->
+  <a routerLink="userfeedback" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>feedback</mat-icon>
+      <span> User Feedback </span>
+    </button>
+  </a>
+
+<!-- survey -->
+<a routerLink="survey" class="button-link">
+  <button class="side-buttons">
+    <mat-icon> forum</mat-icon>
+    <span> Survey</span>
+  </button>
+</a>
+
+  <!-- spotlight -->
+  <a routerLink="spotlight" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>airplay</mat-icon>
+      <span> Spotlight </span>
+    </button>
+  </a>
   
-  
-  
-        <!-- Right Menu -->
-        <ul class="navbar-nav navbar-nav">
-          <li class="nav-item">
-            <button class="nav-link"  routerLink="/home" mat-button>
-              <mat-icon>house</mat-icon><span class="nav-item">Home</span>
-            </button>
-          </li>
-          <li class="nav-item">
-                    <!-- Notification -->
-          <button mat-button>
-            <mat-icon>notifications</mat-icon
-            ><span class="nav-item"> Notifications</span>
-          </button>
-          </li>
-          <li class="nav-item">
-                    <!-- Me Avatar Menu -->
-          <button mat-button [matMenuTriggerFor]="menu">
-            <mat-icon>account_circle</mat-icon><span class="nav-item">Me</span>
-          </button>
-          </li>
-        </ul>
-          <!-- Home -->
-  
-          <!-- Sub Menu -->
-          <mat-menu #menu="matMenu">
-            <!-- LogOut -->
-            <button mat-menu-item (click)="logout()">
-              <mat-icon>exit_to_app</mat-icon>LogOut
-            </button>
-  
-            <!-- Account Settings -->
-            <button mat-menu-item routerLink="/user_profile">
-              <mat-icon>person</mat-icon>Profile
-            </button>
-            <button mat-menu-item>
-              <mat-icon>settings</mat-icon>AccountSettings
-            </button>
-          </mat-menu>
-        </div>
-  
-   
-  </nav>
+
+  <a routerLink="NewsLetter" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>NewsLetter</mat-icon>
+      <span>NewsLetter </span>
+    </button>
+  </a>
+
+  <!-- admins -->
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title>
+          <mat-icon>admin_panel_settings</mat-icon> <span>Admins</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- add chapters -->
+      <a class="button-link" (click)="addAdminDialog()">
+        <button class="side-buttons">
+          <mat-icon> add_moderator </mat-icon>
+          <span>Add Admin</span>
+        </button>
+      </a>
+      <!-- view admins-->
+      <a routerLink="adminsview" class="button-link">
+        <button class="side-buttons">
+          <mat-icon> manage_accounts </mat-icon> <span>View Admins</span>
+        </button>
+      </a>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!--roles-->
+  <a routerLink="roles" class="button-link">
+    <button class="side-buttons">
+      <mat-icon>security</mat-icon> <span>Roles</span>
+    </button>
+  </a>
+</div>

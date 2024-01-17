@@ -10,6 +10,7 @@ import { AdminAddHubsFormComponent } from '../admin-add-hubs-form/admin-add-hubs
   styleUrls: ['./admin-side-bar-menu.component.scss'],
 })
 export class AdminSideBarMenuComponent {
+  
   constructor(public dialog: MatDialog) {}
   // add chapter form dialog
   addChapterDialog(): void {

@@ -140,13 +140,17 @@
    
     <div class="container-fluid row">
       <div class="col-md-6 col-lg-2 col-xlg-3">
-        <div class="card card-hover p-2">
-                <div class="box bg-danger text-center pt-3 pb-1 ">
-                  <h6 class="box text-center card bg-warning text-white p-2"><mat-icon>school</mat-icon></h6>
-                  <h5 class="font-light text-white">Total Scholars</h5> 
-                    <h4 class="font-light text-white">{{ scholarStats.scholarCount }} </h4>
-                </div>
+      
+          <div class="card card-hover p-2">
+            <button style="border: none;" routerLink="/admin/scholarstable">
+            <div class="box bg-danger text-center pt-3 pb-1 ">
+              <h6 class="box text-center card bg-warning text-white p-2"><mat-icon>school</mat-icon></h6>
+              <h5 class="font-light text-white">Total Scholars</h5> 
+                <h4 class="font-light text-white">{{ scholarStats.scholarCount }} </h4>
             </div>
+            </button>
+        </div>
+              
         </div>
         <div class="col-md-6 col-lg-2 col-xlg-3">
           <div class="card card-hover p-2">

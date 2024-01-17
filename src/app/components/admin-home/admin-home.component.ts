@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-home.component.scss'],
 })
 export class AdminHomeComponent {
+  logoimg:string ='assets/images/equity-bank-logo.png';
   isShowing!: boolean;
 
   toggle() {

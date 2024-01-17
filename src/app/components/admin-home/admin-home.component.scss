@@ -1,10 +1,10 @@
 .all-content {
-  margin-top: 6%;
+  margin-top: 7.5%;
   width: 100%;
 }
 
 mat-sidenav{
-  margin-top: 3rem;
+  top: 0;
   width: 12rem;
   border-right: none;
   background: #0e0e23;
@@ -12,16 +12,8 @@ mat-sidenav{
   text-align: center;
 
   .sidenav-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 8vh;
     border-bottom: 1px solid rgba(240, 240, 255, 0.1);
-    h1 {
-      color: white;
-      font-size: 20px;
-      margin: 0;
-    }
+
     // img {
     //   width: 80%;
     // }
@@ -33,4 +25,10 @@ mat-sidenav{
   background-color: #eaedf7;
   width: 100%;
   overflow: hidden;
+}
+img{
+  height:10vh;
+  width: 50%;
+  background: rgb(255, 255, 255);
+  margin-bottom: 3px;
 }
