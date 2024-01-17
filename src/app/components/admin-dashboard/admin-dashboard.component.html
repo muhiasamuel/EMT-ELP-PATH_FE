@@ -140,55 +140,57 @@
    
     <div class="container-fluid row">
       <div class="col-md-6 col-lg-2 col-xlg-3">
-        <div class="card card-hover p-1">
-                <div class="box bg-danger text-center pt-1 pb-1 ">
+        <div class="card card-hover p-2">
+                <div class="box bg-danger text-center pt-3 pb-1 ">
                   <h6 class="box text-center card bg-warning text-white p-2"><mat-icon>school</mat-icon></h6>
                   <h5 class="font-light text-white">Total Scholars</h5> 
-                    <h4 class="font-light text-white">{{ scholarStats.scholarCount }}</h4>
+                    <h4 class="font-light text-white">{{ scholarStats.scholarCount }} </h4>
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-2 col-xlg-3">
-          <div class="card card-hover p-1">
-              <div class="box bg-transparent text-center pt-1 pb-1 ">
-                <h6 class="box text-center card bg-danger text-white p-2"><mat-icon>man</mat-icon></h6>
-                <h5 class="font-light text-black">Local Scholars</h5> 
-                  <h4 class="font-light text-black">{{ scholarStats.localScholars }}</h4>
+          <div class="card card-hover p-2">
+              <div class="box bg-dark text-center pt-3 pb-1 ">
+                <h6 class="box text-center card bg-danger text-white p-2"><mat-icon>group</mat-icon></h6>
+                <h5 class="font-light text-white">Local Scholars</h5> 
+                <span class="border-bottom"></span>
+                  <h4 class="font-light text-white">{{ scholarStats.localScholars }}</h4>
               </div>
           </div>
       </div>
       <div class="col-md-6 col-lg-2 col-xlg-3">
-        <div class="card card-hover p-1">
-            <div class="box bg-secondary text-center pt-1 pb-1 ">
-              <h6 class="box text-center card bg-primary text-white p-2"><mat-icon>woman</mat-icon></h6>
-              <h4 class="font-light text-white">Global Scholars</h4> 
+        <div class="card card-hover p-2">
+            <div class="box bg-success text-center pt-3 pb-1 ">
+              <h6 class="box text-center card bg-primary text-white p-2"><mat-icon>public</mat-icon></h6>
+              <h5 class="font-light text-white">Global Scholars</h5>
+              <span class="border-bottom"></span> 
                 <h4 class="font-light text-white">{{ scholarStats.globalScholars }}</h4>
             </div>
         </div>
     </div>
     <div class="col-md-6 col-lg-2 col-xlg-3">
-      <div class="card card-hover p-1">
-          <div class="box bg-primary text-center pt-1 pb-1 ">
-            <h6 class="box text-center card bg-success text-white p-2"><mat-icon>public</mat-icon></h6>
+      <div class="card card-hover p-2">
+          <div class="box bg-primary text-center pt-3 pb-1 ">
+            <h6 class="box text-center card bg-success text-white p-2"><mat-icon>star</mat-icon></h6>
             <h5 class="font-light text-white">Total Donors</h5>
               <h4 class="font-light text-white">{{ scholarStats.donors }}</h4>         
           </div>        
       </div>
     </div> 
     <div class="col-md-6 col-lg-2 col-xlg-3">
-      <div class="card card-hover p-1">
-          <div class="box bg-warning text-center pt-1 pb-1 ">
-            <h6 class="box text-center card bg-secondary text-white p-2"><mat-icon>public</mat-icon></h6>
-            <h4 class="font-light text-white">Tvet Scholars</h4> 
+      <div class="card card-hover p-2">
+          <div class="box bg-warning text-center pt-3 pb-1 ">
+            <h6 class="box text-center card bg-dark text-white p-2"><mat-icon>settings</mat-icon></h6>
+            <h5 class="font-light text-white">Tvet Scholars</h5> 
               <h4 class="font-light text-white">{{ scholarStats.tvetScholars }}</h4>         
           </div>        
       </div>
     </div> 
     <div class="col-md-6 col-lg-2 col-xlg-3" routerLink="/scholarstable">
-      <div class="card card-hover p-1">
-          <div class="box bg-danger text-center pt-1 pb-1 ">
-            <h6 class="box text-center card bg-transparent text-blacck p-2"><mat-icon>public</mat-icon></h6>
-            <h4 class="font-light text-white">Local University</h4>
+      <div class="card card-hover p-2">
+          <div class="box bg-danger text-center pt-3 pb-1 ">
+            <h6 class="box text-center card bg-info text-white p-2"><mat-icon>local_library</mat-icon></h6>
+            <h5 class="font-light text-white">Local University</h5>
               <h4 class="font-light text-white">{{ scholarStats.localVersity }}</h4>          
           </div>        
       </div>
@@ -198,24 +200,52 @@
   <!-- ============================================================================== -->
   
   <!-- cards-container-->
-  <div class="card-container">
-    <!-- Total Scholars card -->
+  <div class="container-fluid">
+    <div class="row">
+          <!-- scholars Category graph -->
+        <div class=" col-md-6 col-lg-4 col-xlg-3">
+          <div class="card card-hover p-2">
+            <div class="graph">
+              <app-admin-scholar-graph></app-admin-scholar-graph>
+            </div>
+          </div>
+        </div>
+            <!-- Gender graph -->
 
-    <!-- Total Applications card -->
-    <!-- <div class="single-card">
-      <app-applications-card></app-applications-card>
-    </div> -->
-    <!-- Total elps card -->
+        <div class=" col-md-6 col-lg-4 col-xlg-3">
+          <div class="card card-hover p-2">
+            <div class="graph">
+              <app-donor-graph></app-donor-graph>
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-6 col-lg-4 col-xlg-3">
+          <div class="card card-hover p-2">
+            <div class="graph">
+              <app-admin-wtfs-graph></app-admin-wtfs-graph>
+            </div>
+          </div>
+        </div>
+    </div>    
 
-    <!-- Total SWTFs card -->
-    <!-- Total Elimu -->
-    <!-- Total Tvet -->
-    <!-- Total Global -->
+    <div class=" row">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xlg-3">
+          <div class="card card-hover p-2">
+            <div class="graph">
+              <app-minor-donors-graph></app-minor-donors-graph>
+            </div>
+          </div>
+        </div>
 
-    <!-- Total Expenditure card -->
-    <!-- <div class="single-card">
-      <app-expenditure-card></app-expenditure-card>
-    </div> -->
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xlg-3">
+          <div class="card card-hover p-2">
+            <div class="graph">
+              <app-admin-scholargender-graph></app-admin-scholargender-graph>
+            </div>
+          </div>
+        </div>
+    </div>    
+
   </div>
   <!-- row 2  graphs container-->
   <div class="graphs-container">
@@ -224,31 +254,19 @@
       <app-admin-awarding-status-graph></app-admin-awarding-status-graph>
     </div> -->
 
-    <!-- scholars Category graph -->
 
-    <div class="graph">
-      <app-admin-scholar-graph></app-admin-scholar-graph>
-    </div>
 
-    <!-- Gender graph -->
 
-    <div class="graph">
-      <app-admin-scholargender-graph></app-admin-scholargender-graph>
-    </div>
+
+
 
     <!-- wtfs -->
-    <div class="graph">
-      <app-admin-wtfs-graph></app-admin-wtfs-graph>
-    </div>
+
 
     <!-- major donors -->
-    <div class="graph">
-      <app-donor-graph></app-donor-graph>
-    </div>
+
 
     <!-- minor donors -->
-    <div class="graph">
-      <app-minor-donors-graph></app-minor-donors-graph>
-    </div>
+
   </div>
 </div>
